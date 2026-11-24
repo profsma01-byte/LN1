@@ -253,6 +253,24 @@ Let me leave you with study habits that make fuzzy logic permanent knowledge. Fi
 
 A closing reflection on the beauty of this subject. Of all the tools in your AI education, fuzzy logic is perhaps the most human. It admits that words like warm and crowded carry knowledge worth computing with. It invites engineers to listen to experts and to humility. In a profession often tempted by false precision, fuzzy logic keeps the door open to wisdom of a softer kind. Combine it with the rigor of your mathematics, the data of machine learning, the bodies of robotics, and the conscience of your ethics training, and you will build machines that reason like wise practitioners: smoothly, understandably, and well.
 
+PART 16 - ADDITIONAL GLOSSARY, SCENARIOS, AND EXAM TIPS
+
+A final glossary completion and exam preparation. More terms to know. Rule strength: the degree to which a rule fires given its inputs. Fuzzy inference system: the complete pipeline from fuzzification to defuzzification. Mamdani inference: the classic style using fuzzy sets for outputs, aggregated and defuzzified. Sugeno inference: a simplified style using constant or linear output values, computationally efficient for embedded systems. Fuzzy surface: a plot of controller output across the input space, useful for seeing behavior at a glance. Rule viewer: a tool showing how each rule contributes to the output for given inputs. Coverage: ensuring every possible input activates at least one rule meaningfully. Consistency: ensuring rules do not contradict each other in overlapping regions. Gain scaling: stretching input ranges to fit membership functions in implementation.
+
+Exam tip one: be able to compute fuzzification by hand for a triangular membership function. Given a triangle with base from two to six peaking at four, compute membership at five: it falls on the right edge, so membership is the fraction of remaining height, here 0.5. Practice several such computations until automatic.
+
+Exam tip two: know the difference between Mamdani and Sugeno and when each is chosen. Mamdani for human-readable applications like appliances; Sugeno for speed-sensitive embedded control and integration with optimization.
+
+Exam tip three: be able to design a small rule base for a stated problem in five minutes. Practice with past questions: robot speed control, fan speed, tipping, water level. Structure your answer as inputs, terms, membership sketch, rules, and defuzzification method.
+
+Exam tip four: explain why fuzzy control reduces chattering near thresholds compared with crisp control. The overlap of rules blends outputs smoothly instead of switching abruptly.
+
+Two more scenarios to enrich your intuition. Scenario eight: fuzzy elevator dispatch. Waiting time and passenger load are fuzzy; rules balance service speed and energy. In tall buildings at rush hour, fuzzy dispatch reduces average wait noticeably versus fixed schedules.
+
+Scenario nine: fuzzy greenhouse control for a nursery. Temperature, humidity, and light are fuzzy inputs; rules modulate shading, ventilation, and misting. Seedlings thrive under smooth, gentle control that mirrors an expert gardener's care. Students can build such systems with an Arduino kit, creating real value for local agriculture.
+
+With these additions, your fuzzy toolkit is complete: concepts, computations, design, applications, hybrids, and exam readiness. Go now and notice the fuzzy decisions around you: how your air conditioner behaves, how your washing machine chooses, how your camera adapts. Each one is a teacher.
+
 Fuzzy logic teaches engineers to reason well in a vague world. Embrace it, and your machines will be smoother, smarter, and more human-like. Thank you for your attention and your effort. I will see you in the next lecture.
 
 ================================================================
