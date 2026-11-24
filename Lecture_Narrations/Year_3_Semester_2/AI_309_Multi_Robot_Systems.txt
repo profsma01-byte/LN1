@@ -1,0 +1,230 @@
+AI 309 - MULTI-ROBOT SYSTEMS
+COMPREHENSIVE SPOKEN LECTURE NARRATION
+Style: Spoken lecture delivery for voice recording and text to speech
+Language: Simple, clear English
+Length: Extended lecture of at least five thousand words
+Year Three, Semester Two, Robotics and Artificial Intelligence Programme
+
+PART 1 - WELCOME TO MULTI-ROBOT SYSTEMS
+
+Hello everyone, and welcome to AI 309, Multi Robot Systems. In this course we study how teams of robots work together: how they share tasks, coordinate their motions, communicate, and achieve together what no single robot could accomplish alone. You have already met swarms of simple robots in AI 303; here we expand to multi robot systems generally, including teams of capable, sophisticated robots collaborating on complex missions. I am delighted to guide you through this subject, and as always we will ground everything in real life practicals and examples from Nigeria and Africa.
+
+What is a multi robot system? A multi robot system is a group of robots that interact, through communication, perception, or shared environment, to accomplish individual or common goals. The key idea is interaction: the robots' behaviors are coupled, deliberately designed so that the team outcome exceeds what independent robots could achieve. Examples range from two robot arms cooperating to lift a long beam, to a fleet of warehouse robots coordinating traffic, to a team of drones mapping a disaster zone, to autonomous vehicles negotiating an intersection.
+
+Why use multiple robots instead of one big one? Let me give the engineering case. First, parallelism: many robots cover more ground, inspect more pipes, or deliver more packages in the same time. Second, robustness through redundancy: if one robot fails, the mission continues with the rest. Third, scalability: adding robots adds capacity. Fourth, specialization: different robots can carry different sensors or tools and share their findings. Fifth, coverage of spatially distributed tasks naturally suits teams. Sixth, cost: several simple robots can be cheaper and more flexible than one complex machine. Against these benefits stand the costs: coordination complexity, communication demands, potential interference, and harder programming and testing. Multi robot engineering is the art of maximizing the benefits while taming the costs.
+
+Real life practicals bring this alive. Imagine a warehouse in Lagos with dozens of mobile robots moving goods: they must avoid collisions, share aisle space, and prioritize urgent orders, without a single central computer crashing the whole floor. Imagine a search and rescue team of drones and ground robots mapping a flooded area in Bayelsa: the drones cover wide areas, the ground robots inspect close up, and their maps merge into one shared picture. Imagine two robot arms in an Ibadan workshop cooperating to weld a large frame: they must synchronize their motions to keep the workpiece stable. Imagine a fleet of agricultural robots on a large farm near Jos dividing the field into zones and sharing pest reports. These are multi robot systems in action.
+
+Multi robot systems connect to your whole education. Swarm robotics gave you decentralized inspiration. Robot Operating Systems gives you the communication plumbing for robot teams. Reinforcement learning trains coordinated policies. Graph theory and algorithms model teams and their interactions. Control theory governs each robot's motion and the coupled dynamics of cooperation. Game theory models strategic interaction when robots have different objectives. And ethics matters: teams of autonomous robots raise questions of accountability, safety, and resource sharing.
+
+How will we study this course? We will begin with architectures for multi robot systems: centralized, decentralized, and hybrid. We will study team formation and coalition building: how robots decide who works with whom. We will examine task allocation in depth: dividing work among capable robots. We will study coordinated motion and formation control: moving together without collision. We will cover communication and knowledge sharing among robots. We will study cooperative manipulation: robots handling objects together. We will examine multi robot mapping and exploration: teams building shared maps. We will address planning and scheduling for robot teams. We will confront failures, robustness, and reorganization. We will explore applications and testbeds. And we will end with futures and reflections.
+
+To succeed in this course, think at two levels at once: the individual robot's behavior and the team's emergent performance. Great multi robot systems come from deliberate design at both levels. Let us begin.
+
+PART 2 - ARCHITECTURES FOR MULTI ROBOT SYSTEMS
+
+Let me walk you through architectures: the organizational blueprints of robot teams.
+
+The architecture question is: how is control and decision making distributed across the team. Three families of answers exist.
+
+Centralized architectures give one central controller complete authority. The center collects information from all robots, computes globally optimal assignments and plans, and dispatches commands. Advantages: global optimality is achievable, reasoning is simpler, and coordination is exact. Disadvantages: single point of failure, communication bottlenecks as team size grows, computational explosion at scale, and brittleness to delays. Centralized control suits small teams, structured environments, and settings where one supervisor is reliable, like a factory cell with two or three arms.
+
+Decentralized architectures distribute decision making to each robot. Robots decide based on local information and neighbor communication, as in swarm systems. Advantages: robustness to individual failures, scalability, low communication demand, and graceful degradation. Disadvantages: global optimality is hard to guarantee, emergent behaviors can surprise, and analysis is harder. Decentralized architectures suit large teams, outdoor missions, and hazardous environments where communication is imperfect.
+
+Hybrid architectures blend both: local autonomy for reflexes and routine coordination, with a supervisory level for global optimization and mission management. Hierarchical teams may have leaders or roles that rotate. Most practical systems are hybrid, because engineering reality is hybrid.
+
+Market based and negotiation based architectures deserve special attention. Robots bid on tasks in a virtual market: each robot computes a cost for performing a task based on distance, capability, and current load; tasks go to the lowest bidder; profits guide behavior. The Contract Net Protocol is the classic: a manager announces tasks, contractors bid, and contracts are awarded. This elegant decentralized mechanism scales well and adapts dynamically.
+
+Behavior based architectures extend the reactive approach to teams: simple coordination rules produce team behavior, as in flocking and follow the leader patterns.
+
+Organizational models borrow from human teams: hierarchies, holarchies of nested teams, and crews with defined roles like leader, scout, and transporter. Role based organization gives structure and clarity.
+
+Blackboard and shared memory architectures let robots post and read information in a common repository, cooperating indirectly through shared knowledge.
+
+Real life practicals. A Nigerian warehouse pilot begins with centralized scheduling for ten robots, then migrates to a hybrid design as the fleet grows to fifty, keeping global order with local agility. A student team building two cooperating robot arms uses a simple leader follower architecture, with the leader computing paths and the follower synchronizing. A rescue robot team uses a decentralized approach with periodic consensus updates when communication allows. Choose architecture to team size, communication quality, mission criticality, and failure tolerance; there is no universally best choice.
+
+A practical habit: draw your architecture diagram with communication flows and failure modes marked; it will guide both design and debugging.
+
+PART 3 - TASK ALLOCATION AND COALITION FORMATION
+
+Let me walk you through task allocation: the heart of multi robot coordination, deciding who does what.
+
+Task allocation takes the mission's tasks and assigns them to robots to optimize objectives like total time, energy, distance, or quality. Formally, we have tasks with requirements and robots with capabilities, locations, and costs; we seek an assignment minimizing cost or maximizing utility.
+
+The single task allocation problem, one task among many robots, is simple: choose the best robot by cost. The multi task problem, many tasks among many robots, is richer: assignments interact because robots are finite and locations matter. This is an assignment problem with deep connections to combinatorial optimization.
+
+Centralized allocation solves the global assignment with optimization: Hungarian algorithms, integer programming, or auction clearing. Optimal but requires global information and computation.
+
+Decentralized allocation uses market based mechanisms. In the Contract Net Protocol and its descendants, tasks are announced, robots bid based on local costs, and awards are made. Market based task allocation scales gracefully and adapts when robots fail or new tasks appear, because new auctions simply run again. It is the workhorse of practical multi robot task allocation.
+
+Auction variants improve performance: sequential single item auctions allocate tasks one by one in rounds; combinatorial bids let robots bid on bundles of tasks when synergies exist, like two nearby deliveries; and consensus based bundle algorithms let robots agree on assignments through neighbor communication without a central auctioneer.
+
+Threshold and behavior based allocation, familiar from swarm robotics, suits simple robots: robots respond to local task demand when it exceeds their threshold.
+
+Coalition formation groups robots for tasks requiring multiple robots: two arms lifting a heavy object, or a drone and a ground robot exploring together. Coalitions form when combined capability exceeds what individuals can do, and dissolve when the task ends. Coalition value computation and stable coalition structures are studied with game theory.
+
+Task dependencies and scheduling add realism. Tasks may have precedence: fetch before assemble. Time windows constrain when tasks must occur. Multi robot task allocation with time windows and precedence is a rich optimization problem addressed with heuristics and learning.
+
+Learning for task allocation is a growing approach: reinforcement learning trains allocation policies that adapt to environments and team compositions.
+
+Real life practicals. A Nigerian logistics startup uses market based allocation for its delivery robot fleet: each delivery is auctioned to the nearest available robot, with urgent orders bidding higher. A student team implements Hungarian algorithm allocation in simulation for four robots and eight tasks and compares makespan with greedy assignment. A rescue simulation allocates exploration zones to a heterogeneous team of aerial and ground robots using bundle bids. Allocate tasks with clear costs, respect dependencies, and verify fairness across robots.
+
+A practical habit: measure allocation quality with metrics like total completion time, distance traveled, and fairness of workload; optimize what you measure.
+
+PART 4 - COORDINATED MOTION AND FORMATION CONTROL
+
+Let me walk you through coordinated motion: moving robot teams through space safely and elegantly.
+
+Formation control arranges and maintains spatial patterns among robots while moving. You met formation ideas in swarm robotics; here we treat teams of capable robots with richer models and guarantees.
+
+Approaches to formation control. Virtual structure: the desired formation is a rigid body; each robot tracks a point on it; coordinating the virtual structure's motion coordinates the team. Leader follower: one robot leads, others maintain relative offsets; simple, but the leader is a critical point of failure. Behavioral: combine flocking like behaviors with formation attraction; flexible and scalable. Potential field and artificial potential methods: formation points attract, obstacles and neighbors repel; smooth distributed control emerges. And graph rigidity based methods: formation shapes are specified by distance constraints between neighbors, with mathematics guaranteeing shape maintenance.
+
+Formation geometry matters: line formations for corridor traversal, V formations like migrating birds for efficiency, circle formations for surrounding targets, and grids for coverage. Switching formations lets teams adapt: wide formation in open space, column in corridors.
+
+Coordinated path planning avoids inter robot collisions while pursuing individual or team goals. Prioritized planning plans robots one at a time, each avoiding earlier planned robots: simple, but incomplete in some cases. Conflict based search resolves collisions between robot plans through negotiation, efficient and complete in many settings. Velocity tuning adjusts speeds to resolve conflicts without changing paths. Multi robot path planning is computationally hard in general, so good heuristics and problem structure matter.
+
+Traffic management for fleets, like warehouse robots, handles flow in shared networks of corridors and intersections. Rules and protocols prevent deadlock: right of way conventions, reservation of intersection zones, and priority to urgent robots. Deadlock detection and resolution are practical necessities at scale.
+
+Coordinated transportation and pushing have robots moving objects together: pushing a large box requires coordinated contact forces and shared plans.
+
+Real time coordination in dynamic environments relies on local sensing and fast replanning: robots react to unexpected obstacles while maintaining team coherence.
+
+Real life practicals. A Nigerian warehouse fleet uses intersection reservation with priority rules to prevent deadlock; throughput improves measurably. A student team implements leader follower formation with three ground robots and observes formation breaking under obstacle avoidance, learning the tension between formation and safety. A drone team over a Lagos event practices V formations for efficient flight and circle formations for perimeter monitoring. Move together with structure, plan paths with conflict awareness, and always prioritize safety over formation beauty.
+
+A practical habit: test formation controllers with worst case scenarios: leader failure, communication loss, and sudden obstacles; resilience is designed in, not hoped for.
+
+PART 5 - COMMUNICATION, KNOWLEDGE SHARING, AND COOPERATIVE MAPPING
+
+Let me walk you through the information fabric of robot teams: communication, shared knowledge, and cooperative mapping.
+
+Communication enables coordination but is never free or perfect. Communication models range from always connected, ideal but rare outdoors, to intermittent connectivity, to local neighbor only, to no communication with purely implicit coordination. Design for the weakest communication your mission will face.
+
+What robots share matters as much as how. State sharing: positions, velocities, and battery levels. Intent sharing: current goals and planned paths, enabling collision avoidance and synergy. Perception sharing: detected objects, obstacles, and events. Map sharing: merging individual maps into shared world knowledge. And task sharing: announcements and bids.
+
+Knowledge fusion combines information from multiple robots. Sensor fusion across robots improves estimates: several views of an object give better poses and identification. Map merging combines maps built in different coordinate frames, requiring place recognition and alignment. Belief merging reconciles conflicting observations with probabilistic methods.
+
+Cooperative simultaneous localization and mapping, multi robot SLAM, is a flagship capability: robots build maps of a shared environment while localizing themselves and each other. Approaches include centralized merging, where all data flows to one mapper; decentralized data exchange, where robots exchange submaps and constraints; and communication efficient methods that share only summaries and corrections. Robustness to outliers and loop closures across robots are key research challenges.
+
+Shared situational awareness builds a common operating picture: what has been explored, where are hazards, what resources exist. This shared picture supports task allocation and human supervision.
+
+Communication constrained teams use delay tolerant strategies: robots store and carry data, opportunistically exchanging when they meet, like data mules. This is realistic in large outdoor missions.
+
+Human robot team communication adds a dimension: human supervisors receive summaries and issue high level commands, with the robot team handling internal coordination.
+
+Real life practicals. A Nigerian environmental monitoring team maps a wetland with three boats sharing submaps when within radio range, merging them into one pollution map. A rescue team practice exercise shows map merging errors when lighting changes confuse place recognition; they add robust features. A student implements decentralized consensus so three robots agree on a shared list of found objects despite intermittent communication. Share deliberately, fuse carefully, and design for communication reality.
+
+A practical habit: define a communication budget: messages per second, bytes per message, and criticality; design coordination within the budget.
+
+PART 6 - COOPERATIVE MANIPULATION AND HETEROGENEOUS TEAMS
+
+Let me walk you through cooperative manipulation and heterogeneous teams: robots physically working together and teams of diverse robots.
+
+Cooperative manipulation has multiple robots handling one object: two arms lifting a beam, mobile robots pushing a large cart. The kinematics and dynamics become coupled: the object constrains the robots' motions, forming closed chains with internal forces.
+
+Master slave and leader follower approaches coordinate manipulation: one robot commands the object's trajectory, others maintain relative compliance. Hybrid position force control regulates both motion and contact forces, crucial when robots squeeze an object. Cooperative impedance control makes robots behave like springs around a shared object, absorbing uncertainties gracefully.
+
+Closed kinematic chains arise when multiple arms grasp one object: internal forces can stress the object or the robots; force control manages them. Task space partitioning divides object motion among robots while maintaining grasp constraints.
+
+Mobile cooperative manipulation adds platform motion: teams of mobile manipulators move large objects through buildings, coordinating bases and arms. Motion planning must consider the coupled system.
+
+Heterogeneous teams combine robots with different capabilities: aerial and ground robots, fast scouts and heavy carriers, sensor specialists and actuators. Heterogeneity increases team power but complicates allocation: who can do what must be modeled precisely.
+
+Task allocation for heterogeneous teams uses capability aware markets and coalition formation: tasks require capabilities, robots advertise theirs, and assignments respect compatibility.
+
+Collaboration patterns include relay approaches: a drone hands off to a ground robot; cooperative perception: the drone's view guides the ground robot; and layered exploration: scouts explore, carriers transport.
+
+Cross domain teams span environments: underwater and surface robots mapping a harbor together, or aerial and ground teams in precision agriculture.
+
+Real life practicals. A Nigerian construction equipment company trials two mobile robots carrying steel beams cooperatively through a site, with force control managing the shared load. A student team pairs a drone with a ground robot for a survey mission: the drone detects points of interest, the ground robot inspects closely. A mining safety project uses heterogeneous teams: scouts for gas sensing, carriers for equipment. Match capabilities to mission demands, and engineer the interfaces between heterogeneous partners.
+
+A practical habit: write capability descriptions for every robot: what it senses, what it carries, where it can go, and how long it lasts; allocation decisions are only as good as these descriptions.
+
+PART 7 - PLANNING, SCHEDULING, AND FAILURE RECOVERY
+
+Let me walk you through planning and scheduling for robot teams and the critical topic of failure recovery.
+
+Team level planning decides the sequence of team actions toward mission goals: explore, then transport, then assemble. Multi robot planning composes individual plans with coordination constraints: timing, spatial exclusion, and resource sharing.
+
+Multi robot path planning, which we introduced, is NP hard in general; practical algorithms exploit structure. Prioritized heuristics, conflict based search, and windowed planning for large teams are standard tools.
+
+Scheduling assigns times to tasks: which robot does which task when. Job shop scheduling models, with machines as robots and operations as tasks, guide algorithms. Time windows and deadlines constrain schedules. Multi robot scheduling balances load to minimize makespan.
+
+Task and motion planning for teams combines symbolic task plans with geometric feasibility for multiple robots, an active research frontier with growing practical tools.
+
+Plan execution with monitoring: plans are monitored during execution; deviations trigger repair: local adjustments, reallocation, or replanning. Plan repair is cheaper than full replanning and keeps teams fluid.
+
+Failure recovery is mission critical. Failure types: robot failure, communication loss, sensor degradation, actuator faults, and environmental surprises. Detection comes from self diagnostics and team observation: a robot missing from updates is presumed failed. Recovery strategies: re allocate the failed robot's tasks, re plan team routes, reconfigure roles, and degrade gracefully to reduced capability. Self healing teams reorganize without human intervention for common failures.
+
+Graceful degradation quantifies performance loss versus team size reduction; good designs lose capability smoothly, not catastrophically.
+
+Redundancy design: keep spare capacity, alternate routes, and role flexibility so failures have substitutes.
+
+Real life practicals. A Nigerian warehouse fleet experiences robot breakdown during peak hours; the market based allocation simply re auctions the orphaned tasks, and the system continues with barely a ripple. A student multi robot project suffers a robot failure in the final demo; the team's re allocation logic saves the presentation. A rescue mission simulator shows graceful degradation when drones drop: coverage shrinks but the mission continues. Plan for failure as a design input, not an unfortunate surprise.
+
+A practical habit: run failure injection drills in simulation: kill robots, drop packets, and freeze sensors; observe recovery and improve it.
+
+PART 8 - LEARNING FOR MULTI ROBOT SYSTEMS
+
+Let me walk you through learning approaches that elevate multi robot coordination.
+
+Learning helps at many levels of multi robot systems. Individual skill learning: each robot improves manipulation or navigation with practice, benefiting the team. Coordination learning: robots learn to cooperate more effectively through experience. Communication learning: robots learn what, when, and how to communicate, even inventing protocols. And allocation learning: policies that assign tasks adaptively from data.
+
+Multi agent reinforcement learning is the core framework: multiple agents learn policies in a shared environment with individual or shared rewards. Shared rewards, all robots win or lose together, encourage cooperation but face credit assignment: which robot's action caused success. Individual rewards shape local behavior but can conflict. Difference rewards and counterfactual baselines sharpen credit assignment.
+
+Centralized training with decentralized execution is the dominant practical paradigm: policies are trained with global information but execute on local information, achieving near centralized performance with decentralized robustness. Algorithms like multi agent proximal policy optimization and counterfactual multi agent policy gradients implement this.
+
+Communication learning trains agents to exchange messages that improve joint performance: emergent protocols can be surprising but effective. Differentiable communication lets gradients flow through messages.
+
+Learning from demonstrations at team level: show coordinated behavior, and the team imitates. Human demonstrations of collaboration teach strategies that are hard to specify.
+
+Sim to real transfer at team level compounds the usual gap: train teams in simulation with domain randomization, then fine tune on hardware teams.
+
+Real life practicals. A research group in Nigeria trains a team of simulated robots with multi agent reinforcement learning to patrol a facility cooperatively, transferring to three real robots with fine tuning. A student team learns cooperative box pushing policies where two robots must synchronize; shared rewards with difference rewards solve the credit assignment puzzle. A logistics company trains allocation policies from historical data, outperforming hand tuned heuristics. Learn where hand design is hard: coordination subtleties, adaptive allocation, and communication timing.
+
+A practical habit: always keep a rule based baseline alongside learned coordination; learning must demonstrate clear value before deployment.
+
+PART 9 - APPLICATIONS, TESTBEDS, AND BENCHMARKS
+
+Let me tour applications of multi robot systems and the testbeds where the field advances.
+
+Warehousing and logistics is the commercial heart: fleets of hundreds of robots coordinate in fulfillment centers worldwide. Search and rescue uses heterogeneous teams in disaster zones. Environmental monitoring deploys teams across oceans, rivers, and fields. Construction explores teams for building, inspection, and assembly. Agriculture fields teams for planting, monitoring, and harvesting. Inspection uses teams for pipelines, power grids, and structures. Space exploration plans multi robot teams for planetary missions. Defense and security applications exist alongside civilian ones, raising dual use responsibilities. Entertainment includes robot team performances and sports.
+
+Testbeds and benchmarks advance science. RoboCup competitions feature robot soccer teams pushing coordination limits. Multi robot exploration challenges compare mapping and coordination algorithms. Warehouse robot benchmarks standardize task allocation problems. Shared simulation environments let researchers compare algorithms fairly. Reporting standards ask for team size, communication assumptions, failure models, and metrics.
+
+Metrics for evaluation: mission completion time, total distance and energy, area covered, allocation fairness, communication overhead, robustness under failures, and scalability with team size. Honest comparison requires controlled experiments and released code.
+
+Simulation platforms: ROS based multi robot simulation, dedicated multi robot simulators, and game engine based environments support research and education.
+
+Real life practicals. Nigerian university teams enter RoboCup style robot soccer to learn coordination under pressure. A research benchmark for African inspired terrain mapping with robot teams is proposed to the community. A company evaluates two multi robot task allocation algorithms on standard benchmarks before choosing deployment. Measure, compare, and share; that is how the field grows.
+
+A practical habit: when benchmarking, vary team size and communication quality systematically; many methods behave differently at scale and under stress.
+
+PART 10 - ETHICS, FUTURES, AND COURSE COMPLETION
+
+Let me close with ethics, future directions, and your course synthesis.
+
+Ethics of multi robot systems. Accountability: when a team errs, responsibility spans operators, developers, and organizations; clear governance is essential. Safety: teams operating near people need rigorous safety cases. Privacy: distributed sensing by robot teams collects extensive data. Military use and autonomy in weapons raise profound moral questions; engineers must advocate for responsible use and human control. Workforce effects: fleet automation changes jobs; organizations should retrain and include affected communities. And resource equity: multi robot capabilities should serve broad development needs, including African priorities in agriculture, health, and infrastructure.
+
+Future directions. Teams will grow in size and heterogeneity. Learning based coordination will mature toward reliable deployment. Human robot teams, people working alongside robot fleets, will expand. Cloud connected fleets will share experience across sites. Self reconfiguring and self repairing teams will enhance resilience. Standardization of interfaces and benchmarks will accelerate progress. And societal applications, from climate resilience to healthcare delivery, will grow.
+
+For Nigeria and Africa, multi robot systems offer paths to leapfrogging: agricultural teams for productivity, logistics fleets for commerce, infrastructure inspection for safety, and environmental teams for stewardship. Building expertise and local solutions keeps the value on the continent.
+
+Course completion summary. You studied architectures for multi robot systems. You mastered task allocation and coalition formation. You learned coordinated motion and formation control. You covered communication, knowledge sharing, and cooperative mapping. You explored cooperative manipulation and heterogeneous teams. You planned and scheduled for teams and recovered from failures. You learned multi agent learning methods. You toured applications and benchmarks. And you reflected on ethics and futures.
+
+Final reflections. Multi robot systems teach that the whole can exceed the sum of its parts, when coordination is designed with wisdom. The challenges of distributed decision making, communication, and cooperation mirror challenges in human organizations. Build robot teams that collaborate robustly, fail gracefully, and serve people well, and you will practice the noble art of engineering cooperation itself.
+
+PART 11 - PRACTICAL SCENARIOS IN MULTI ROBOT OPERATIONS
+
+Let me add a tour of practical scenarios that cement multi robot thinking. Scenario one: a hospital logistics team of delivery robots. Tasks arrive from wards; allocation auctions assign pickups; traffic rules share corridors; failures re allocate automatically. Scenario two: a perimeter security team of ground robots and drones. Drones survey broadly; ground robots investigate closely; shared maps track incidents. Scenario three: a large farm team dividing zones by capability, heavy robots spraying, light robots scouting, sharing pest maps daily. Scenario four: a construction site team transporting materials with coordinated carriers and guiding cranes with vision robots. Scenario five: a port logistics team moving containers with coordinated straddle carriers, where traffic management prevents deadlock at intersections. Scenario six: a university research team of three heterogeneous robots demonstrating cooperative exploration for a national robotics showcase. Scenario seven: an environmental cleanup team of surface boats and underwater robots cleaning a polluted waterway, coordinating coverage and sharing contamination maps with regulators. In each scenario the same toolkit applies: choose an architecture, allocate tasks, coordinate motion, share knowledge, and recover from failures. Practice these scenarios in simulation with your classmates; discuss what fails and why. For each scenario, write one page describing the mission objective, the team composition, the chosen architecture, the task allocation mechanism, the coordination rules, the communication assumptions, and the failure recovery plan. Then run the scenario twice: once under nominal conditions and once with injected failures such as a lost robot or a dropped network. Record metrics like completion time, distance traveled, and fairness of workload. This disciplined scenario practice builds judgment about trade offs: centralization versus decentralization, optimality versus robustness, and communication richness versus bandwidth. Scenario study builds the engineering imagination that exams cannot measure.
+
+Multi robot systems coordinate teams of robots to achieve shared goals with robustness and scale. Master them, and you can build fleets that accomplish what no single robot can. Thank you for your attention and your effort. I will see you in the next lecture.
+
+Glossary of Key Terms
+
+Multi robot system: interacting robots accomplishing coupled goals. Centralized architecture: one controller commanding the team. Decentralized architecture: distributed decisions among robots. Hybrid architecture: combining central supervision with local autonomy. Market based allocation: task assignment through virtual bidding. Contract Net Protocol: announce, bid, and award task mechanism. Coalition: group of robots formed for a joint task. Formation control: maintaining spatial patterns while moving. Virtual structure: formation as rigid body tracking points. Leader follower: formation with one leader and maintaining followers. Prioritized planning: planning robots sequentially avoiding earlier plans. Conflict based search: resolving collisions by negotiation between plans. Deadlock resolution: freeing robots trapped in circular waiting. Cooperative manipulation: multiple robots handling one object. Closed kinematic chain: coupled robots grasping a shared object. Hybrid position force control: regulating both motion and contact force. Heterogeneous team: robots with differing capabilities. Cooperative SLAM: teams building shared maps. Map merging: combining maps from multiple robots. Delay tolerant networking: storing and carrying data until contact. Multi agent reinforcement learning: agents learning jointly in shared environments. Centralized training decentralized execution: global training, local execution. Credit assignment: attributing team outcomes to individual actions. Difference reward: credit assignment by counterfactual comparison. Graceful degradation: smooth performance loss under failures. Plan repair: adjusting plans instead of full replanning. Self healing: reorganization after failures automatically. Makespan: total completion time of all tasks. Fairness: balance of workload among robots. RoboCup: robot soccer research competition. Domain randomization: training variation for sim to real transfer.
+
+Exercises for Students
+
+One: compare centralized and decentralized architectures with one advantage and one weakness each. Two: explain market based task allocation and why it scales well. Three: describe two formation control approaches and when each suits. Four: explain how multi robot SLAM merges maps and one challenge involved. Five: describe cooperative manipulation of a large object by two robot arms and the control issues. Six: explain failure recovery strategies for a robot fleet with an example. Seven: describe centralized training with decentralized execution and its benefits. Eight: compare heterogeneous and homogeneous teams with application examples. Nine: propose a multi robot application for a Nigerian context and outline its architecture. Ten: discuss two ethical considerations of multi robot systems.
+
+END OF AI 309 LECTURE NARRATION
