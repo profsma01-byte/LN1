@@ -287,7 +287,7 @@ Scenario twelve: robots supporting people with disabilities in public spaces. Gu
 
 Each scenario returns to the core lessons of this course: locomotion matched to terrain, localization fused from many sources, layered planning, courteous motion among people, and operational design for maintenance and trust. When you design your own mobile robot, walk through these scenarios and steal their lessons: they are hard-won wisdom from real deployments.
 
-One more assignment worth doing: find a mobile robot video online, a robotaxi run, a warehouse tour, or a drone delivery, and write a technical commentary analyzing its likely localization, planning, and human interaction design. Guess what sensors it carries and what fails first in bad weather. This habit of technical watching turns entertainment into education.
+One more assignment worth doing: find a mobile robot video online, a robotaxi run, a warehouse tour, or a drone delivery, and write a technical commentary analyzing its likely localization, planning, and human interaction design. Guess what sensors it carries and what fails first in bad weather. This habit of technical watching turns entertainment into education. Better still, gather two classmates and discuss your analyses together; disagreements reveal assumptions, and assumptions reveal where your understanding needs work. These small group rituals, technical video discussions, lab debriefs, and design critiques are how engineering communities grow strong. Keep them alive beyond the classroom, and your learning will compound for life.
 
 Mobile robotics frees intelligence to roam the world. Build machines that move with skill, courtesy, and reliability. Thank you for your attention and your effort. I will see you in the next lecture.
 

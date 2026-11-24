@@ -265,6 +265,20 @@ Carry three habits from this course. First, prototype in simulation before hardw
 
 And a completion summary of everything in this course. You defined the field and mapped the stack. You learned demonstration methods: kinesthetic teaching, cloning, and DAgger. You applied reinforcement learning with sim-to-real rigor. You planned tasks and motions with integrated reasoning. You explored foundation models and the data frontier. You adopted a professional methodology. You built pick and place. You studied fourteen scenarios. And you made a twelve-week study plan. The tools are yours now.
 
+PART 15 - FAREWELL WORDS AND ENCOURAGEMENT
+
+As this course closes, let me speak directly to you as future builders of intelligent machines. The field of AI for robotics is young, and its greatest achievements are still ahead. The warehouses of tomorrow, the farms that feed growing cities, the hospitals that care for aging populations, the factories that manufacture locally, all of them will run on robots whose intelligence is being designed now, possibly by people in this room.
+
+Your preparation is strong. You understand perception, the senses of machines. You understand learning, how they improve. You understand planning, how they decide. You understand control, how they move. You understand embedded systems, how they are built. You understand architecture, what runs beneath. And you understand ethics, why it all matters. That combination is rare in the world. Guard it, deepen it, and use it generously.
+
+Practical advice for your next steps. Build one robot project per semester, however small. Read one robotics paper or article per week, however briefly. Teach one concept to someone else per month, however informally. And once a year, look back at what you could not do before and smile at your growth. Engineering careers are built exactly this way: brick by patient brick.
+
+Remember also that the best robot builders are not the ones who love machines most, but the ones who love people most. We build robots to carry burdens, to extend care, to widen opportunity, and to explore the places our bodies cannot go. Let that human purpose be the compass that guides every design choice you make.
+
+One final technical note before we part. As you build AI robot systems, keep three notebooks. The first is a lab notebook: what you built, what happened, what you measured. The second is a failure notebook: every failure, its cause, and its fix. The third is an ideas notebook: every project idea, every improvement thought, every wild concept. Over your degree these three notebooks will become more valuable than any textbook, because they will be uniquely yours, forged in your own experiments and observations.
+
+And when the day comes that your robot completes something genuinely useful, waters a farm correctly, sorts goods reliably, or helps someone with a task they could not do alone, pause and appreciate what you have made. Machines that think and act in service of people are among the noblest things engineers create. I hope this course has prepared you to create many of them.
+
 AI for robotics is the art of building machines that think before they act and learn as they live. Build with wisdom, validate with rigor, and serve with purpose. Thank you for your attention and your effort. I will see you in the next lecture.
 
 ================================================================
