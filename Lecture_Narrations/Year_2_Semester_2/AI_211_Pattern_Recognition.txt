@@ -157,7 +157,7 @@ Step four: train a support vector machine with RBF kernel and compare accuracy a
 
 Step five: train a random forest and compare again.
 
-Step six: reduce features with PCA to 50 components and retrain; measure how much accuracy changes and how much speed improves in your experiments.
+Step six: reduce features with PCA to 50 components and retrain; measure how much accuracy changes and how much speed improves in all of your experiments.
 
 Step seven: analyze errors. Look at misclassified digits. Are labels wrong? Are they genuinely ambiguous? This analysis teaches more than scores.
 
