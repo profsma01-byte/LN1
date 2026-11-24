@@ -1,0 +1,248 @@
+AI 402 - ROBOT ETHICS
+COMPREHENSIVE SPOKEN LECTURE NARRATION
+Style: Spoken lecture delivery for voice recording and text to speech
+Language: Simple, clear English
+Length: Extended lecture of at least five thousand words
+Year Four, Semester One, Robotics and Artificial Intelligence Programme
+
+PART 1 - WELCOME TO ROBOT ETHICS
+
+Hello everyone, and welcome to AI 402, Robot Ethics. As you enter your final year, this course carries special weight. Throughout your studies you have learned to build robots that see, think, move, and interact. Now we ask the deepest question of engineering: what should these machines do, and what responsibilities do their builders carry. Robot ethics is the study of moral principles and responsible practice in the design, deployment, and governance of robots. It is not an add on; it is a core engineering discipline. I am honored to guide you through it, and as always we will ground everything in real life practicals and examples from Nigeria and Africa.
+
+What is robot ethics? Robot ethics examines the moral questions arising from robots in human life. Questions like: If a robot harms someone, who is responsible. How should autonomous vehicles choose in unavoidable accidents. Should care robots be allowed to replace human contact. How do we protect privacy when robots perceive continuously. How do we prevent lethal autonomous weapons. And how do we ensure robots benefit society broadly rather than deepening inequality. These questions have technical dimensions and deeply human ones.
+
+Why does robot ethics matter now? Because robots are moving from factories into streets, homes, hospitals, and farms. Decisions that were human are becoming automated. Robots act with physical force, perceive intimately, and increasingly decide. With capability comes consequence, and with consequence comes responsibility. Engineers who ignore ethics build liabilities; engineers who practice ethics build trust and lasting value.
+
+Let me frame the ethical landscape with real life practicals. An autonomous delivery robot in Lagos must decide how to move safely among pedestrians, children, and animals. A medical robot in Ibadan assists surgery; errors have human costs, and accountability must be clear. A farm robot in rural Nigeria collects data about fields and farmers; whose data is it, and how is it protected. A security robot patrols a compound; how much surveillance is acceptable. A care robot looks after an elderly parent; what duties of honesty and dignity apply. Each of these is an engineering design challenge as much as a moral one.
+
+Ethics connects to your whole education. AI 203 introduced ethics in AI and robotics; this course deepens and specializes. Social robotics gave you interaction ethics. Control and safety engineering gave you technical foundations of harm prevention. Law and governance now join engineering practice. Psychology helps you understand human trust and vulnerability. And professional codes of practice guide conduct.
+
+How will we study this course? We will begin with ethical frameworks: the moral theories engineers use to reason. We will study safety and harm prevention as ethical duties. We will examine privacy and data ethics in robotics. We will cover accountability and responsibility for autonomous systems. We will study fairness, bias, and justice in robotic systems. We will examine autonomy and human control, including meaningful human control over weapons and critical systems. We will cover deception, attachment, and dignity in social robots. We will study environmental ethics of robotics. We will examine professional codes, standards, and governance. We will explore participatory and inclusive design. We will study case analysis methods for ethical dilemmas. And we will end with reflections on engineers as moral agents.
+
+To succeed in this course, bring your whole self: technical skill and moral seriousness. Ethics is not about memorizing rules; it is about developing judgment for hard cases. Let us begin.
+
+PART 2 - ETHICAL FRAMEWORKS FOR ENGINEERS
+
+Let me walk you through ethical frameworks: the tools for moral reasoning in engineering.
+
+Consequentialism judges actions by outcomes: the right action produces the best overall consequences, often framed as the greatest good for the greatest number. In robotics, cost benefit analysis follows this logic: weigh harms against benefits. Strength: clear and practical. Weakness: some duties cannot be traded away, and predicting consequences is imperfect.
+
+Deontology judges actions by duties and rules: some actions are right or wrong regardless of outcomes. Respect for persons, informed consent, and prohibitions on deception are deontological duties. In robotics: do not deceive users about a robot's nature; do not collect data without consent. Strength: protects fundamental rights. Weakness: duties can conflict.
+
+Virtue ethics asks what a good person or professional would do: cultivating virtues like honesty, courage, care, and prudence. For engineers: be honest about limitations; have courage to speak up about risks; practice care for users. Strength: shapes character and culture. Weakness: less specific guidance in hard cases.
+
+Ethics of care emphasizes relationships and vulnerability: those affected by technology deserve care, especially the vulnerable. In robotics: children, elderly, and patients deserve extra protection. Justice theories ask about fair distribution of benefits and burdens: who gains, who bears risks, and who decides.
+
+Professional ethics translates these into conduct: codes of practice, standards, and fiduciary duties to society. Engineers serve public safety first.
+
+Applying frameworks: real dilemmas benefit from multi framework analysis: what outcomes, what duties, what virtues, what care, and what justice require. Disagreement between frameworks marks the hard case requiring wise judgment.
+
+Real life practicals. A Nigerian engineering team reviews a delivery robot's pedestrian safety with cost benefit analysis, deontological duties to avoid harm, and care ethics for children in the environment. A student analyzes a surveillance robot with justice questions about who is watched and who benefits. Use multiple lenses; single lens answers are usually too simple.
+
+A practical habit: when facing an ethical question, write one paragraph under each framework; the comparison sharpens judgment.
+
+PART 3 - SAFETY, HARM PREVENTION, AND RISK
+
+Let me walk you through safety as an ethical duty: preventing harm is the first moral obligation of roboticists.
+
+Robots are physical agents; failures cause physical harm. Safety engineering is ethics in action: risk assessment, hazard analysis, and protective design.
+
+Risk thinking: risk equals probability times severity. Identify hazards: collisions, crushing, electrical, thermal, and cybersecurity hazards that become physical. Assess likelihood and severity. Mitigate through design: inherently safer design first, then guards and interlocks, then warnings and training.
+
+Safety standards for robots: industrial robot safety standards, collaborative robot standards defining force and speed limits near people, and emerging standards for service and autonomous robots. Standards encode collective wisdom; following them is duty.
+
+Defense in depth: multiple independent protective layers so single failures do not cause harm. Fail safe design: failures default to safe states. Watchdogs, emergency stops, and speed and force limits are ethical features.
+
+Verification and validation: prove safety properties where possible, test exhaustively otherwise. Safety cases: documented arguments that a system is acceptably safe.
+
+Human robot proximity demands special care: collaborative robots need compliant design, monitoring, and predictable behavior. Autonomous vehicles and drones carry higher stakes and stricter duties.
+
+Real life practicals. A Nigerian hospital robot team conducts hazard analysis before deployment: collisions in corridors, dropped payloads, and battery hazards, with mitigations at each layer. A student robot project adds emergency stops and force limits after a near accident. A factory collaborative robot installation documents its safety case for regulators. Safety is not bureaucracy; safety is care made rigorous.
+
+A practical habit: begin every project with a hazard log and update it throughout development; risk awareness grows with the project.
+
+PART 4 - PRIVACY, DATA, AND SURVEILLANCE
+
+Let me walk you through privacy and data ethics: robots perceive intimately, and data carries duties.
+
+Robots with cameras, microphones, and sensors collect rich data about people and places. Privacy is the right to control personal information and to be free from unwarranted observation.
+
+Data ethics principles. Consent: people should know what is collected and agree meaningfully. Purpose limitation: collect only for specified purposes. Data minimization: collect only what is needed. Storage limitation: keep only as long as needed. Security: protect data rigorously. Transparency: publish what is collected and how it is used. And user control: let people access, correct, and delete their data.
+
+Surveillance concerns: robots that watch continuously can chill behavior and enable abuse. Proportionality: surveillance should match justified purposes. Oversight: human review and accountability for surveillance systems. In workplaces, homes, and public spaces, surveillance design choices have moral weight.
+
+Anonymization and aggregation: where possible, use data without identifying individuals. Privacy by design: build protections into architecture, not bolt them on.
+
+Special contexts: children's data, health data, and home data deserve heightened protection. Cross border data flows raise governance questions.
+
+Real life practicals. A Nigerian social robot project implements on device processing so raw audio never leaves the robot, with transparent data notices in local languages. A warehouse robot team minimizes data retention, deleting logs weekly after safety review. A school robot project obtains parental consent and limits recording. Privacy engineering is ethical engineering.
+
+A practical habit: perform a privacy impact assessment before deployment: what data, whose, why, and how protected; document it and revisit it.
+
+PART 5 - ACCOUNTABILITY, RESPONSIBILITY, AND LIABILITY
+
+Let me walk you through accountability: who answers when robots cause harm.
+
+Autonomy complicates responsibility. In simple tools, the operator is clearly responsible. As robots decide, responsibility spreads across designers, manufacturers, operators, and organizations. Yet someone must remain accountable; design for accountability is ethical duty.
+
+Responsibility gaps concern autonomy that no one clearly controls. Meaningful human control ensures humans can understand, oversee, and intervene in systems. Without it, accountability dissolves.
+
+Liability frameworks: product liability holds manufacturers for defects; negligence law addresses careless design and operation; emerging frameworks address autonomous systems specifically. Engineers should understand the legal landscape they work in.
+
+Explainability supports accountability: systems whose decisions can be explained allow investigation and correction. Logging and auditing create records for accountability.
+
+Organizational responsibility: companies deploying robots bear duties of governance: policies, training, oversight, and incident response. Clear roles and documentation prevent buck passing.
+
+Incident response: when harm occurs, responsible organizations respond transparently: investigate, disclose, compensate, and improve. Cover ups multiply harm.
+
+Real life practicals. A Nigerian robotics company publishes clear accountability chains for its delivery fleet: who monitors, who can stop, who answers for incidents. A hospital robot policy names responsible officers and review boards. A student team's project documents decision logs for every autonomous action. Design for answerability; it protects people and organizations alike.
+
+A practical habit: for every autonomous function, write one sentence naming who is answerable for its failures; ambiguity here is a design flaw.
+
+PART 6 - FAIRNESS, BIAS, AND JUSTICE
+
+Let me walk you through fairness: robots must serve people equitably.
+
+Bias in robotic systems arises from data, design, and deployment. Training data that under represents groups leads to worse performance for them: perception systems failing on darker skin tones, speech systems struggling with accents. Design assumptions embed bias: default settings favoring some bodies or contexts. Deployment bias: systems placed unequally, serving some communities and not others.
+
+Fairness definitions: demographic parity, equal opportunity, and individual fairness each capture aspects; trade offs exist and choices must be explicit.
+
+Mitigation: diverse and representative data, bias testing across groups, inclusive design teams, and participatory development with affected communities. Continuous monitoring in deployment catches emergent inequities.
+
+Distributive justice: who receives robotic benefits and who bears risks. Automation displaces jobs; responsible practice includes retraining and transition support. Access justice: advanced robotics should not deepen divides; designs for affordability and local context expand access.
+
+Global justice: technologies developed in wealthy contexts should adapt respectfully to others; local capacity building keeps value on the continent.
+
+Real life practicals. A Nigerian vision team tests their system across skin tones and lighting conditions typical locally, correcting disparities. A hospital robot pilot evaluates service quality across departments and patient groups. A student project assesses who benefits from an automated service and proposes equitable access measures. Fairness is measurable; measure it.
+
+A practical habit: disaggregate performance metrics by user groups; aggregate numbers hide inequities.
+
+PART 7 - AUTONOMY, WEAPONS, AND MEANINGFUL HUMAN CONTROL
+
+Let me walk you through autonomy and its hardest frontier: lethal autonomy and human control.
+
+Autonomy exists on a spectrum: from remote controlled, to supervised autonomy, to full autonomy. As autonomy grows, human roles shift from direct control to oversight and goal setting.
+
+Meaningful human control over force is a central ethical demand in weapons systems. Fully autonomous weapons that select and engage targets without human control raise profound moral objections: dignity demands that life and death decisions not be delegated to machines; accountability gaps; risks of lowering thresholds for conflict; and dangers of proliferation and error.
+
+The campaign to ban lethal autonomous weapons and various national policies reflect these concerns. Engineers play roles: refusing harmful work, advocating safeguards, and designing human control into systems.
+
+Dual use dilemmas: robotics capabilities for rescue and inspection also enable weapons; responsible engineers consider end use and advocate beneficial deployment.
+
+Human control principles: appropriate levels of human judgment for the stakes; clear chains of command; and the ability to intervene meaningfully, not merely symbolically.
+
+Real life practicals. Nigerian robotics students debate autonomous security systems and articulate human control requirements. A drone company adopts policies limiting weaponizable configurations and end use monitoring. Engineers petition for international norms on autonomous weapons. Conscience is part of engineering competence.
+
+A practical habit: apply the meaningful human control test to any autonomous system: can informed humans understand, oversee, and intervene; if not, redesign.
+
+PART 8 - DIGNITY, DECEPTION, AND SOCIAL ROBOTS
+
+Let me walk you through dignity and deception in social robotics: how robots should treat people.
+
+Human dignity is the foundational value: people are ends, not mere means. Robots serving people must respect their dignity: in care, education, and service.
+
+Deception issues: robots that appear to have feelings may mislead. Transparency about machine nature protects autonomy. Anthropomorphism is a design choice with ethical weight: expressive robots should be honest about what they are.
+
+Attachment and companionship: people bond with social robots, especially children and elders. Healthy design supports human relationships rather than replacing them; companionship should supplement human contact, never substitute for it fully.
+
+Vulnerable populations deserve heightened protection: age appropriate design, clear boundaries, human oversight, and avoidance of manipulation.
+
+Emotional manipulation: using emotional expression to influence purchasing or compliance raises serious concerns; design for helpfulness, not exploitation.
+
+Care ethics in robotics: care robots should empower recipients, preserve agency, and involve human caregivers in the loop.
+
+Real life practicals. A Nigerian companion robot project includes family involvement features and clear machine identity statements. A tutoring robot's designers avoid manipulative reward loops and keep teachers central. A care robot pilot evaluates wellbeing and human contact frequency alongside task metrics. Design for dignity; measure dignity effects.
+
+A practical habit: ask of every social robot feature: does this respect user autonomy and honesty; features failing this test should be redesigned.
+
+PART 9 - ENVIRONMENTAL ETHICS, PROFESSIONAL CODES, AND GOVERNANCE
+
+Let me walk you through environmental responsibility, professional codes, and governance of robotics.
+
+Environmental ethics of robotics: manufacturing consumes resources and energy; deployment affects ecosystems; end of life creates waste. Sustainable robotics considers lifecycle impacts: efficient design, durable construction, repairability, recyclability, and responsible disposal.
+
+Robots for environmental good: monitoring pollution, precision agriculture reducing chemical use, and wildlife protection. Balance the footprint with the benefits honestly.
+
+Professional codes of engineering ethics: holding paramount public safety, avoiding deception, acting within competence, and disclosing risks. Professional societies provide codes and disciplinary processes.
+
+Standards and regulation: safety standards, data protection regulation, emerging robotics regulation, and certification. Engineers shape standards through participation.
+
+Governance frameworks: organizational ethics boards, incident reporting systems, and independent oversight. Participatory governance involves affected communities in decisions.
+
+Policy engagement: engineers have voices in policy debates on autonomy, data, and weapons; informed technical voices improve governance.
+
+Real life practicals. A Nigerian engineering body adopts robotics practice guidelines for safety and data. A company establishes an ethics review board including community representatives. A student team submits their project to an ethics checklist before deployment. Governance makes ethics durable beyond individual virtue.
+
+A practical habit: keep current with standards and regulations in your domain; compliance is a floor, not a ceiling, for ethical practice.
+
+PART 10 - ETHICAL DILEMMAS, CASE METHODS, AND COURSE COMPLETION
+
+Let me close with dilemma analysis methods and your course synthesis.
+
+Ethical dilemmas arise when values conflict: safety versus privacy, autonomy versus control, efficiency versus fairness. Structured analysis helps. Identify stakeholders and their interests. Apply multiple frameworks: outcomes, duties, virtues, care, and justice. Identify options and their consequences. Seek additional data and perspectives. Decide with reasons documented. Implement with monitoring and revision.
+
+Case method practice: analyze real cases: autonomous vehicle accidents, care robot incidents, surveillance deployments, and bias failures. Write structured analyses; discuss in groups; refine judgment. Cases build the moral imagination engineers need.
+
+Trolley problem debates in autonomous vehicles illustrate limits of abstract dilemmas: real safety comes from design, regulation, and systemic measures, not only split second choices.
+
+Moral stress in engineering: engineers may face pressure to cut safety or deceive users; preparation, professional communities, and courage support ethical conduct. Know your lines before pressure arrives.
+
+Course completion summary. You studied ethical frameworks for engineers. You examined safety and harm prevention duties. You covered privacy and data ethics. You studied accountability and liability. You explored fairness and justice. You confronted autonomy and weapons questions. You covered dignity and deception in social robots. You examined environmental ethics and governance. You practiced dilemma analysis. And you reflected on engineers as moral agents.
+
+Final reflections. Robot ethics asks you to be more than skilled: to be wise, honest, and courageous. The robots you build will act in the world on your design decisions. Build them with moral seriousness equal to technical excellence, and you will serve society well. Let conscience be your constant companion in every design review and deployment.
+
+PART 11 - SCENARIOS AND PRACTICE IN ROBOT ETHICS
+
+Let me add scenarios that build your ethical judgment through practice. Scenario one: an autonomous delivery robot strikes a pedestrian in Lagos traffic. Analyze: immediate incident response duties, investigation transparency, liability across designer, operator, and owner, and redesign measures. Scenario two: a school tutoring robot records children's conversations to improve service. Analyze: consent from parents and children, data minimization, storage security, and transparency. Scenario three: a security robot in a compound uses facial recognition of staff. Analyze: proportionality of surveillance, bias risks across faces, oversight, and worker dignity. Scenario four: a care robot for an elderly parent suggests replacing family visits. Analyze: attachment risks, dignity, honesty about machine nature, and family involvement. Scenario five: an agricultural data service collects farm data and shares it with insurers. Analyze: ownership, consent, benefit sharing, and justice for farmers. Scenario six: an autonomous weapon component request arrives at your robotics firm. Analyze: meaningful human control, dual use, conscientious objection, and policy advocacy. For each scenario, write a structured analysis: stakeholders, interests, applicable frameworks, options, consequences, and a justified recommendation. Discuss in groups and revise after debate. Scenario practice builds the moral imagination and steady judgment that hard cases demand.
+
+PART 12 - CAREERS, STUDY PLANS, AND CLOSING REFLECTIONS
+
+Let me close with career guidance, study plans, and final reflections for robot ethics. Careers where ethical expertise matters include robotics safety engineer, compliance and standards specialist, robotics policy advisor, responsible innovation lead, ethics board member, and technical auditor. Organizations increasingly seek engineers who can navigate safety, privacy, and accountability with skill.
+
+Study plan for mastery. Weeks one and two: study the ethical frameworks and write short analyses of simple cases. Weeks three and four: analyze safety and privacy cases from industry reports. Weeks five and six: practice accountability mapping for a real robot system. Weeks seven and eight: study fairness testing methods and apply them to a simple data set. Weeks nine and ten: research autonomous weapons debates and human control principles. Weeks eleven and twelve: capstone: conduct a full ethical review of a robotics project and present recommendations.
+
+Portfolio pieces: an ethics review document for a robot system, a case analysis collection, a privacy impact assessment, and a position paper on a robotics governance issue. These demonstrate professional maturity.
+
+Final reflections. Robot ethics is ultimately about people: the people robots serve, the people they affect, and the engineers who build them. Technical skill without moral seriousness is dangerous; moral seriousness without technical skill is powerless. Your programme has given you both. As Year Four continues and you enter practice, carry ethical reflection into every design review, every deployment, and every difficult conversation. Be the engineer others trust with consequential machines.
+
+PART 13 - DETAILED CASE ANALYSES FOR PRACTICE
+
+Let me present detailed case analyses to sharpen your judgment through careful study.
+
+Case one: the autonomous vehicle dilemma. An self driving car faces an unavoidable accident scenario. Public debate fixates on split second choices, but the deeper ethics are systemic: how the vehicle was designed, tested, and regulated; how safety drivers were trained; how data was handled after incidents. Analysis reveals that most ethical value lies in design and governance, not dilemma algorithms. Lessons: invest in prevention, transparency after incidents, and fair compensation. Engineers should redirect trolley problem energy toward rigorous safety engineering.
+
+Case two: the care robot substitution. A nursing home introduces companion robots and reduces human staff contact time to cut costs. Residents' wellbeing metrics initially hold but loneliness rises over months. Analysis: care ethics demands human relationship be protected; efficiency motives cannot override dignity. Lessons: robots should supplement human care with explicit policies protecting contact time; evaluation must measure wellbeing, not just task completion; families and residents should participate in decisions.
+
+Case three: the biased hiring robot. A company deploys a robot assisted screening system that evaluates job candidates with speech and vision analysis. The system performs worse for certain accents and dialects. Affected candidates are unfairly filtered out. Analysis: fairness duties require representative data, bias auditing, and human oversight with appeal routes. Lessons: disaggregate metrics, test with diverse users, keep humans in consequential decisions, and provide recourse.
+
+Case four: the surveillance security robot. A residential estate deploys a robot with facial recognition, recording public spaces continuously. Residents feel watched and chilled in their own community. Analysis: privacy and proportionality require clear purpose, minimal collection, oversight, and community consent. Lessons: conduct privacy impact assessments, involve residents, restrict retention, and provide transparency reports.
+
+Case five: the agricultural data extraction. A foreign service offers free farm analytics to Nigerian farmers but claims all data rights and sells insights to insurers who raise premiums. Analysis: justice and consent demand transparent terms, farmer ownership, and benefit sharing. Lessons: local capacity building, fair contracts, and community governance protect against exploitation.
+
+Case six: the dual use drone. A rescue drone team is asked to adapt their platform for crowd control with harmful capabilities. Analysis: dual use duties, meaningful human control, and conscientious practice weigh heavily. Lessons: establish clear end use policies, document refusals, and advocate beneficial use norms.
+
+For each case, practice the full method: identify stakeholders and interests, apply frameworks, list options and consequences, and write justified recommendations with implementation measures. Case analysis is the gymnasium of ethical judgment; train regularly.
+
+PART 14 - PROFESSIONAL PRACTICE AND FINAL GUIDANCE
+
+Let me give final professional guidance for practicing robot ethics throughout your career. First, build ethical review into your workflow: before each milestone, hold a review covering safety, privacy, fairness, and accountability; write the outcomes down. Second, cultivate speak up culture: raise concerns early and constructively; good organizations reward this. Third, keep learning: laws, standards, and norms evolve; continuing education is duty. Fourth, engage communities: deploy with, not merely for, the people affected. Fifth, document decisions: reasons written at the time prevent hindsight disputes and build institutional memory. Sixth, mentor juniors: ethical culture grows through teaching. Seventh, join professional communities that set standards and share lessons. Eighth, maintain perspective: robots are tools in human projects; keep human welfare central. Ninth, practice self care: moral stress is real; seek support and balance. Tenth, remember why you chose engineering: to build things that help people; let that purpose guide hard calls.
+
+A final reflection on our African context. Nigeria and the continent are building robotic futures: in agriculture, health, logistics, and education. The ethical choices made now will shape whether these technologies empower or exploit. Engineers trained in both technical excellence and moral seriousness will define that trajectory. Be among them.
+
+PART 15 - ETHICAL VOCABULARY AND QUIZ PREPARATION
+
+Let me strengthen your ethical vocabulary and prepare you for assessments. Autonomy: capacity to act without direct human control. Beneficence: duty to do good and promote wellbeing. Non maleficence: duty to avoid harm. Respect for persons: treating people as ends in themselves. Informed consent: agreement given with full understanding. Proportionality: measures matched to justified purposes. Transparency: openness about how systems work and are used. Oversight: human supervision of automated systems. Recourse: ability of affected people to challenge decisions. Redress: compensation and correction for harms. Stakeholder: anyone affected by a system. Value sensitive design: designing with human values embedded. Trust calibration: reliance matched to actual reliability. Safety integrity: rigor level of safety functions. Human in the loop: humans making key decisions. Human on the loop: humans supervising automated decisions. Human out of the loop: full automation without oversight. Moral distress: stress from acting against one's ethical judgment. Whistle blowing: reporting unethical practice externally. Precautionary principle: caution under uncertainty of serious harm. Sustainability: meeting needs without compromising the future. Intergenerational justice: fairness to future generations. Data sovereignty: rights over data about people and places. Algorithmic transparency: understandability of automated decisions. Contestability: ability to dispute automated outcomes.
+
+Quiz preparation questions with guidance for answers. One: compare consequentialist and deontological reasoning with robotics examples; answer by defining each, illustrating with cases, and noting strengths and weaknesses. Two: explain defense in depth for robot safety; answer by describing layered protections with examples. Three: outline data ethics principles and apply them to a robot scenario; answer by listing principles and mapping measures. Four: describe accountability chains for autonomous systems; answer by naming roles and duties across the lifecycle. Five: analyze bias risks in perception systems and mitigations; answer with data, testing, and design measures. Six: explain meaningful human control and its relevance beyond weapons; answer by defining the concept and applying it to critical infrastructure. Seven: discuss dignity in social robotics with design guidelines; answer by linking values to concrete design choices. Eight: evaluate an environmental lifecycle for a robot product; answer with stages and improvement options. Nine: apply structured case analysis to a new incident; answer with the method steps. Ten: propose governance for a Nigerian robotics deployment; answer with policies, oversight, and community involvement.
+
+Robot ethics guides the responsible design and deployment of robots. Master it, and you will build machines worthy of human trust. Thank you for your attention and your effort. I will see you in the next lecture.
+
+Glossary of Key Terms
+
+Robot ethics: moral principles for robot design and deployment. Consequentialism: judging actions by outcomes. Deontology: judging actions by duties and rules. Virtue ethics: cultivating moral character traits. Ethics of care: moral focus on relationships and vulnerability. Justice: fair distribution of benefits and burdens. Risk: probability times severity of harm. Hazard analysis: systematic identification of dangers. Fail safe: failure defaulting to safe state. Defense in depth: multiple independent protective layers. Safety case: documented argument of acceptable safety. Privacy: control over personal information and observation. Consent: meaningful agreement to data collection. Data minimization: collecting only necessary data. Privacy by design: building protections into architecture. Surveillance: systematic observation of people. Accountability: answerability for outcomes. Responsibility gap: unclear responsibility under high autonomy. Meaningful human control: human understanding, oversight, and intervention. Product liability: manufacturer responsibility for defects. Explainability: ability to understand system decisions. Bias: systematic unfair performance differences. Fairness: equitable treatment across groups. Distributive justice: fair allocation of benefits and risks. Dual use: technology with beneficial and harmful applications. Lethal autonomous weapons: weapons selecting and engaging targets without human control. Dignity: inherent human worth demanding respect. Deception: misleading users about a system's nature. Attachment: emotional bonding with robots. Vulnerable populations: groups deserving heightened protection. Environmental lifecycle: resource impacts from production to disposal. Professional code: standards of ethical engineering conduct. Incident response: organizational handling of failures and harms. Participatory design: involving affected communities in design. Moral imagination: capacity to envision ethical dimensions of design.
+
+Exercises for Students
+
+One: apply consequentialist and deontological analysis to one robotics dilemma. Two: explain why safety is an ethical duty and describe defense in depth. Three: describe four data ethics principles with robotics examples. Four: explain accountability chains for an autonomous delivery robot system. Five: give an example of bias in robotics and one mitigation measure. Six: explain meaningful human control and why it matters in weapons systems. Seven: discuss deception and attachment in social robots with design guidelines. Eight: outline an environmental lifecycle assessment for a robot product. Nine: analyze a real robotics incident case using structured ethical analysis. Ten: propose governance measures for a robotics deployment in a Nigerian context.
+
+END OF AI 402 LECTURE NARRATION
