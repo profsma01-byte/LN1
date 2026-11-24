@@ -307,7 +307,31 @@ A hospital ward. Monitors filter ECG, oxygen saturation, and blood pressure wave
 
 This rapid tour should leave you with one lasting impression: DSP is not a niche subject for specialists. It is the universal plumbing of the information age. Every engineer who understands it speaks the native language of sensors, communication, and modern machines.
 
-Each scenario shows the same recipe: sense the signal, understand its structure, remove what harms, extract what matters, and deliver what humans need. That recipe is the beating heart of digital signal processing.
+PART 17 - FINAL GLOSSARY CHECK AND COURSE CLOSURE
+
+Let me add a few more essential terms to complete your DSP toolkit.
+
+Pre-emphasis: boosting higher frequencies before analysis to balance the spectrum, commonly used in speech processing before feature extraction.
+
+Windowing: multiplying a slice of signal by a smooth window function, like Hamming or Hanning, before FFT, to reduce spectral leakage at the edges of the slice.
+
+Spectral leakage: smearing of frequency energy caused by analyzing a finite slice of signal without a window.
+
+Frequency resolution: the ability to distinguish close frequencies, equal to the sampling rate divided by the number of samples in the transform.
+
+Amplitude modulation: encoding information by varying the height of a carrier wave, the classic idea behind AM radio.
+
+Doppler shift: change in observed frequency when source and observer move relative to each other, used in radar speed guns and medical ultrasound.
+
+Latency: the delay between input and output in a real-time DSP system; low latency matters for live calls, hearing aids, and control loops.
+
+Real-time processing: handling samples fast enough to keep up with the live signal stream; for a 48 kilohertz audio stream, the system must finish each block of samples before the next arrives.
+
+With these terms, your DSP vocabulary covers the essentials of the field. Carry them into your robotics, vision, and embedded systems work: signals are everywhere, and now you speak their language.
+
+This has been Digital Signal Processing. You began with raw waves and ended with the power to see inside them, clean them, and shape them into information that serves people. From the heartbeat of a patient to the radio of a drone, from the song on your phone to the radar of a police officer, DSP is the quiet science behind it all.
+
+Thank you for listening. Practice the labs, sketch the spectra, and question every wave you meet. I will see you in the next lecture.
 
 ================================================================
 END OF AI 108 LECTURE NARRATION
