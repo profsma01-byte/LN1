@@ -1,0 +1,240 @@
+AI 311 - ROBOTICS PLANNING
+COMPREHENSIVE SPOKEN LECTURE NARRATION
+Style: Spoken lecture delivery for voice recording and text to speech
+Language: Simple, clear English
+Length: Extended lecture of at least five thousand words
+Year Three, Semester Two, Robotics and Artificial Intelligence Programme
+
+PART 1 - WELCOME TO ROBOTICS PLANNING
+
+Hello everyone, and welcome to AI 311, Robotics Planning. If perception is the eyes of a robot and control is its muscles, then planning is its mind deciding what to do and how. In this course you will learn how robots decide on courses of action: how to move from here to there, how to rearrange the world toward goals, how to act over time under constraints, and how to plan when things are uncertain. Planning is one of the oldest and richest areas of artificial intelligence, and in robotics it meets the hard reality of physics. I am delighted to guide you through it, and as always we will ground everything in real life practicals and examples from Nigeria and Africa.
+
+What is planning? Planning is the process of finding a sequence of actions that transforms the current situation into a desired goal situation, subject to constraints. Notice the elements: a current state, a goal, actions with effects, constraints like collision limits and time, and a sequence, a plan, connecting them. A robot plan might be: pick the red block, place it on the blue block, move to the door, open it, and exit. Each of those steps must be executable by the robot's body in the real world.
+
+Let me frame planning problems in robotics. Motion planning: find collision free paths for robot bodies through space. Task planning: find sequences of symbolic actions to achieve goals. Task and motion planning: combine both so symbolic steps are physically feasible. Trajectory planning: shape paths into timed motions respecting velocity and acceleration limits. Planning under uncertainty: plan when outcomes are not guaranteed. Multi robot planning: plan coordinated actions for teams. And scheduling: plan when actions consume resources and time.
+
+Real life practicals make the need vivid. Consider a service robot in a Lagos hospital: it must plan a route through crowded corridors, plan the order of deliveries to save time, and replan when a corridor is blocked. Consider a robotic arm in an Ibadan workshop assembling a product: it must plan each pick, place, and screw operation in a feasible order without collisions. Consider a warehouse fleet in Kano: robots must plan paths that do not deadlock each other. Consider an agricultural robot: it must plan coverage of a field with minimal overlap and fuel. Planning is the invisible intelligence behind every useful robot.
+
+Planning connects to your whole education. Search and graph algorithms provide the computational tools. Kinematics and dynamics define what motions are physically possible. Control executes planned motions. Perception informs planning with current world state. Learning improves plans from experience. Multi robot systems extend planning to teams. And ethics matters: plans that affect people must respect safety, fairness, and human priorities.
+
+How will we study this course? We will begin with the structure of planning problems and representations of state and action. We will study graph search from uninformed to heuristic methods. We will explore configuration space and motion planning in depth. We will cover trajectory generation and time parameterization. We will study task planning with classical methods and behavior structures. We will integrate task and motion planning. We will cover planning under uncertainty with contingent and probabilistic methods. We will study multi robot and constrained planning. We will examine replanning and execution monitoring. We will explore learning for planning. We will tour applications. And we will end with trends and reflections.
+
+To succeed in this course, master abstraction: planning is the art of searching in the right space with the right representation. Choose your space, define your actions, and design your search. Let us begin.
+
+PART 2 - PLANNING PROBLEM STRUCTURE AND REPRESENTATIONS
+
+Let me walk you through the structure of planning problems and how we represent them.
+
+A planning problem has four parts: states describing situations, actions transforming states, a transition model saying what actions do, and a goal test saying when we are done. Sometimes we add costs to actions and seek optimal plans; sometimes we have constraints; sometimes outcomes are uncertain.
+
+State representation is the first design decision. In classical planning, states are discrete facts: the block is on the table, the door is closed, the robot is in room one. In geometric planning, states are continuous configurations: joint angles, positions in space. The representation determines what search is possible and how hard it is.
+
+Action representation: operators with preconditions and effects. The STRIPS style: an action lists what must be true before it and what becomes true after it. For continuous actions, control inputs parameterize motion.
+
+The transition model: deterministic models predict exactly what actions achieve; probabilistic models give outcome distributions; and learned models capture complex dynamics from data.
+
+Goal representation: goal states can be specific configurations, or goal predicates like all blocks stacked, or soft goals with preferences and rewards.
+
+Search spaces: the state space can be enormous. A robot arm with seven joints has a seven dimensional continuous configuration space. Planning efficiency depends on exploiting structure: heuristics, decomposition, abstraction, and pruning.
+
+Planning versus scheduling: planning decides what actions to do; scheduling decides when, subject to resource and time constraints. Real missions need both.
+
+Hierarchical abstraction: high level planning with abstract actions, then refinement into detailed steps. Abstraction makes large problems tractable.
+
+Real life practicals. A Nigerian logistics robot planning deliveries represents states as robot location plus remaining packages; actions as travel and drop off; goals as empty package list. A student represents a blocks world problem on paper before coding search; the discipline of representation clarifies everything. A warehouse planner adds time windows to tasks and discovers scheduling complexity. Design representations with the problem's real needs in mind: detail only where it matters.
+
+A practical habit: before any algorithm, write down your state variables, actions, and goal test on one page; this design page prevents many wasted hours.
+
+PART 3 - SEARCH ALGORITHMS FOR PLANNING
+
+Let me walk you through search algorithms, the engines that turn planning representations into plans.
+
+Uninformed search explores without guidance. Breadth first search expands level by level, finding shortest plans in steps but exploring widely. Depth first search dives deep with low memory, risking poor plans and dead ends. Uniform cost search expands by path cost, finding cheapest plans when costs are non negative. These are your foundations from algorithms courses.
+
+Heuristic search adds guidance. Greedy best first search expands toward the goal by heuristic estimate, fast but not optimal. A star search balances actual cost with heuristic estimate, optimal when the heuristic never overestimates. Planning search uses heuristics like relaxed plan costs: solve an easier version of the problem and use its cost as guidance. Good heuristics make enormous differences.
+
+Search efficiency levers. Pruning: cut branches provably unable to succeed or beat current best. Duplicate detection: remember visited states to avoid re exploration. Transposition tables cache evaluated states. Iterative deepening bounds depth incrementally.
+
+Planning specific algorithms. Graph plan builds a planning graph over time layers and extracts plans backwards, elegant for classical planning. Heuristic planners compute relaxed plans as heuristics and search forward. Satisfiability based planning encodes planning as logic satisfiability and uses powerful solvers. These modern planners handle thousands of facts and actions.
+
+Optimal versus satisficing planning: optimal plans minimize cost but cost computation; satisficing planners find good plans quickly, often the practical choice. Anytime algorithms improve plans as time permits.
+
+Search in continuous spaces needs sampling and optimization rather than enumeration: we will meet sampling based motion planning next.
+
+Real life practicals. A student implements A star on a grid for robot navigation and compares with Dijkstra, watching heuristics cut exploration dramatically. A Nigerian robotics team uses a classical planner to sequence assembly actions and validates the plan in simulation. A warehouse planner uses heuristic search to route robots around congestion. Choose search to your problem's structure and to your time budget.
+
+A practical habit: always measure nodes expanded and planning time alongside plan quality; efficient search is engineering, not luck.
+
+PART 4 - CONFIGURATION SPACE AND MOTION PLANNING
+
+Let me walk you through motion planning, the geometry of getting robot bodies through space without collision.
+
+The key idea is configuration space. A robot's configuration specifies the positions of all its degrees of freedom: for a mobile robot, its pose; for an arm, its joint angles. Configuration space, C space, is the space of all configurations. The beautiful transformation: represent the robot as a single point in C space and the obstacles as grown regions, C obstacles. Collision free motion planning becomes point navigation among C obstacles.
+
+For a planar mobile robot with rotation, C space is three dimensional: x, y, and heading. For a two joint arm, C space is two dimensional: the two joint angles. Dimensionality grows with degrees of freedom, and this growth is the curse of dimensionality in motion planning.
+
+Exact cell decomposition divides free space into regions and connects them; complete but complex. Potential field methods treat the goal as attracting and obstacles as repelling the robot; simple and fast but prone to local minima where forces balance away from goals. Roadmap methods build a network of collision free configurations and connections, then search the graph; the probabilistic roadmap is the practical champion.
+
+Probabilistic roadmap planning samples random collision free configurations, connects nearby ones with collision free local paths, and builds a graph. Query planning then searches this graph. Probabilistic roadmaps handle high dimensional C spaces remarkably well and are a standard tool.
+
+Rapidly exploring random trees grow a tree of collision free motions from the start toward the goal, biased toward unexplored regions. RRT and its kinodynamic variants handle complex dynamics and constraints. RRT star variants improve path quality with rewiring.
+
+Kinodynamic planning respects dynamics: not every geometric path is executable at speed; planners must respect velocity, acceleration, and actuator limits. Trajectory optimization shapes smooth motions directly in constrained spaces, complementing sampling methods.
+
+Optimization based motion planning treats planning as minimizing costs like path length and energy subject to collision and dynamic constraints, solved with numerical optimization.
+
+Real life practicals. A Nigerian robotics lab plans arm motions with probabilistic roadmaps for pick and place around fixtures. A student implements a simple RRT in Python for a planar robot and watches the tree explore. A drone planner uses kinodynamic RRT to respect acceleration limits near obstacles. Motion planning turns kinematics into collision free action.
+
+A practical habit: visualize C obstacles and planned paths for simple problems first; geometric intuition catches errors algorithms hide.
+
+PART 5 - TRAJECTORY PLANNING AND TIME PARAMETERIZATION
+
+Let me walk you through trajectories: shaping planned paths into timed motions that machines can execute.
+
+A path is a geometric curve in configuration space; a trajectory is a path with time: configurations as functions of time with velocities and accelerations. Trajectory planning converts collision free paths into executable motions respecting dynamic limits.
+
+Interpolation connects waypoints smoothly. Linear interpolation is simple but has sharp corners at waypoints. Polynomial splines connect with smooth curvature; cubic and quintic splines are standard. Clothoid and spline curves give curvature continuity for vehicles.
+
+Time scaling shapes speed along a path. Trapezoidal velocity profiles accelerate, cruise, and decelerate, simple and effective. S curve profiles smooth jerk, the rate of acceleration change, for precision machinery and passenger comfort. Time optimal trajectories respect velocity, acceleration, and torque limits; efficient computation of these is classic material.
+
+Jerk limitation matters practically: sudden acceleration changes excite vibrations and wear mechanisms. Smoother jerk preserves machines and payloads.
+
+Trajectory optimization refines motions for cost: minimum time, minimum energy, or minimum wear, subject to constraints. Numerical optimization solves these problems for complex robots.
+
+Reactive trajectory adjustment handles disturbances: local modifications around obstacles while preserving the global plan, blending planning with control.
+
+For mobile robots, paths are planned in two dimensions with curvature constraints: Dubins and Reeds Shepp curves give shortest paths with bounded turning radius, essential for cars and fixed wing aircraft.
+
+Real life practicals. A Nigerian factory robot's smooth s curve profiles reduce vibration and improve weld quality. A student time parameterizes a pick and place path and observes trapezoidal versus s curve smoothness on a real arm. A delivery robot uses Dubins paths for aisle turns with its steering limits. Shape time deliberately; motion quality is perceived by people and machines alike.
+
+A practical habit: plot velocity and acceleration profiles of your trajectories; smooth profiles tell you as much as the path shape.
+
+PART 6 - TASK PLANNING, BEHAVIORS, AND EXECUTION
+
+Let me walk you through task planning: symbolic reasoning about what actions to do, and how plans execute in reality.
+
+Task planning abstracts away geometry: states are logical facts, actions are symbolic operators, goals are logical conditions. The classical planning problem: find a sequence of operators from initial facts to goal facts.
+
+STRIPS operators with preconditions and effects remain the foundation. Modern planners handle thousands of operators with powerful heuristics and preprocessing.
+
+Hierarchical task network planning decomposes abstract tasks into subtasks and primitive actions. Methods describe how to achieve tasks; ordering constraints ensure correct sequences. Hierarchical task networks give readable, reusable plans and scale to complex missions.
+
+Behavior trees structure execution logic as trees: sequences execute children in order, fallbacks try alternatives, conditions guard actions. Behavior trees blend reactivity and deliberation and are popular in games and robotics for readable behavior.
+
+Execution monitoring: plans are promises; reality breaks them. Executives monitor plan steps, detect failures, and trigger repair: retry, re plan locally, or re plan globally. Plan repair preserves completed work and adapts gracefully.
+
+Goal reasoning and goal management: robots may pursue multiple goals with priorities and deadlines; managers allocate attention and resources.
+
+Deliberation versus reaction balance: task planning is deliberative; behavior trees and reflexes are reactive; executives integrate both.
+
+Real life practicals. A Nigerian hospital logistics robot uses hierarchical task network planning for multi step deliveries and behavior tree execution for reactive safety. A student team sequences a competition robot's tasks with a classical planner and monitors execution with simple state checks. A warehouse system repairs plans when aisles block, avoiding full re planning. Plan symbolically, execute reactively, and monitor constantly.
+
+A practical habit: write failure handling for every plan step before execution; who plans for surprises wins in the field.
+
+PART 7 - TASK AND MOTION PLANNING AND UNCERTAINTY
+
+Let me walk you through the integration frontier: task and motion planning, and planning under uncertainty.
+
+Symbolic plans say what to do; geometry decides if it can be done. Task and motion planning interleaves them: symbolic search proposes action sequences; geometric feasibility checks validate grasps, placements, and collision free motions; failures guide symbolic search elsewhere. This integration prevents the classic failure of purely symbolic plans that cannot be executed.
+
+Integrated approaches. Moveit style pipelines combine task planners with motion planners in layers. Logic geometric programming blends logical constraints with continuous optimization. Feasibility driven search biases symbolic exploration by geometric checks. Task and motion planning remains an active research area with growing practical tools.
+
+Planning under uncertainty acknowledges noisy actuators and sensors. Contingent planning branches on observations: if the drawer is open, grasp; else open it first. Policies, rather than fixed sequences, prescribe actions per situation.
+
+Markov decision process planning optimizes expected reward under probabilistic transitions; value iteration and policy iteration compute policies. Partially observable problems plan over beliefs: the robot maintains probability distributions over states and plans information gathering as well as acting.
+
+Robust planning sacrifices optimality for reliability across bounded uncertainty sets. Risk aware planning penalizes dangerous outcomes; safety constraints cap worst case.
+
+Replanning strategies: plan, execute, monitor, and re plan when needed. Event triggered re planning responds to surprises; periodic re planning refreshes continuously in dynamic worlds.
+
+Real life practicals. A Nigerian robotics project validates task plans with motion feasibility before execution, preventing failed grasps. A service robot uses contingent plans for fetching objects from uncertain locations. A drone mission planner optimizes routes probabilistically for wind. Plan for what you cannot predict; policies beat fixed sequences in messy worlds.
+
+A practical habit: whenever outcomes are uncertain, write policies rather than sequences: if this happens, do that; policies are the plans of the real world.
+
+PART 8 - MULTI ROBOT AND CONSTRAINED PLANNING
+
+Let me walk you through planning for teams and under constraints.
+
+Multi robot planning composes individual plans with coordination constraints. Prioritized planning assigns planning order and avoids previously planned robots; simple and often effective. Conflict based search plans robots independently and resolves collisions by adding constraints through negotiation; efficient and complete in many cases. Windowed and horizon planning re plans continuously for large teams.
+
+Coordination spaces: the composite configuration space of all robots, huge but structured; planning in it handles interactions exactly for small teams.
+
+Task allocation interfaces: planning takes assignments and produces executable schedules and paths.
+
+Resource constraints: shared tools, charging stations, and aisle capacity constrain plans. Constraint programming and scheduling solvers handle these with time windows and capacities.
+
+Temporal planning adds time: durative actions with start and end, temporal constraints, and scheduling integrated with planning. Real missions are temporal.
+
+Optimization objectives beyond feasibility: minimize makespan, energy, distance, or risk; multi objective planning balances trade offs.
+
+Real life practicals. A Nigerian warehouse uses conflict based search for fleet path planning with time windows for priority orders. A student coordinates three robots across a shared corridor and measures deadlock rates with and without reservation. A construction planner schedules robot tasks respecting crane availability windows. Constraints are the texture of reality; plan within them deliberately.
+
+A practical habit: enumerate constraints explicitly before planning: safety, resources, time, and precedence; hidden constraints cause plan failures at execution.
+
+PART 9 - LEARNING FOR PLANNING AND APPLICATIONS
+
+Let me walk you through learning that improves planning and the applications where planning shines.
+
+Learning improves planning in several ways. Learned heuristics: neural networks estimate distances to goals, guiding search faster than hand designed heuristics. Learned value functions: reinforcement learning evaluates states for planning quality. Imitation learning: planners learn from human demonstrations of routes and strategies. Model learning: learned dynamics models predict outcomes accurately for planning in complex systems. Experience reuse: planners cache sub plans and reuse them across similar problems.
+
+Neural planners map problems to plans directly: fast but less reliable; hybrid systems combine neural proposals with classical validation for both speed and correctness.
+
+Applications of planning are everywhere robotics is. Industrial manipulation: assembly sequences and collision free arm motions. Logistics and warehousing: routing and task sequencing. Autonomous driving: route planning, lane changes, and parking. Aerial robotics: mission planning for inspection and delivery. Search and rescue: exploration planning under time pressure. Agriculture: coverage planning for fields. Healthcare: scheduling and delivery logistics in hospitals. Household service robots: daily task planning in homes.
+
+Real life practicals from our continent. A Nigerian logistics firm optimizes delivery routes with planning algorithms adapted to local road realities. An agricultural service plans coverage for drone spraying that respects wind and battery limits. A hospital pilot plans medicine delivery runs with time windows for critical doses. Planning turns intentions into executable schedules and paths.
+
+A practical habit: evaluate planners on realistic problem distributions, not single showcase instances; robustness across problems is the true measure.
+
+PART 10 - TRENDS, ETHICS, AND COURSE COMPLETION
+
+Let me close with trends, ethics, and your course synthesis.
+
+Trends in robotics planning. Learning based planning matures toward reliability and verifiability. Foundation models generate high level plans from language instructions, connecting natural language to action. Task and motion planning tools become practical and integrated. Real time re planning advances with better algorithms and hardware. Multi robot planning scales with decomposition and learning. And human aware planning incorporates people's preferences, comfort, and schedules.
+
+Ethics and responsibility. Plans that affect people must respect safety, fairness, and consent. Autonomous planning in transport and service requires transparency and accountability. Planning that optimizes purely for efficiency can burden some people; human centered objectives matter. And access: planning technology should serve broad needs, including African development in logistics, agriculture, and health.
+
+For Nigeria and Africa, planning technology optimizes scarce resources: delivery logistics, agricultural coverage, hospital scheduling, and infrastructure inspection. Local expertise ensures plans fit local realities of roads, power, and institutions.
+
+Course completion summary. You learned planning problem structure and representations. You mastered search algorithms from uninformed to heuristic. You explored configuration space and motion planning. You shaped trajectories with time parameterization. You studied task planning with behaviors and execution monitoring. You integrated task and motion planning. You planned under uncertainty with contingent and probabilistic methods. You covered multi robot and constrained planning. You learned from experience with learning for planning. You toured applications. And you considered trends and ethics.
+
+Final reflections. Robotics planning is the art of deciding well before acting. It teaches disciplined thinking about goals, actions, constraints, and uncertainty, qualities that serve engineers far beyond robotics. Build planners that are fast enough, safe enough, and human centered, and you will give robots the gift of purposeful action.
+
+PART 11 - WORKED EXAMPLES IN ROBOTICS PLANNING
+
+Let me walk through worked examples that make planning concrete.
+
+Worked example one: grid path planning with A star. Consider a warehouse robot on a ten by ten grid with obstacles. The state is a cell; actions are four or eight way moves; the goal is a target cell. The heuristic is Manhattan or Euclidean distance. Step by step, A star expands cells with smallest f equals g plus h, finds the shortest collision free path, and the robot executes it. Change one obstacle and re plan; the algorithm adapts. This small example contains the essence of motion planning: state space, actions, heuristic, search, and re planning.
+
+Worked example two: blocks world task planning. Three blocks: A on B on table, goal is A on B on C. Operators: pick up, put down, stack, unstack with preconditions and effects. A forward search finds the plan: unstack A from B, pick up C? Wait, the initial and goal details determine the exact sequence; the planner explores operator applications until goal facts hold. This classic teaches symbolic search beautifully.
+
+Worked example three: arm motion with a probabilistic roadmap. Sample one hundred collision free joint configurations; connect nearby ones with collision free interpolation; search the graph from start to goal configuration; time parameterize the result. The arm moves smoothly around an obstacle. This pipeline is industrial practice.
+
+Worked example four: delivery scheduling. Five deliveries with time windows, one robot with battery constraints. Model as planning with resources: states include location and load; actions consume time and energy; the planner finds a sequence respecting windows and charging. In real logistics, such planning saves hours daily.
+
+Worked example five: contingent plan for object search. The robot must find a toolbox that may be in two rooms. Policy: go to room one; if found, done; else go to room two. This simple policy illustrates planning under partial observability.
+
+Work through these examples on paper and in code; each teaches a different facet of planning. Sketch first, implement second, verify third. For the grid example, also implement Dijkstra and compare node counts with A star. For the blocks world, add a fourth block and see how search grows. For the roadmap example, vary sample counts and measure planning success rates. For the delivery schedule, add a second robot and observe allocation effects. For the contingent search, extend to three rooms and compare policy cost with a fixed sequence. Each variation deepens intuition about how representation and algorithms shape performance. Discuss your findings in study groups; explaining your reasoning consolidates mastery.
+
+PART 12 - STUDY PLANS, CAREERS, AND CLOSING REFLECTIONS
+
+Let me close with study plans, career paths, and final reflections. For mastery, follow a plan. Weeks one and two: implement uninformed and heuristic search on grids and compare expansions. Weeks three and four: implement A star with different heuristics and analyze optimality. Weeks five and six: build a simple motion planner: sample configurations, connect, and search. Weeks seven and eight: time parameterize a path with trapezoidal profiles and test on a robot or simulator. Weeks nine and ten: implement a classical task planner for blocks world and a behavior tree executor. Weeks eleven and twelve: capstone: plan and execute a full robot mission in simulation, documenting states, actions, heuristics, and re planning.
+
+Careers where planning shines: motion planning engineer for arms and vehicles; logistics optimization engineer; autonomous systems engineer; game and simulation AI developer; and operations research analyst. Industries from robotics to transportation to manufacturing hire planning skill.
+
+Portfolio projects to build: a grid A star with visualization; a probabilistic roadmap planner for a simple arm; a task planner with execution monitoring; and a multi robot coordination demo. Document each with problem formulation, algorithm choices, performance metrics, and lessons.
+
+PART 13 - ADVANCED TOPICS AND COMMON PITFALLS IN PLANNING
+
+Let me add advanced topics and pitfalls that round out your planning education. First, on heuristics: admissible heuristics never overestimate, guaranteeing optimal plans; consistent heuristics behave smoothly and speed search further. Designing heuristics is creative work: relax constraints, solve the easier problem, and use its cost as your guide. Inventing a good heuristic often matters more than choosing a search algorithm. Second, on symmetry: many planning problems have symmetric states that search wastes time on; symmetry breaking constraints or canonical state representations shrink search enormously. Third, on landmark based heuristics: identify facts that must be true in every plan, landmarks, and use them to guide search powerfully. Fourth, on partial order plans: instead of one total sequence, represent plans as partially ordered steps with causal links, committing to order only when necessary; this flexibility improves replanning. Fifth, on macro actions: composing frequent step sequences into macros speeds planning for repetitive domains. Sixth, common pitfalls: state space too detailed causes explosion, so abstract where possible; hidden constraints discovered at execution cause failures, so enumerate early; heuristics misestimated cause slow or suboptimal plans, so measure and tune; and plans too rigid break in reality, so prefer policies and repair. Seventh, on computational budgets: real time planning needs anytime behavior: return a good plan quickly and improve as time allows. Eighth, on validation: always validate plans in simulation before hardware execution, checking feasibility with the real robot model. Ninth, on benchmarking: use standard planning domains and report metrics honestly. Tenth, on integration: planning is one module among perception, control, and execution; clean interfaces make the whole system work. Eleventh, on domain modeling languages: tools like PDDL let you describe planning problems in standard formalisms and use off the shelf planners; learning these languages multiplies your productivity. Twelfth, on visualizing search: draw the search tree and the explored region; visualization reveals algorithm behavior that numbers hide. Thirteenth, on incremental improvements: after a working planner, add cost optimization, then time windows, then uncertainty, growing capability step by step. Fourteenth, on community resources: public planning libraries, benchmark domains, and competitions accelerate learning; use them generously and cite them. Fifteenth, on teaching: explain planning to juniors; teaching deepens your own mastery and spreads the craft.
+
+Robotics planning finds action sequences that achieve goals under constraints. Master it, and you can turn intentions into executable motion. Thank you for your attention and your effort. I will see you in the next lecture.
+
+Glossary of Key Terms
+
+Planning: finding action sequences from current to goal states. State: description of a situation in a planning problem. Action: operation transforming states with preconditions and effects. Transition model: description of action outcomes. Goal test: condition checking goal achievement. STRIPS: classical action representation. Search space: space of states explored by algorithms. Breadth first search: level by level search for shortest plans. A star search: heuristic search optimal with admissible heuristics. Heuristic: estimate guiding search toward goals. Planning graph: layered graph structure for classical planning. Satisfiability planning: planning encoded as logic satisfiability. Configuration space: space of all robot configurations. C obstacle: obstacle region in configuration space. Potential field: attraction and repulsion based planning. Probabilistic roadmap: sampled graph of collision free configurations. Rapidly exploring random tree: tree growing random collision free motions. Kinodynamic planning: planning respecting dynamics constraints. Trajectory: path with time, velocities, and accelerations. Trapezoidal profile: accelerate cruise decelerate speed profile. S curve profile: motion with limited jerk. Dubins path: shortest path with bounded curvature. Hierarchical task network: planning by task decomposition. Behavior tree: tree structured reactive control logic. Execution monitoring: tracking plan execution and failures. Plan repair: adjusting plans after failures. Task and motion planning: integrated symbolic and geometric planning. Contingent planning: plans branching on observations. Markov decision process: sequential decision under uncertainty. Policy: action prescription per state or belief. Belief planning: planning over probability distributions. Conflict based search: multi robot planning resolving collisions by negotiation. Temporal planning: planning with time and durations. Learned heuristic: heuristic estimated by machine learning. Coverage planning: planning complete area traversal.
+
+Exercises for Students
+
+One: describe the four parts of a planning problem with a robot example. Two: compare breadth first and A star search with one advantage each. Three: explain configuration space and how it simplifies collision avoidance. Four: compare probabilistic roadmaps and rapidly exploring random trees. Five: explain the difference between a path and a trajectory with examples. Six: describe hierarchical task network planning and one application. Seven: explain why task and motion planning must be integrated. Eight: compare contingent planning and Markov decision process planning. Nine: propose a planning application for a Nigerian context and outline its states, actions, and goals. Ten: discuss two ethical considerations in robotics planning.
+
+END OF AI 311 LECTURE NARRATION
