@@ -1,0 +1,250 @@
+AI 403 - ROBOT LEARNING
+COMPREHENSIVE SPOKEN LECTURE NARRATION
+Style: Spoken lecture delivery for voice recording and text to speech
+Language: Simple, clear English
+Length: Extended lecture of at least five thousand words
+Year Four, Semester One, Robotics and Artificial Intelligence Programme
+
+PART 1 - WELCOME TO ROBOT LEARNING
+
+Hello everyone, and welcome to AI 403, Robot Learning. In this course we study how robots improve with experience: how they acquire skills from demonstration, refine them through practice, adapt to new situations, and accumulate knowledge over lifetimes of service. Robot learning sits at the vibrant intersection of machine learning and robotics, and it is transforming what robots can do. I am delighted to guide you through it in your final year, and as always we will ground everything in real life practicals and examples from Nigeria and Africa.
+
+What is robot learning? Robot learning is the set of methods by which robots improve their behavior through data and experience rather than through explicit programming alone. A programmed robot follows instructions written by an engineer. A learning robot starts with some capability and gets better: grasping objects more reliably, navigating routes faster, predicting how the world responds, and adapting to new users and environments. Learning is how robots handle the variability and complexity of the real world.
+
+Let me make this vivid with a comparison. Consider programming a robot arm to pour water from a jug into a cup. Hand programming requires specifying every joint motion for every position of jug and cup, and it breaks when the cup moves. A learning robot practices pouring hundreds of times in simulation and on hardware, adjusting its motions from feedback, until pouring works from many starting positions, with different jugs, at different speeds. The difference is adaptation to variability, and that is the power of learning.
+
+Real life practicals ground us. In a Nigerian factory, a robot learns to weld better by practicing and measuring weld quality over thousands of cycles. In an Ibadan hospital, a service robot learns the daily routines of a ward and times its deliveries to avoid crowds. In agriculture near Jos, a harvesting robot learns to recognize ripe produce from examples shown by farmers. In a Lagos home, a household robot learns where objects are usually kept and finds them faster over weeks. Each of these is robot learning in action.
+
+Robot learning connects to your whole education. Machine learning and neural networks provide the core methods. Reinforcement learning, which you studied in AI 205, is the framework for learning from interaction. Computer vision provides perceptual learning. Control theory frames learning as adaptation within stability. Cognitive robotics frames learning within memory and reasoning. And robot ethics matters profoundly: learning robots raise questions of safety during learning, data privacy, and accountability for learned behavior.
+
+How will we study this course? We will begin with the problem of learning in embodied systems and why robotics learning is hard. We will study supervised learning for robot perception and models. We will cover imitation learning and learning from demonstration in depth. We will study reinforcement learning for robotics, from foundations to deep methods. We will examine model learning and model based methods. We will explore sim to real transfer and domain adaptation. We will cover continual and lifelong learning. We will study active learning and learning from human feedback. We will examine safety and verification of learned skills. We will explore skill libraries and hierarchical learning. We will tour applications. And we will end with futures and reflections.
+
+To succeed in this course, hold two truths together: data teaches robots much that no programmer can write, yet learning in physical bodies demands discipline about safety, stability, and evaluation. Let us begin.
+
+PART 2 - WHY ROBOT LEARNING IS HARD AND SPECIAL
+
+Let me walk you through why learning in robots differs from learning in pure software, and why it is hard.
+
+The real world is variable and messy. Objects come in endless shapes and positions; lighting changes; surfaces differ; people behave unpredictably. Hand programmed rules cannot enumerate all cases; learning generalizes from experience to handle variation.
+
+Data is expensive in robotics. Images are cheap to collect, but robot interaction data requires physical time: each grasp attempt costs seconds, each walking trial risks falls, each field trial costs logistics. Robot learning must be data efficient: extracting maximum skill from minimum experience.
+
+Embodiment changes everything. A robot's body shapes what is learnable: its sensors limit perception, its actuators limit action, and physics imposes constraints. Morphological computation: bodies do part of the control work. Learning algorithms must respect the body.
+
+Safety constraints bound exploration. A web recommender can try random suggestions harmlessly; a robot cannot try random motions near people. Safe exploration, conservative policies, and human oversight are essential.
+
+Non stationarity: the world and the robot change. Tires wear, payloads vary, seasons change. Learning must track change without forgetting fundamentals.
+
+Partial observability: robots rarely see the full state; they infer from noisy sensors. Learning under uncertainty is the norm.
+
+Evaluation is subtle: success rates in lab conditions may not transfer to the field. Honest evaluation across conditions separates research from products.
+
+The sim to real gap: simulated experience is cheap but imperfect. Learning must bridge worlds.
+
+Real life practicals. A Nigerian robotics team learns the hard data lesson when a grasping skill needs ten thousand practice attempts; simulation pre training cuts hardware trials to hundreds. A student discovers safety constraints limit exploration when his robot nearly falls during learning; conservative policies fix it. A farm robot's learned perception degrades across seasons; continual learning addresses it. Understanding these challenges guides you to the right methods.
+
+A practical habit: for every robot learning project, write the challenge list first: data cost, safety, variability, and evaluation; your method choices should answer each item.
+
+PART 3 - SUPERVISED LEARNING FOR ROBOT PERCEPTION AND MODELS
+
+Let me walk you through supervised learning as it serves robots: learning from labeled examples.
+
+Supervised learning maps inputs to outputs from examples: images to labels, states to actions, or sensor readings to quantities. In robotics, supervised learning powers perception and world models.
+
+Perception learning: object recognition labels images of objects; detection localizes them; segmentation classifies pixels. Deep convolutional networks trained on labeled robot camera data give robots vision. The practical workflow: collect images in the robot's actual operating conditions, label carefully, train with augmentation, validate on held out data, and deploy with monitoring.
+
+Model learning: supervised regression learns dynamics models mapping states and actions to next states. Inverse dynamics models learn the actions that produce desired motions, enabling feed forward control. Forward models predict outcomes, enabling planning and simulation based learning. Learned models must be accurate where the robot operates and honest about uncertainty.
+
+Data collection for supervised learning: sensors log streams; labeling can be manual, automatic from simulation, or automatic from robot self supervision. Label quality sets the ceiling; consistent labeling protocols matter.
+
+Generalization: models must work on unseen examples. Cross validation, diverse data, and regularization prevent overfitting. Distribution shift: deployment conditions differing from training data degrade models; monitoring and adaptation handle it.
+
+Active learning connects here: choosing which examples to label to improve models fastest, saving precious human effort.
+
+Real life practicals. A Nigerian vision team labels ten thousand tomato images across ripeness stages and lighting, training a classifier that grades produce reliably. A student learns a dynamics model of a wheeled robot from logged data and uses it for predictive control. A hospital robot learns to recognize staff badges from examples. Supervised learning gives robots their senses and models; invest in data quality.
+
+A practical habit: keep a data sheet for every dataset: collection conditions, label protocols, known biases, and version history.
+
+PART 4 - IMITATION LEARNING AND LEARNING FROM DEMONSTRATION
+
+Let me walk you through imitation learning: teaching robots by showing them how.
+
+Learning from demonstration captures human skills through observation or teleoperation. Humans teach naturally by showing; robots can learn from this. Demonstration modalities: kinesthetic teaching, moving the robot arm by hand; teleoperation, guiding via controls; and observation of human video or motion capture.
+
+Behavior cloning learns a direct mapping from states to actions by supervised learning on demonstrated state action pairs. Simple and effective, but subject to compounding errors: small mistakes lead to unseen states where the policy fails. DAgger addresses this by collecting corrective demonstrations on states the learner visits.
+
+Inverse reinforcement learning infers the reward function the demonstrator optimizes. Instead of copying actions, the robot learns what the demonstrator valued, enabling generalization and adaptation. Apprenticeship learning matches feature expectations between learner and expert.
+
+Movement primitives encode skills as parameterized, adaptable trajectories: dynamic movement primitives add stability and ease of retargeting to new goals. A pouring skill as a movement primitive adapts to different cup positions naturally.
+
+Trajectory level learning: learning distributions over successful trajectories, then sampling new ones: probabilistic movement primitives and Gaussian mixture models handle multi modal skills.
+
+Quality and quantity of demonstrations matter: diverse, high quality examples teach robust skills; noisy demonstrations need filtering. Multiple demonstrators capture variations and personal styles.
+
+Real life practicals. A Nigerian lab teaches a robot arm to sort beans by kinesthetic demonstration of grasping and placing; behavior cloning learns the skill and DAgger refines it. A service robot learns delivery routes from teleoperated demonstrations. A student team teaches a robot to wipe tables via movement primitives that adapt to table sizes. Demonstration learning bridges human skill and robotic execution.
+
+A practical habit: verify learned skills by testing on states beyond demonstrations; the failure frontier tells you where more data is needed.
+
+PART 5 - REINFORCEMENT LEARNING FOR ROBOTICS
+
+Let me walk you through reinforcement learning in the physical setting: learning by trial, reward, and practice.
+
+You know reinforcement learning foundations from AI 205: agents, states, actions, rewards, policies, and value functions. Robotics adds embodiment, safety, and data cost to the classic loop.
+
+Policy gradient methods optimize policies directly, handling continuous actions of robot arms and vehicles. Actor critic methods combine policy and value learning for efficiency. Deep reinforcement learning represents policies with neural networks for high dimensional control.
+
+Data efficiency is the central challenge: each real interaction costs time and wear. Solutions: model based reinforcement learning learns dynamics and plans through models, dramatically cutting interactions. Sim to real pre training gathers experience in simulation cheaply. Off policy learning reuses past data maximally. And demonstration initialization starts near competent behavior.
+
+Exploration in robotics must be safe: constrained reinforcement learning optimizes reward under safety constraints; conservative policies avoid dangerous regions; shielded exploration uses safety layers during learning.
+
+Reward shaping guides learning efficiently: potential based shaping preserves optimal policies while providing dense feedback. Sparse rewards are realistic but slow to learn; shaping accelerates.
+
+Hierarchical reinforcement learning composes skills: low level skills like reaching and grasping, high level policies sequencing them for tasks. Options and meta learning frameworks formalize this.
+
+Partial observability: recurrent policies and belief states handle what robots cannot see directly.
+
+Real life practicals. A Nigerian robotics team trains a quadruped gait in simulation with domain randomization and fine tunes on hardware, using reward shaping for smooth motion. A student trains an arm to insert pegs with actor critic learning, initializing from demonstrations. A warehouse robot learns pick strategies with model based reinforcement learning in a digital twin. Learn in simulation where possible, plan through models, and guard with safety.
+
+A practical habit: always compare learned policies against a tuned baseline controller; reinforcement learning must demonstrate clear value.
+
+PART 6 - MODEL LEARNING AND MODEL BASED METHODS
+
+Let me walk you through learned models: the leverage of learning how the world works.
+
+Learned models predict how the world responds to actions. Forward models predict next states; inverse models compute actions for desired transitions; and dynamics models enable planning and simulation.
+
+Model based control uses learned models within control loops: model predictive control optimizes actions over predicted horizons with the learned model, handling constraints explicitly. Learned models improve as data accumulates.
+
+Planning through learned models: model based reinforcement learning plans in imagined rollouts, avoiding costly real trials. Dyna style architectures alternate real experience and imagined planning.
+
+Uncertainty in learned models matters: models know what they do not know. Gaussian processes give calibrated uncertainty; ensembles of neural networks estimate disagreement; uncertainty drives cautious exploration and robust planning.
+
+Model identification: structured models, like linear parameter varying models, blend physics with learning. Physics informed learning embeds known laws, improving data efficiency.
+
+Real life practicals. A Nigerian process robotics project learns furnace dynamics with Gaussian processes and optimizes control with model predictive control. A drone team learns wind response models for better trajectory tracking. A student learns a robot cart model and plans with model predictive control, comparing against PID. Learn the world, plan through it, and act with confidence.
+
+A practical habit: validate models on data regimes where they will be used; a model good near the start may fail at the extremes.
+
+PART 7 - SIM TO REAL TRANSFER AND DOMAIN ADAPTATION
+
+Let me walk you through bridging worlds: transferring learned skills from simulation to reality and across domains.
+
+Simulation gives cheap, safe, parallel experience, but differs from reality: physics approximations, sensor models, visual appearance. The sim to real gap degrades transferred skills.
+
+Domain randomization varies simulation parameters widely during training: physics, visuals, and noise; policies trained across variations generalize to reality. System identification calibrates simulation to match the real robot, shrinking the gap.
+
+Reality gap calibration: measure simulated and real performance of the same policy, and adjust training accordingly. Progressive networks and adaptation layers fine tune on real data.
+
+Visual domain adaptation: learned perception shifts from simulated to real imagery through style transfer, domain adversarial training, and self supervision on real unlabeled data.
+
+Real to sim to real: collect some real data, calibrate models and simulators, train in the improved simulator, and validate on reality. This circular discipline narrows the gap progressively.
+
+Real life practicals. A Nigerian drone startup trains in randomized simulations and transfers flight controllers to windy coastal conditions successfully. A student team calibrates their simulator's friction and latency from real robot logs; transfer accuracy improves markedly. A warehouse robot's vision model adapts from synthetic to real images with self supervision. Bridge worlds with randomization, calibration, and honest measurement.
+
+A practical habit: always quantify the reality gap: report simulated and real metrics side by side in every project report.
+
+PART 8 - CONTINUAL, LIFELONG, AND ACTIVE LEARNING
+
+Let me walk you through learning across lifetimes: continual improvement without forgetting, and learning efficiently.
+
+Continual learning: robots learn new tasks over time without catastrophically forgetting old ones. Regularization methods protect important weights; memory replay revisits old experience; modular architectures isolate new learning. The goal is cumulative competence.
+
+Lifelong learning: robots accumulate skills and knowledge across years of deployment. Skill libraries grow; models improve; user preferences are learned. Systems must manage memory, evaluate when to learn, and know when to ask for help.
+
+Active learning: choosing what to learn next for maximum improvement. Robots select the most informative experiences: try the grasp that teaches most, visit the unexplored area, label the uncertain example. Active learning multiplies data efficiency.
+
+Curriculum learning: ordering learning from easy to hard accelerates mastery, like human education.
+
+Learning to learn, meta learning: robots that have learned many tasks acquire new ones faster, adapting with few examples.
+
+Real life practicals. A Nigerian hospital robot learns new ward layouts without forgetting old floors through modular memory. A farm robot actively selects which crop images to send for labeling, cutting annotation costs in half. A student meta learner adapts a grasping skill to new objects in ten trials. Plan for lifetimes of learning; design systems that grow.
+
+A practical habit: track performance on old tasks as you learn new ones; forgetting detected early is fixable.
+
+PART 9 - HUMAN FEEDBACK, SKILL LIBRARIES, AND SAFETY
+
+Let me walk you through learning from humans at higher levels, organizing skills, and keeping learned robots safe.
+
+Human feedback beyond demonstrations: preferences, corrections, and ratings teach nuanced behavior. Preference learning from comparisons shapes behaviors that are hard to specify. Interactive correction: humans fix robot mistakes and the robot learns from fixes. Natural language guidance: instructions shape learning and planning.
+
+Skill libraries organize learned abilities: grasps, placements, locomotion gaits, and task fragments. Planners compose skills into solutions; learning adds new skills to the library over time. Hierarchical learning organizes skills at multiple levels.
+
+Safety of learned skills: verification of learned controllers through formal methods and testing; runtime monitoring with safety supervisors; conservative policies near limits; and human override always available. Safe learning protocols govern exploration during training.
+
+Accountability for learned behavior: documenting training data, procedures, and evaluations; keeping logs; and clear responsibility chains.
+
+Real life practicals. A Nigerian service robot learns user preferences for delivery timing through ratings. A manipulation lab maintains a skill library of grasps refined over a year. A logistics company runs learned policies behind safety monitors with human supervisors on call. Learn from humans richly, organize skills cleanly, and guard everything with safety layers.
+
+A practical habit: write a safety case for every learned skill before deployment: training scope, known limits, monitors, and override procedures.
+
+PART 10 - APPLICATIONS, FUTURES, AND COURSE COMPLETION
+
+Let me close with applications, futures, and your course synthesis.
+
+Applications of robot learning span industry and service. Manufacturing: learned welding, assembly, and quality inspection improving over time. Logistics: learned picking, packing, and routing. Agriculture: learned harvesting, weeding, and crop monitoring. Healthcare: learned assistance and adaptive rehabilitation. Domestic: learned cleaning, organizing, and companionship. Field robotics: learned navigation and inspection in unstructured environments.
+
+African opportunities are significant. Learning agricultural robots adapt to local crops and conditions. Service robots learn local languages and customs. Industrial robots learn local production variations. Building expertise keeps the value on the continent.
+
+Future directions. Foundation models for robotics: large models trained on broad robot data giving general purpose competence. Sim to real at scale: massive simulation with modern compute. Human robot team learning: teams that improve together. Open world learning: robots learning in unbounded environments safely. And verifiable learning: learned behaviors with formal guarantees.
+
+Ethics of robot learning: safety during learning; data privacy of collected experience; fairness of learned behaviors across users; transparency of learned decisions; and accountability for learned actions. Responsible learning robotics practices all of these.
+
+Course completion summary. You understood why robot learning is hard and special. You studied supervised learning for perception and models. You mastered imitation and demonstration learning. You explored reinforcement learning for robots. You learned model based methods. You handled sim to real transfer. You covered continual, lifelong, and active learning. You studied human feedback, skill libraries, and safety. You toured applications. And you considered futures and ethics.
+
+Final reflections. Robot learning teaches that capability is not fixed: with data, practice, and care, robots grow more able over time, much like people do. Build learning robots with patience for data, discipline for safety, and humility about limits, and you will create machines that improve in service to others.
+
+PART 11 - WORKED EXAMPLES IN ROBOT LEARNING
+
+Let me walk through worked examples that make robot learning concrete and memorable.
+
+Worked example one: learning to grasp varied objects. The challenge: a gripper must pick up objects of many shapes from a bin. Approach: supervised learning first, collecting labeled images of objects and successful grasp points to train a grasp proposal network. Then reinforcement learning refines grasps through practice in simulation with domain randomization across object sets. Skill library stores successful grasps by object type. Safety layer caps grip force. Evaluation: success rate on unseen objects in a held out bin. The full pipeline shows perception learning, practice refinement, and honest evaluation together.
+
+Worked example two: learning a delivery routine. A hospital robot must deliver supplies along corridors at good times. Approach: imitation learning from a human guide's teleoperated runs, then reinforcement learning optimizing timing with rewards for speed minus crowding penalties. Continual learning adapts to schedule changes weekly. The robot improves from eighty to ninety seven percent on time deliveries over a month. This example shows demonstration, reward design, and lifelong adaptation.
+
+Worked example three: learning stable walking on slippery floors. A quadruped trained in simulation with domain randomization of friction and payload, transferred with adaptation layers to real tiles and wet floors. Reward shaping encourages smooth gaits. The reality gap is measured and reported honestly. This shows sim to real discipline.
+
+Worked example four: active learning for crop disease detection. A farm robot collects images in the field; a model flags uncertain cases for expert labeling; labeled data improves the model; the cycle repeats. Annotation cost halves while accuracy rises. This shows active learning economics.
+
+Worked example five: preference learning for a household robot. Family members compare two behaviors; the robot learns preferred cleaning order and quiet hours. No explicit reward function needed; human judgments shape behavior directly. This shows human feedback methods.
+
+In each example, notice the pattern: define the skill, choose data sources, select methods for efficiency and safety, evaluate on realistic tests, and document limits. Work through simplified versions in simulation yourself; doing teaches more than reading.
+
+PART 12 - STUDY PLAN, CAREERS, AND FINAL REFLECTIONS
+
+Let me close with study guidance, careers, and final reflections. Study plan for mastery. Weeks one and two: implement behavior cloning on a simple control dataset and observe compounding errors. Weeks three and four: implement DAgger or corrective learning and compare. Weeks five and six: train a reinforcement learning policy in simulation for a small robot task with reward shaping. Weeks seven and eight: implement domain randomization and measure transfer to a new simulated environment. Weeks nine and ten: build a simple skill library and compose two skills for a task. Weeks eleven and twelve: capstone: a robot learning project with training logs, evaluation across conditions, and a written report.
+
+Careers in robot learning: robotics software engineer with learning specialization, machine learning engineer for embodied systems, research engineer in autonomy, agricultural and service robotics developer, and simulation engineer. Industries from manufacturing to logistics to healthcare hire these skills.
+
+Portfolio projects: a grasp learning pipeline, a reinforcement learning controller with safety layers, a sim to real transfer study, and a continual learning demonstration. Document data, methods, evaluations, and lessons.
+
+Final reflections. Robot learning is where machines become apprentices: learning from people, from practice, and from the world. The craft demands statistical rigor, physical intuition, and ethical care. Africa needs robots that adapt to local realities; learning robotics is one of the most powerful paths to that adaptation. Study patiently, experiment boldly, evaluate honestly, and let your robots grow in capability and in service.
+
+PART 13 - PRACTICE EXERCISES AND GLOSSARY EXTENSIONS
+
+Let me extend your practice with exercises and vocabulary that consolidate learning. Practice exercises beyond the numbered list. Implement a small behavior cloning learner on a recorded trajectory dataset and visualize its predictions versus demonstrations. Build a discrete grid world reinforcement learning experiment and compare exploration strategies: epsilon greedy versus softmax. Write a domain randomization script varying simulator parameters and measure policy robustness across seeds. Create a skill library schema and populate it with two parameterized skills. Design a safety monitor that halts a learned policy when outputs exceed bounds and test it with adversarial inputs. Draft a data sheet for a robot dataset you collect yourself. These concrete tasks turn knowledge into capability.
+
+Additional glossary terms. Episode: one complete trial from start to end in reinforcement learning. Rollout: a simulated or real trajectory generated by a policy. Replay buffer: stored experience reused for off policy learning. Target network: stabilizing copy of a network in deep reinforcement learning. Exploration noise: random variation encouraging trial of new actions. Success criterion: measurable condition defining task completion. Generalization gap: performance difference between training and test conditions. Domain gap: performance difference between source and target domains. Adaptation layer: module adjusting features across domains. Few shot learning: learning from very few examples. Zero shot transfer: applying skills to new tasks without new training. Simulated annealing: temperature controlled exploration schedule. Curriculum: ordered sequence of training tasks. Ablation: testing by removing one component. Baseline: reference performance for comparison. Ground truth: verified correct answers used in evaluation. Inter rater agreement: consistency between human labelers. Class imbalance: unequal representation of categories. Calibration error: mismatch between confidence and accuracy. Drift detection: monitoring for changing data distributions. Concept drift: change in the underlying mapping over time. Transfer metric: measure of cross domain performance retention. Compute budget: total computational resource available for training. Latency bound: maximum acceptable response delay. Energy budget: power available for robot operation during learning.
+
+With these exercises and terms, your robot learning toolkit is complete for practice and for interviews. Study them steadily and apply them in your capstone project work.
+
+PART 14 - INTERVIEW PREPARATION AND FINAL GUIDANCE
+
+Let me prepare you for interviews and final professional guidance in robot learning. Common interview questions and how to answer them. Explain the difference between imitation learning and reinforcement learning: answer with definitions, strengths, data needs, and an example application for each. How do you handle the sim to real gap: answer with domain randomization, calibration, adaptation, and honest measurement. What is catastrophic forgetting and how do you prevent it: answer with regularization, replay, and modular approaches. Describe a data efficient learning method: answer with model based learning or active learning and quantify efficiency. How do you keep learned policies safe: answer with constrained optimization, runtime monitors, and human oversight. Walk through a robot learning project end to end: answer with problem, data, methods, evaluation, and lessons, using one of your portfolio projects. What metrics do you use to evaluate robot learning: answer with success rates, generalization tests, safety violations, and efficiency measures.
+
+Final guidance. Keep engineering notebooks of experiments: parameters, results, and interpretations. Reproduce published results at least once per semester to build research skill. Collaborate with domain experts: the best robot learning projects solve real problems in agriculture, health, or industry. Contribute to open source learning robotics tools; communities grow through sharing. And keep ethical practice central: learning robots act in the world on your design decisions.
+
+PART 15 - CLOSING REFLECTIONS ON LEARNING MACHINES
+
+A closing reflection on the meaning of robot learning. When a robot improves through practice, something remarkable happens: capability becomes a process, not a fixed gift. This mirrors human learning, and it carries responsibilities. Learned robots inherit the biases of their data, the limits of their training, and the values of their objectives. As their teachers, we must choose examples carefully, reward wisely, evaluate honestly, and supervise humbly. The robots that will serve on Nigerian farms, in African hospitals, and in global industry will be shaped by the learning methods you now master. Bring statistical rigor to data, physical intuition to embodiment, and ethical care to deployment. And keep learning yourself: read papers, reproduce results, join communities, and mentor others. The field moves quickly; steady learners lead it.
+
+Robot learning equips robots to improve through experience. Master it, and you can build robots that grow more capable every day. Thank you for your attention and your effort. I will see you in the next lecture.
+
+Glossary of Key Terms
+
+Robot learning: robots improving behavior through data and experience. Supervised learning: learning mappings from labeled examples. Behavior cloning: learning state to action mappings from demonstrations. DAgger: dataset aggregation with corrective demonstrations. Inverse reinforcement learning: inferring rewards behind demonstrations. Movement primitives: parameterized adaptable motor skills. Dynamic movement primitives: stable, adaptable movement primitives. Reinforcement learning: learning policies from reward signals. Policy gradient: optimizing policies by gradient ascent. Actor critic: combined policy and value learning. Model based reinforcement learning: learning models for planning. Reward shaping: adding guidance rewards without changing optima. Constrained reinforcement learning: learning under safety constraints. Hierarchical reinforcement learning: composing skills at multiple levels. Forward model: predicting next states from states and actions. Inverse model: computing actions for desired transitions. Model predictive control: optimizing actions over predicted horizons. Gaussian process: probabilistic model with calibrated uncertainty. Domain randomization: training across randomized simulation variations. Sim to real gap: performance drop transferring to reality. Domain adaptation: transferring models across data distributions. Continual learning: learning new tasks without forgetting old. Catastrophic forgetting: new learning erasing prior knowledge. Active learning: selecting most informative experiences. Curriculum learning: ordering learning from easy to hard. Meta learning: learning to learn new tasks quickly. Preference learning: learning from human comparisons. Interactive correction: learning from human fixes. Skill library: organized collection of learned abilities. Safe exploration: learning without unsafe actions. Runtime monitoring: supervising learned behavior during execution. Digital twin: virtual replica used for training and testing. Off policy learning: learning from previously collected data. Partial observability: incomplete state information. Self supervision: generating training signals from raw data.
+
+Exercises for Students
+
+One: explain two challenges unique to robot learning with examples. Two: describe behavior cloning and its compounding error problem. Three: compare imitation learning and inverse reinforcement learning. Four: explain why data efficiency matters and two methods that improve it. Five: describe domain randomization and how it bridges simulation to reality. Six: explain catastrophic forgetting and two approaches that prevent it. Seven: describe active learning with a robotics example. Eight: explain the role of safety layers around learned controllers. Nine: propose a robot learning application for a Nigerian context and outline its data and method. Ten: discuss two ethical issues in robot learning and responsible practices.
+
+END OF AI 403 LECTURE NARRATION
