@@ -279,6 +279,28 @@ One final technical note before we part. As you build AI robot systems, keep thr
 
 And when the day comes that your robot completes something genuinely useful, waters a farm correctly, sorts goods reliably, or helps someone with a task they could not do alone, pause and appreciate what you have made. Machines that think and act in service of people are among the noblest things engineers create. I hope this course has prepared you to create many of them.
 
+PART 16 - ONE LAST WALKTHROUGH: INTEGRATING A LEARNING-BASED GRASP
+
+Let me close with one detailed walkthrough that ties the whole course together: adding a learning-based grasp skill to a robot arm.
+
+The goal: a robot arm that can pick up a variety of small objects from a table, even ones it has not seen before. Classical fixed grasps fail on variety; a learned grasp policy adapts.
+
+Step one: build the classical baseline. A top-down gripper with simple parallel-jaw grasps at object centers, driven by color detection. It works on uniform blocks. Document its success rate honestly, perhaps sixty percent on mixed objects. This baseline is your comparison point.
+
+Step two: collect demonstration data. In simulation, script many grasp attempts on randomized objects: different shapes, sizes, and orientations. Record successful grasps with their camera images and approach poses. Thousands of attempts cost only compute time.
+
+Step three: train a grasp quality network. The network takes a depth image patch and scores candidate grasp poses. Positive examples are successful grasps; negatives are failures. Training converges as the network learns what geometry leads to stable holds.
+
+Step four: integrate. At runtime, the camera captures the scene; the network scores hundreds of candidate grasps quickly; the best-scoring pose is executed with force feedback closing the grip until resistance is felt. Verification by lift-and-weigh confirms success.
+
+Step five: handle failures. If the grasp slips, the robot re-scans and re-plans with a different candidate. Failure events are logged and become the next round of training data. This closes the learning loop in production.
+
+Step six: evaluate fairly. Test on a fresh set of objects held out from training. Report success rate with confidence intervals. Compare against the baseline: the learned approach should show clear gains on varied objects, while the baseline may still win on its narrow specialty. Honest evaluation tells you where each approach belongs.
+
+Step seven: deploy with safety. Force limits prevent crushing; workspace limits prevent collisions; speed limits protect nearby humans; and a supervisor monitors the grasp success statistics over time, alerting when performance drifts.
+
+What this walkthrough demonstrates is the full arc of AI for robotics: classical baseline, simulated data, learned perception of grasp quality, force-guided execution, verification, recovery, honest evaluation, and safety-wrapped deployment. Master this arc and you can add intelligence to any robot skill: welding, sorting, feeding, inspecting, or harvesting. The recipe transfers across domains because it respects both learning and engineering discipline. Practice it first in simulation, then on one real skill, and you will have earned the heart of this course.
+
 AI for robotics is the art of building machines that think before they act and learn as they live. Build with wisdom, validate with rigor, and serve with purpose. Thank you for your attention and your effort. I will see you in the next lecture.
 
 ================================================================
