@@ -251,6 +251,20 @@ Now the completion summary. You defined AI for robotics as intelligence embodied
 
 Final reflections. AI for robotics is where your degree's two halves, artificial intelligence and robotics engineering, become one. The intelligence you build will have hands, eyes, and presence in the world. That is a profound responsibility and a magnificent opportunity. Study the algorithms, respect the physics, honor the people around your machines, and never stop questioning what your systems truly do. The robots of the next decade, in African farms, hospitals, and cities, can be built by graduates exactly like you. Build them wisely.
 
+PART 13 - FINAL GLOSSARY ADDITIONS AND STUDY PLAN
+
+Let me complete your AI-for-robotics vocabulary and leave a study plan. More terms. Perception pipeline: the sequence from raw sensors to scene understanding. Policy: a mapping from observations to robot actions. Skill library: reusable learned or programmed capabilities robots compose into tasks. Grounding: connecting language or symbols to real-world referents. Action space: the set of actions available to a robot. Observation space: the set of perceptions available. Curriculum: ordered training tasks from easy to hard. Multi-task learning: training one model across several skills. Transfer learning: reusing learned knowledge across tasks or robots. Online learning: adapting during operation. Fail-safe: a design ensuring failures do not cause harm. Runtime assurance: monitoring and constraining AI behavior during execution.
+
+Study plan for the next twelve weeks. Weeks one and two: run a robot simulator and implement simple perception and control pipelines. Weeks three and four: implement behavioral cloning on a navigation or grasping dataset. Weeks five and six: train a reinforcement learning policy in simulation and attempt sim-to-real or analyze the transfer gap. Weeks seven and eight: build a task-level planner for a fetch-and-carry scenario with recovery actions. Weeks nine and ten: study a vision-language model demo and experiment with grounding instructions to robot actions. Weeks eleven and twelve: integrate into a small project and document with your methodology notes. Follow this rhythm and the subject will be yours.
+
+PART 14 - FINAL REFLECTIONS AND COURSE COMPLETION
+
+Final reflections to close this course. AI for robotics taught you that intelligence without embodiment is incomplete for the world's hardest problems, and embodiment without intelligence is clumsy. The fusion you studied here, perception that understands, planning that reasons, learning that adapts, and safety that protects, is the recipe for machines that truly serve. Remember the balance: use learning where the world is messy, classical methods where guarantees matter, and human judgment where values are at stake.
+
+Carry three habits from this course. First, prototype in simulation before hardware; virtual failures are free teachers. Second, measure honestly: task success rates, recovery rates, and failure modes, not just demo-day highlights. Third, design for the person beside the robot: the worker, the farmer, the nurse, the child. Their trust is your final metric.
+
+And a completion summary of everything in this course. You defined the field and mapped the stack. You learned demonstration methods: kinesthetic teaching, cloning, and DAgger. You applied reinforcement learning with sim-to-real rigor. You planned tasks and motions with integrated reasoning. You explored foundation models and the data frontier. You adopted a professional methodology. You built pick and place. You studied fourteen scenarios. And you made a twelve-week study plan. The tools are yours now.
+
 AI for robotics is the art of building machines that think before they act and learn as they live. Build with wisdom, validate with rigor, and serve with purpose. Thank you for your attention and your effort. I will see you in the next lecture.
 
 ================================================================

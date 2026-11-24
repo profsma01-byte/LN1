@@ -271,6 +271,24 @@ Fourth, on field conditions: rain makes floors slippery and sensors unreliable; 
 
 Fifth, on documentation: keep a build log with photos, code versions, parameter values, and test results. When something works, capture the parameters that made it work. Future you, facing a regression at midnight, will be grateful.
 
+PART 18 - FINAL SCENARIOS FOR MOBILE ROBOTICS
+
+Scenario seven: robots in postal sorting centers. Small mobile robots carry mail sacks between sorting stations, following floor markers and adapting routes when aisles are blocked. Shift supervisors monitor fleets from dashboards. The systems integrate with human workflows: robots wait for full sacks, humans load and unload, and exceptions go to operators. The productivity gains come from smooth integration, not flashy technology.
+
+Scenario eight: mobile robots in hotel logistics. Robots deliver towels and linens to floors, riding service elevators and announcing politely at doors. Guests quickly adopt them; staff appreciate the reduced walking. Room navigation and courteous behavior in corridors determine acceptance more than raw speed.
+
+Scenario nine: vineyard and orchard rovers. Wheeled rovers with cameras scout rows for disease and estimate yield; slow, careful movement avoids damaging plants; GPS keeps rows straight. The data feeds harvest planning and market forecasts. Farmers gain the insights of large operations at small-farm scale.
+
+Scenario ten: border and perimeter security robots. Rugged rovers patrol long perimeters with cameras and radar, reporting anomalies to human guards. They work at night, in dust and heat, with solar charging stations along the route. The design values: reliability, clear reporting, and strict human oversight of any response.
+
+Scenario eleven: museum and exhibition guide robots. Robots lead tours, adjusting pace to visitors, answering questions from a knowledge base, and gracefully handling interruptions. They return to charging docks between tours. The design blends navigation, dialogue, and storytelling.
+
+Scenario twelve: robots supporting people with disabilities in public spaces. Guide robots help visually impaired users navigate stations and campuses; robotic wheelchairs assist with doors and ramps. Co-design with users is essential: the people who use these robots must shape them.
+
+Each scenario returns to the core lessons of this course: locomotion matched to terrain, localization fused from many sources, layered planning, courteous motion among people, and operational design for maintenance and trust. When you design your own mobile robot, walk through these scenarios and steal their lessons: they are hard-won wisdom from real deployments.
+
+One more assignment worth doing: find a mobile robot video online, a robotaxi run, a warehouse tour, or a drone delivery, and write a technical commentary analyzing its likely localization, planning, and human interaction design. Guess what sensors it carries and what fails first in bad weather. This habit of technical watching turns entertainment into education.
+
 Mobile robotics frees intelligence to roam the world. Build machines that move with skill, courtesy, and reliability. Thank you for your attention and your effort. I will see you in the next lecture.
 
 ================================================================
