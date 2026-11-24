@@ -301,6 +301,10 @@ Step seven: deploy with safety. Force limits prevent crushing; workspace limits 
 
 What this walkthrough demonstrates is the full arc of AI for robotics: classical baseline, simulated data, learned perception of grasp quality, force-guided execution, verification, recovery, honest evaluation, and safety-wrapped deployment. Master this arc and you can add intelligence to any robot skill: welding, sorting, feeding, inspecting, or harvesting. The recipe transfers across domains because it respects both learning and engineering discipline. Practice it first in simulation, then on one real skill, and you will have earned the heart of this course.
 
+As a final study suggestion, revisit this lecture's methodology whenever you begin a new robotics project. Write the task definition first. Analyze the variability second. Choose your classical-versus-learned split third. Plan data fourth. Prototype in simulation fifth. Wrap in safety sixth. Validate seventh. Deploy gradually eighth. Maintain ninth. Keep these nine steps as a checklist poster above your desk. When deadlines pressure you to skip steps, the poster will quietly insist on discipline, and your projects will be better for it.
+
+And with that, we close AI for Robotics. You have learned to give machines not only movement and senses, but judgment and improvement. That is a rare and powerful gift in the hands of a responsible engineer. Use it to build machines worthy of the trust that people will place in them, and let every robot you create carry a little more wisdom and a little more care into the world.
+
 AI for robotics is the art of building machines that think before they act and learn as they live. Build with wisdom, validate with rigor, and serve with purpose. Thank you for your attention and your effort. I will see you in the next lecture.
 
 ================================================================
