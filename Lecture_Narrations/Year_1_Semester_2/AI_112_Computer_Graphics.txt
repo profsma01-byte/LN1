@@ -313,6 +313,12 @@ With these terms, your graphics vocabulary spans the pipeline from vertex to scr
 
 This course has been a journey from single pixels to living virtual worlds. Computer graphics turns imagination into images and data into vision. It is where engineering precision meets artistic soul. Study it deeply; it will serve your robots, your simulations, and your creativity for life. Keep a rendering portfolio, keep studying light and geometry, and keep fusing graphics with your AI and robotics skills. Rare engineers master this trio; you are on that path now.
 
+One more practice assignment to seal your learning. This week, recreate one scene from your daily environment in Blender: your reading table, your room corner, or the view from your window. Match the lighting as closely as you can by comparing side by side. Write half a page on what was hardest to match: the softness of shadow, the color of light through a curtain, or the reflection on a surface. Those difficulties are precisely where your graphics skill will grow. Repeat this exercise monthly and your eye will sharpen like an artist's and your renders will breathe like photographs.
+
+And a final exam reminder: bring your one-page handwritten formula sheet, know the pipeline by heart, and answer with sketches where words stumble. Graphics rewards the prepared eye. Yours is now trained.
+
+And one parting practice: keep a light sketchbook, physical or digital, of scenes and compositions you admire. Steal like an artist: recreate lighting moods, camera angles, and color palettes. Over one semester your visual library grows enormously, and your renders will carry a spark that pure technique never teaches.
+
 Thank you for your attention and your effort. Keep rendering, keep exploring, and I will see you in the next lecture.
 
 ================================================================
