@@ -277,9 +277,15 @@ Eighth, mobile robot kinematics. Differential drive robots turn by wheel speed d
 
 Ninth, practical engineering. Verify every analytical formula with a numerical check. Test round trips: angles to pose to angles. Use proven libraries for complex robots, but understand the mathematics they implement.
 
-Tenth, the mindset. Kinematics rewards patience and geometric imagination. Sketch constantly, derive steadily, verify rigorously. The engineers who master kinematics design robots that move with precision, reliability, and grace.
+Tenth, the mindset. Kinematics rewards patience, steady practice, and geometric imagination. Sketch constantly, derive steadily, verify rigorously. The engineers who master kinematics design robots that move with precision, reliability, and grace in every application they touch.
 
 Carry these formulas in your mind and these principles in your habits. They will serve you in every robotics challenge that comes your way.
+
+PART 17 - CAREER PATHWAYS IN MOTION ENGINEERING
+
+Let me paint a picture of career pathways where kinematics is the daily companion. In industrial automation, robotics engineers program welding, painting, and assembly arms; every program begins with frames and poses. In medical robotics, engineers develop surgical arms where millimeter precision matters; inverse kinematics positions instruments safely around delicate tissue. In film and gaming, technical animators apply the same transform mathematics to bring digital characters to life. In space robotics, engineers design manipulator arms for satellites and space stations, where every motion must be planned exactly because there is no room for error. In agriculture, engineers build harvesting arms that reach fruit gently; workspace and joint limits shape the design. In logistics, engineers deploy palletizing robots in warehouses; forward kinematics and trajectory planning keep goods flowing. And in research labs, engineers explore soft robots and novel mechanisms, extending the same principles to new materials and shapes.
+
+For your portfolio, build three projects. First, a two-link arm simulator with forward and inverse kinematics plus animation. Second, a Jacobian analysis tool that visualizes manipulability across a workspace. Third, a mobile robot odometry simulator that fuses wheel encoders with a simple sensor. These three projects demonstrate your kinematics skill to any employer or graduate school.
 
 Robot kinematics is the mathematics that gives robots precise, purposeful motion. Master it, and you can command any arm to move with confidence and grace. Thank you for your attention and your effort. I will see you in the next lecture.
 
