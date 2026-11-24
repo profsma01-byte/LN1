@@ -241,6 +241,36 @@ A few more terms to complete your mobile robotics vocabulary. Waypoint navigatio
 
 With these terms, your mobile robotics vocabulary spans wheels to fleets. Study steadily, build patiently, and let every robot you make move through the world with skill and courtesy.
 
+PART 15 - COURSE COMPLETION SUMMARY AND STUDY PLAN
+
+Let me complete AI 207 with a summary and a study plan.
+
+Completion summary. You defined mobile robotics as machines that move through the world. You studied locomotion: differential drive, Ackermann, omnidirectional wheels, legs, tracks, and flight, and matched each to terrain and mission. You learned mobile kinematics: pose, forward and inverse kinematics, nonholonomic constraints, and odometry with its inevitable drift. You studied sensing while moving: LiDAR, cameras, ultrasonics, IMUs, and the importance of placement and time sync. You answered where am I with localization: odometry, landmarks, Kalman and particle filters, and place recognition. You answered what does the world look like with mapping: occupancy grids, feature maps, and topological maps. You answered how do I get there with global planning, local avoidance like the dynamic window approach, and path following with pure pursuit. You designed robots that work among people with courtesy and legibility. You toured scenarios from warehouses to farms to hospitals. And you built a line-following robot with odometry and sensing.
+
+Study plan for mastery. Weeks one and two: implement differential drive kinematics in Python and simulate paths. Weeks three and four: implement a particle filter localizer on a grid with noisy odometry. Weeks five and six: run a navigation stack in a free simulator like Gazebo or Webots and tune local avoidance. Weeks seven and eight: build the physical line-follower lab and document PID tuning. Weeks nine and ten: study one open-source SLAM system and run it on a sample dataset. Weeks eleven and twelve: mini-project: a mobile robot concept with full documentation: kinematics, sensors, localization plan, and navigation plan.
+
+Final reflections. Mobile robotics demands systems thinking of the highest order: every subsystem interacts, and the world tests all of them at once. When your robot finally completes a route smoothly, dodges a person politely, and docks itself to charge, you will feel the pride of engineering that works in the real world. That pride is earned through exactly the patient, layered learning this course began.
+
+PART 16 - CAREERS AND FINAL REFLECTIONS FOR MOBILE ROBOTICS
+
+Let me open career doors and close with reflections. Mobile robotics engineers work in logistics automation, designing and tuning warehouse fleets; in agriculture, building rovers and scouting drones; in inspection and maintenance, deploying robots in pipelines, power lines, and mines; in healthcare logistics, moving supplies in hospitals; in consumer robotics, creating vacuums, mowers, and companions; and in defense and rescue, exploring dangerous ground. Drone piloting and development is a fast-growing specialty with applications from real estate to farming to filmmaking. Startups across Africa need mobile robotics talent for delivery, farming, and infrastructure; local knowledge is your advantage.
+
+For your portfolio, aim to show three artifacts: a physical mobile robot with documented odometry and PID tuning; a localization or SLAM demo on real or public data; and a navigation project in simulation with obstacle avoidance. Add a one-page design document for each. These prove your skills more powerfully than grades alone.
+
+Final reflections. Mobile robotics is where engineering meets the world in motion. You learned that movement demands knowing where you are, seeing where you are going, and choosing how to get there, all while the world changes under your wheels. The patience this demands, calibrating, fusing, testing, recovering, is the patience of real-world engineering itself. When your robot completes its first long autonomous run without intervention, you will remember this course and smile. Build machines that move with wisdom and courtesy.
+
+PART 17 - ADDITIONAL STUDY NOTES FOR MOBILE ROBOTICS
+
+Let me add a few more study notes to consolidate your learning. First, on coordinate frames: robots live among multiple frames: the world frame, the robot base frame, the sensor frames, and the goal frame. Transformations between them, the same matrix tools from computer graphics and kinematics, keep everything consistent. When something feels wrong in localization or planning, check your frames first; frame confusion is the most common bug in mobile robotics.
+
+Second, on timing: mobile robots are real-time systems. Sensor readings arrive at different rates; control loops run faster than perception; planning runs slower still. Design your software so each layer runs at its natural rate and passes clean data upward. ROS 2, which you will study, organizes exactly this.
+
+Third, on testing discipline: always test odometry first, then localization, then planning, then full autonomy. Layered testing isolates failures quickly. Keep a test course: tape loops, cardboard obstacles, and a marked docking spot; repeatable tests produce comparable results.
+
+Fourth, on field conditions: rain makes floors slippery and sensors unreliable; sunlight blinds cameras; crowds change everything. Test in the messiest conditions your robot will meet. The lab is a hypothesis; the field is the exam.
+
+Fifth, on documentation: keep a build log with photos, code versions, parameter values, and test results. When something works, capture the parameters that made it work. Future you, facing a regression at midnight, will be grateful.
+
 Mobile robotics frees intelligence to roam the world. Build machines that move with skill, courtesy, and reliability. Thank you for your attention and your effort. I will see you in the next lecture.
 
 ================================================================
