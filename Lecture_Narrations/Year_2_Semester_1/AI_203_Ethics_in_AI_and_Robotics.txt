@@ -233,6 +233,48 @@ Practical identity habits. Speak up early when something seems wrong; most disas
 
 Remember your communities. You will build for Ibadan and Nigeria and Africa and the world. The values you encode in systems will touch neighbors, elders, and children who cannot inspect your code. Let fairness to them be your standard. Let their trust be your reward.
 
+PART 14 - ADDITIONAL PRACTICAL SCENARIOS IN ETHICS
+
+Scenario one: an AI tutor that adapts to students. The system personalizes exercises but must avoid labeling a struggling child as weak in ways that crush confidence or follow them forever. Ethical design: growth-oriented language, periodic human review of labels, and clear records that students can move beyond past patterns. The tool serves learning without imprisoning identity.
+
+Scenario two: a robot referee in school sports. The robot calls offsides and fouls using vision. Students and parents demand fairness and explanation. Ethical design: transparent call criteria, human override authority, and a review channel for disputed decisions. Even in games, justice needs accountability.
+
+Scenario three: an AI system screening job applications in a local company. The efficiency is tempting, but the data reflects a male-dominated industry. Ethical design: fairness audits before launch, demographic monitoring of outcomes, human final interviews, and published appeal routes. Efficiency must never launder discrimination.
+
+Scenario four: a smart city surveillance upgrade. Cameras with face recognition promise safer streets but enable tracking of activists and worshipers. Ethical design: strict purpose limits, independent oversight, data retention caps, and public consultation before deployment. Security and liberty must be balanced in daylight, not in secret.
+
+Scenario five: an autonomous delivery robot on campus sidewalks. It must decide how to behave around crowds: wait, squeeze through, or ask for help. Ethical design: pedestrian-first rules, clear signaling, conservative behavior when unsure, and easy reporting of near-misses. The robot's manners are ethics embodied in motion.
+
+Scenario six: an AI research paper with impressive results built on scraped personal data. Ethical design: dataset provenance documentation, consent where possible, and publication of limitations. Scientific progress built on hidden exploitation corrodes trust in the whole field.
+
+Each scenario returns you to the same toolkit: identify stakeholders, apply the five questions, use the frameworks, document, and monitor. Ethics becomes a habit through repetition.
+
+PART 15 - ETHICS IN YOUR DAILY STUDENT LIFE AND COURSE COMPLETION
+
+Ethics is not only for deployments; it is for your life as a student right now. Consider academic integrity. When you use AI tools to write code or essays, the question is not whether the tool exists but whether your work honestly represents your understanding. Use AI as a tutor and a draftsman, then verify, learn, and own the final product. Submitting machine-written work as your own understanding is self-deception as much as dishonesty, and it hollows out the very skills your future patients, clients, and communities will rely on.
+
+Consider data ethics in coursework. When you scrape images or messages for a class project, ask about consent and terms of service. When you analyze classmates' data, get permission and protect identities. These small practices rehearse the professional duties that later protect millions.
+
+Consider collaboration ethics. Credit ideas, share tools, help struggling classmates, and compete fairly. The engineering profession runs on trust between colleagues; your character forms now.
+
+Consider social media and public speech. Engineers shape public understanding of AI. Share honestly, correct errors publicly, and resist hype that misleads. Responsible communication is part of responsible engineering.
+
+Now the completion summary of this course. You defined ethics and felt its stakes through real failures of biased, opaque, and unsafe systems. You mastered fairness: sources of bias, detection with disaggregated metrics, and mitigation in data and design. You defended transparency and explainability as rights and built them into deliverables. You protected privacy with consent, minimization, and security. You assigned accountability along human chains with documentation and oversight. You upheld safety and meaningful human control. You weighed social impacts on work, equality, environment, and culture. You adopted frameworks and a seven-step decision method. You worked through nine case studies from biased admissions to drone data governance. And you began living ethics as a student and future professional. Carry this course in every project you will ever build. It is the difference between power and trust.
+
+PART 16 - ETHICS QUESTIONS FOR YOUR FUTURE INTERVIEWS AND PRACTICE
+
+Let me prepare you for the ethics questions that increasingly appear in job interviews and professional practice. Interviewers ask about a time you disagreed with a design decision: they want to hear that you raise concerns with evidence and persistence. They ask how you would handle biased data: they want your concrete process, audit, mitigation, and monitoring. They ask about privacy trade-offs: they want principled reasoning, not slogans. They ask about failing gracefully: they want humility and systematic learning.
+
+Practice answering these aloud this week. Describe a project where you chose fairness over accuracy. Explain how you would validate a face recognition system across demographic groups. Argue for human oversight in a medical device. Defend data minimization to a product manager who wants more data. These conversations will recur throughout your career; rehearse them until your principles speak clearly under pressure.
+
+And a final word on courage. Ethics often asks you to slow projects, to say no, to demand testing, to protect people you will never meet. That takes professional courage. Surround yourself with colleagues who share these values, keep evidence of your reasoning, and remember why you chose engineering: to build a better life for your community. Let that purpose steady your hand when pressure tells you to cut corners. The engineers remembered by history are not the fastest, but the ones who built what could be trusted.
+
+Keep a personal ethics journal as well: note decisions you face in projects and how you resolve them. Over the years, this journal becomes your professional compass.
+
+Discuss them in study groups until your answers flow naturally and firmly. Also read one ethics code of a professional body this month, the ACM code of ethics is a fine choice, and mark the duties that surprise you. Write a paragraph on how each duty applies to your own project work. Finally, find a mentor or senior engineer whose judgment you admire and ask them how they handled an ethical pressure in their career. Their stories will teach you what textbooks cannot.
+
+Keep debating these questions in study groups as your training continues. In closing, carry with you this simple creed: build only what you would trust with the lives of your own family, defend the vulnerable in every design meeting, and let your conscience have the final vote in every release. Live by it and your engineering will be a credit to your community. And remember that you now carry something rare: engineers who understand both the power of intelligent machines and the duties that power imposes. In every interview, every design review, every deployment meeting, that combination will set you apart and, more importantly, will protect the people your work touches.
+
 Ethics is not a brake on innovation; it is the steering wheel. The world has enough powerful engineers. It needs trustworthy ones. Be among them. Thank you for your attention and your conscience. I will see you in the next lecture.
 
 ================================================================

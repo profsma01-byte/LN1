@@ -269,6 +269,18 @@ PART 15 - FINAL STUDY HABITS FOR PERCEPTION ENGINEERS
 
 Three final study habits to carry out of this course. First, become a data detective: whenever you see a perception demo, ask what data trained it, what conditions it was tested in, and where it will fail. Second, keep a sensing journal: record how sensors behave in rain, at night, on shiny floors, and near crowds; your personal field notes will become priceless design intuition. Third, practice explaining perception results to non-engineers; if you can tell a farmer why the weeding robot is unsure and what it will do about it, you understand perception deeply. These habits, compounded over your remaining years, will make you the engineer teams trust when the world gets complicated.
 
+And a parting reminder: perception is where your whole degree converges, sensors and signal processing from below, machine learning and computer vision from within, control and planning from above. Master perception and you can plug into any robotics team in the world. Study it as the keystone it is.
+
+Final assignment: build a perception failure diary. For one week, note every time a sensing system around you fails: a phone camera struggling in sun, a door sensor missing you, a voice assistant mishearing. For each, guess the cause and a fix. This habit trains the diagnostic eye that perception engineers are hired for.
+
+Remember also that perception engineers rarely work alone: you will partner with controls engineers, planners, hardware designers, and the people who use the robots. Communicate perception limits clearly to them; a planner that does not know perception's blind spots will design unsafe plans. Your voice translating uncertainty into team decisions is part of the job.
+
+One closing word of encouragement: perception is hard because the world is rich, but that is also why it is beautiful. Every improvement in your system is a machine seeing a little more of the truth. Keep chasing that truth patiently.
+
+Go now with curious eyes: every camera, every sensor, every machine that notices the world is a teacher. Learn from them, and then build better ones.
+
+Goodbye for now, and happy building. May your robots always see the truth of the world and act with care within it. And when you face your first hard perception problem in a project or a job, remember this course: start with the data, respect uncertainty, fuse what you can, and design for graceful failure. Those four habits will guide you better than any single algorithm. Study well, practice often, and trust the process of careful engineering.
+
 Robotic perception is the art of knowing the world well enough to act safely within it. Build it honestly, fuse it wisely, and your robots will see with clarity and humility. Thank you for your attention and your effort. I will see you in the next lecture.
 
 ================================================================
