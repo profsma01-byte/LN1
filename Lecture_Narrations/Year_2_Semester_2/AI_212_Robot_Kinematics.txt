@@ -279,7 +279,7 @@ Ninth, practical engineering. Verify every analytical formula with a numerical c
 
 Tenth, the mindset. Kinematics rewards patience, steady practice, and geometric imagination. Sketch constantly, derive steadily, verify rigorously. The engineers who master kinematics design robots that move with precision, reliability, and grace in every application they touch.
 
-Carry these formulas in your mind and these principles in your habits. They will serve you in every robotics challenge that comes your way.
+Carry these formulas in your mind and these principles in your habits. They will serve you in every robotics challenge that comes your way. And keep a small reference card of these formulas in your own words. When you face a new robot mechanism, start by naming its joints and links, sketch its frames, and write its forward kinematics before touching any code. This disciplined habit turns intimidating machines into familiar chains of geometry. Review the card weekly until recall becomes instant and effortless for you.
 
 PART 17 - CAREER PATHWAYS IN MOTION ENGINEERING
 
