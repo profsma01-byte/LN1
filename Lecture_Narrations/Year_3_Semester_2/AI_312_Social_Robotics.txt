@@ -1,0 +1,252 @@
+AI 312 - SOCIAL ROBOTICS
+COMPREHENSIVE SPOKEN LECTURE NARRATION
+Style: Spoken lecture delivery for voice recording and text to speech
+Language: Simple, clear English
+Length: Extended lecture of at least five thousand words
+Year Three, Semester Two, Robotics and Artificial Intelligence Programme
+
+PART 1 - WELCOME TO SOCIAL ROBOTICS
+
+Hello everyone, and welcome to AI 312, Social Robotics, the final course of your Year Three journey. This is a course about robots that live and work among people, robots that communicate, cooperate, and build relationships. Social robotics asks not only how robots move and compute, but how they should behave in human society: how they speak, listen, show attention, express emotion appropriately, respect norms, and earn trust. It is one of the most humanistic areas of our field, and I am delighted to guide you through it. As always, we will ground everything in real life practicals and examples from Nigeria and Africa.
+
+What is social robotics? Social robotics is the design, study, and evaluation of robots that interact with people in socially appropriate ways. A social robot does not merely execute commands; it engages. It recognizes who is speaking, takes turns in conversation, maintains comfortable distance, gestures understandably, adapts to individuals, and behaves in ways people find clear, helpful, and respectful. The goal is not to fake humanity but to be a good social partner in the ways that matter for the task.
+
+Why does social behavior matter in robots? Because people respond to robots socially, whether designers intend it or not. Humans automatically attribute intentions, moods, and personalities to machines that move, speak, and face them. This phenomenon, social attribution, is an opportunity and a responsibility. Robots designed with social awareness communicate more clearly, cooperate more smoothly, and are trusted more appropriately. Robots designed without it confuse, annoy, or even frighten people.
+
+Let me share real life practicals to ground us. Imagine a reception robot in a Lagos hospital that greets patients, understands simple requests in English and Yoruba, guides them to departments with clear gestures, and calls a human when confused. Imagine a tutoring robot in an Ibadan primary school that teaches reading with patience, praises effort, and adapts to each child's pace. Imagine a companion robot for elderly care in Accra that reminds about medicine, chats warmly, and alerts family if something seems wrong. Imagine an agricultural extension robot in rural Nigeria that explains best practices to farmers in local languages with culturally respectful interaction. These are social robots serving real needs.
+
+Social robotics connects to your whole education. Human robot interaction gave you interaction fundamentals. Natural language processing enables conversation. Computer vision enables face and gaze perception. Cognitive robotics provides memory and adaptation. Control makes motions smooth and safe. Ethics is central, because social robots affect people deeply. And psychology, newly important, helps you understand human behavior and expectations.
+
+How will we study this course? We will begin with the foundations of social interaction between humans and robots. We will study verbal interaction: speech, dialogue, and language. We will examine nonverbal communication: gaze, gesture, proxemics, and posture. We will explore emotion and expressiveness in robots. We will study social cues in robot motion and behavior. We will cover personalization and adaptation to individuals and cultures. We will examine trust, acceptance, and user evaluation methods. We will study social robots in application domains: education, healthcare, service, and companionship. We will confront ethics and responsible design deeply. We will explore design methods and evaluation practice. And we will end with futures and reflections.
+
+To succeed in this course, adopt the user's perspective constantly. Ask not only what the robot does, but how the interaction feels to the person. That empathy is the core skill of the social robotics engineer.
+
+Let us begin our study of robots among people.
+
+PART 2 - FOUNDATIONS OF HUMAN ROBOT SOCIAL INTERACTION
+
+Let me walk you through the foundations of social interaction between people and robots.
+
+Humans are social animals with deep habits of interaction. We read faces, follow gaze, take turns in conversation, stand at comfortable distances, and interpret tone and gesture instantly. When robots enter this social world, people apply these habits automatically. Understanding this is the foundation of social robotics.
+
+Social attribution: people attribute mental states to robots that behave in life like ways. A robot that hesitates seems unsure; a robot that moves smoothly seems competent; a robot that faces you seems attentive. Designers cannot prevent attribution, but they can shape it honestly and usefully.
+
+The media equation research showed people treat media socially: being polite to computers, feeling guilty switching them off. Robots intensify this effect through physical presence and motion. Physical embodiment matters: a social robot in the room commands attention that a screen character does not.
+
+Interaction is a dance of signals. Human conversation is structured: greetings, turn taking, repair of misunderstandings, and closings. Social robots participate in this structure to be understandable and pleasant.
+
+Common ground and context: successful interaction relies on shared knowledge. Social robots track what has been said, who is present, and what is happening around them.
+
+Social roles shape expectations. A reception robot, a tutor, and a companion each carry different behavioral expectations. People judge robots by role appropriate behavior; a tutor that jokes during serious teaching disappoints.
+
+The uncanny valley deserves mention: as robots become almost human, small imperfections can provoke discomfort. Designers choose appearance and behavior levels deliberately: clearly robotic but socially fluent often works better than near human with flaws.
+
+Cultural dimensions shape interaction: norms of politeness, personal space, eye contact, and formality vary across cultures. Social robots for Nigerian and African contexts must respect local norms of respect, greeting, and communication style.
+
+Real life practicals. A Nigerian hospital robot project studies how patients greet and ask questions, then programs matching conversational structures. A student team observes that users speak to their robot slowly and loudly, and adapts speech recognition accordingly. A reception robot's designers choose a friendly clearly robotic appearance, avoiding uncanny discomfort. Study people first; design robots second.
+
+A practical habit: watch people interact with any new robot prototype and note every awkward moment; awkwardness is a design requirement list.
+
+PART 3 - VERBAL INTERACTION: SPEECH AND DIALOGUE
+
+Let me walk you through verbal interaction: how robots speak, listen, and converse.
+
+Speech interaction has a pipeline. Automatic speech recognition converts sound to text. Language understanding extracts meaning and intent. Dialogue management tracks conversation state and decides what to do next. Language generation composes responses. Speech synthesis turns text into spoken words. Each stage must work reliably for conversation to flow.
+
+Robust speech recognition faces real conditions: accents, dialects, background noise, and code switching between languages, common in Nigerian speech. Practical systems adapt to users and environments, and graceful fallbacks, asking for repetition or offering choices, keep conversation alive.
+
+Language understanding goes beyond words: resolving references like the one on the left, understanding context from earlier turns, and inferring intent behind polite phrasing. Intent classification and slot filling are the workhorses of task oriented dialogue.
+
+Dialogue management styles. Finite state dialogues follow scripted flows: simple and reliable for narrow tasks. Frame based dialogues fill slots toward goals: collecting information for a service. Plan based and collaborative dialogues reason about user goals and negotiate. Modern data driven dialogue systems learn from conversation data.
+
+Turn taking is conversational rhythm: knowing when to listen, when to respond, and how to handle interruptions. Social robots use timing cues and brief acknowledgments like I see and go on to feel natural.
+
+Grounding: confirming mutual understanding. Good robots confirm important details and avoid over confirming routine ones.
+
+Error handling in conversation: misunderstandings happen; socially skilled robots repair gracefully: I did not catch that; did you mean the pharmacy. Repair quality distinguishes good systems.
+
+Multilingual and code switched interaction matters profoundly in African contexts. Supporting English alongside Yoruba, Igbo, Hausa, and others, and handling natural switching between them, makes robots genuinely useful and respectful.
+
+Synthesized speech quality: prosody, pace, and tone convey warmth and clarity. Flat monotone speech feels robotic in the bad sense; appropriate prosody makes robots pleasant to hear.
+
+Real life practicals. A Nigerian service robot supports English and Yoruba greetings and switches based on the user's language. A student dialogue system fails in noisy labs until they add noise robust recognition and choice based fallbacks. A hospital robot confirms appointment details with structured slot filling and friendly confirmation. Design conversation as carefully as code; words are the robot's hands in social space.
+
+A practical habit: record and review actual user conversations with your robot; transcripts reveal friction points faster than intuition.
+
+PART 4 - NONVERBAL COMMUNICATION: GAZE, GESTURE, AND PROXEMICS
+
+Let me walk you through nonverbal communication, the silent language of social robots.
+
+Most human communication is nonverbal. Robots that master nonverbal signals communicate far better.
+
+Gaze is the master signal. Where a robot looks indicates attention, intention, and turn taking. Looking at a speaker shows listening; looking toward an object before reaching indicates intent; glancing at a person before addressing them shows politeness. Shared attention, both attending to the same object, enables cooperation and teaching. Gaze behavior must balance engagement with comfort: staring is aggressive; looking away constantly seems disinterested.
+
+Gesture complements speech. Deictic gestures point and refer: this one here. Beat gestures mark rhythm and emphasis. Iconic gestures illustrate shapes and motions. Robots that gesture while speaking are understood better and appear more competent. Gesture timing with speech matters: gestures lead slightly before the words they support.
+
+Head movements and posture convey attitude. Nods show agreement and encouragement. Head tilts signal curiosity or attention. Posture orientation shows engagement: facing a person signals availability.
+
+Proxemics, the study of interpersonal distance, guides robot positioning. People maintain comfortable zones: intimate, personal, social, and public distances. Robots approaching too closely startle; robots too far seem disengaged. Approach angles matter: coming from the front is visible and respectful; approaching from behind surprises. Speed of approach affects comfort: slow, predictable motions reassure.
+
+Facial displays on robots with faces: expressions of attention, surprise, and simple emotions aid understanding. Even simple light based or eyebrow displays help. Facial expressiveness must be legible and appropriate, not exaggerated.
+
+Body language coherence: all signals should agree. A robot that says welcome while turning away confuses. Coherence between speech, gaze, gesture, and motion creates trustworthy interaction.
+
+Real life practicals. A Nigerian reception robot approaches visitors at social distance, faces them, and gestures toward seating while speaking. A tutoring robot uses gaze to show attention to the child and the book alternately, supporting joint attention. A student project adds pointing gestures to object directions and measures comprehension improvement. Train your robot in the silent language; it speaks volumes.
+
+A practical habit: video record interactions and code nonverbal behaviors systematically; what you measure, you improve.
+
+PART 5 - EMOTION, EXPRESSIVENESS, AND SOCIAL MOTION
+
+Let me walk you through emotion and expressiveness: how robots show affective states and move socially.
+
+Emotion in robots serves function, not deception. Expressing uncertainty helps users know when to double check. Showing attention communicates engagement. Conveying effort calibrates expectations. The goal is legible, honest expression that helps interaction, never manipulation.
+
+Emotional expression channels. Facial expression on robots with displays or mechanical faces. Voice prosody: pitch, pace, and energy carry affect. Body motion: energetic versus calm movement shows states. Color and light: expressive lighting cues attention and state on many modern robots.
+
+Recognizing human emotion supports adaptive interaction. From voice tone, facial expression, posture, and context, robots estimate user states like confusion, frustration, or satisfaction. Recognition is uncertain and culturally variable; use it as a soft signal, and never over claim.
+
+Adaptive empathy: when a user seems confused, slow down and offer help; when a user is in a hurry, be concise. This functional empathy improves service without pretending to feel.
+
+Social motion design: robot motion should be legible and predictable. Intention revealing motion: showing where you are going before moving helps people feel safe. Smooth acceleration and deceleration feel competent and kind. Motion effort displays: visible effort when carrying heavy loads makes robots relatable.
+
+Personal space and motion respect: never move suddenly near people; maintain clearance; stop when someone crosses unexpectedly.
+
+Affect in long term relationships: companionship robots maintain consistent personality and mood continuity that supports bonding and trust.
+
+Cultural expression norms: gestures of politeness and respect vary; expressive behavior should match local expectations.
+
+Real life practicals. A Nigerian service robot signals uncertainty with a questioning tone and tilted head, prompting users to clarify kindly. A student team adds expressive lights to show listening and processing states, reducing user impatience. A companion robot greets warmly with consistent personality across days. Expressiveness is a tool for clarity and kindness; use it wisely.
+
+A practical habit: test expressive behaviors with users from your target culture; expression that reads well in one context may confuse in another.
+
+PART 6 - PERSONALIZATION, ADAPTATION, AND CULTURE
+
+Let me walk you through personalization and cultural adaptation: making social robots fit individuals and societies.
+
+People differ in preferences, habits, abilities, and expectations. Social robots that adapt to individuals serve better and are liked more.
+
+User modeling builds knowledge of individuals: their names, preferences, interaction history, and needs. Memory of past interactions enables continuity: How is your knee today after yesterday's complaint. Privacy governs what is stored and how.
+
+Adaptive interaction styles: matching verbosity, pace, and formality to users. Some users want brief commands; others enjoy conversation. Children need different language than adults. Experts want efficiency; novices need guidance.
+
+Learning from interaction: robots learn preferences from feedback, explicit corrections, and observed choices over time. Continual personalization improves fit but must avoid overfitting to noise.
+
+Accessibility and inclusive design: social robots must serve people with diverse abilities. Voice interaction helps those with limited mobility. Clear visual displays help those with hearing loss. Simple language helps those with cognitive differences. Inclusive design widens benefit and is ethical duty.
+
+Cultural adaptation is deeper than translation. Norms of politeness, formality in address, gender interaction norms, greeting rituals, and attitudes toward technology all vary. Designing for Nigerian and African contexts means understanding local norms of respect for elders, communal interaction styles, and multilingual realities. Co design with communities produces robots that fit.
+
+Value alignment: robots serving in homes and institutions should respect the values of those they serve, configured transparently and with consent.
+
+Real life practicals. A Nigerian tutoring robot addresses teachers formally and children warmly, matching social norms. A hospital robot uses polite formal language with elders and simpler language with children. A student personalizes a service robot's verbosity by asking user preferences at first meeting. Design for people as they are, in the cultures where they live.
+
+A practical habit: involve target users in design from the first sketches; co design prevents expensive misunderstandings later.
+
+PART 7 - TRUST, ACCEPTANCE, AND EVALUATION METHODS
+
+Let me walk you through trust, acceptance, and the professional evaluation of social robots.
+
+Trust is the currency of social robotics. Over trust leads users to rely too much on imperfect robots; under trust deprives users of useful help. Calibrated trust matches reliance to actual robot reliability. Design for calibration: communicate confidence honestly, admit uncertainty, and demonstrate reliability consistently.
+
+Factors affecting trust: robot reliability over time, transparency of intentions and limitations, appearance and competence cues, and the stakes of the situation. Trust builds slowly and breaks quickly; consistency matters.
+
+Acceptance research studies why people welcome or reject robots. Performance expectancy, does it help; effort expectancy, is it easy to use; social influence, do others approve; and facilitating conditions, is support available. These factors guide adoption strategies.
+
+Evaluation methods for social robots are interdisciplinary. Usability testing measures task success and errors. Interaction analysis codes conversational and nonverbal behaviors. Questionnaires measure perceptions: warmth, competence, trust, and satisfaction. Behavioral measures reveal real preferences: how long users engage, whether they return. Longitudinal studies capture adaptation and relationship over weeks.
+
+Study design matters: representative users, realistic settings, appropriate comparisons, and honest reporting. Laboratory results do not always transfer to field conditions; field studies are gold.
+
+Ethnographic and qualitative methods reveal needs and meanings: interviews, observations, and participatory design sessions.
+
+Real life practicals. A Nigerian social robot team runs a three month field study in a hospital, measuring acceptance weekly and discovering trust grew as reliability proved itself. A student team evaluates a tutoring robot with children using both quiz scores and engagement observations. A service robot's makers publish honest limitation reports to calibrate user trust. Evaluate with rigor and humility; users deserve evidence based claims.
+
+A practical habit: define evaluation metrics before building; evaluation plans shape design decisions from the start.
+
+PART 8 - APPLICATIONS OF SOCIAL ROBOTICS
+
+Let me tour applications where social robots serve people, with attention to African contexts.
+
+Education and tutoring: robots teach languages, reading, science, and social skills. They engage children with patience and repetition, support teachers with practice time, and reach learners in under resourced schools. Evidence shows benefits particularly for young learners and language practice.
+
+Healthcare and therapy: social robots support rehabilitation with motivating coaching, assist elderly care with reminders and companionship, support autism therapy with predictable social interaction, and help hospital logistics with friendly guidance. Clinical evidence grows steadily.
+
+Service and hospitality: reception robots greet and guide, retail robots assist shoppers, and hotel robots deliver items with social grace. Service robots handle routine tasks so humans handle meaningful ones.
+
+Companionship and elder care: companion robots provide conversation, cognitive stimulation, and connection alerts for isolated individuals. Ethical care ensures companionship supplements rather than replaces human contact.
+
+Agriculture and community extension: robots that explain practices to farmers in local languages with respectful interaction extend advisory services.
+
+Public engagement: museum guides, information kiosks, and event robots engage crowds informatively and memorably.
+
+Real life practicals from Africa. In Nigeria, pilot tutoring robots support reading in English and local languages. South African hospitals trial companion robots in elder wards. Kenyan museums use guide robots to engage visitors. Rwandan hospitals use delivery robots with friendly interfaces. Each application succeeds where social fit and reliability combine; technology alone is never enough.
+
+Design guidance across domains: clarify the robot's role, design for the local culture, ensure reliability before expressiveness, keep humans in the loop, and evaluate honestly in context.
+
+PART 9 - ETHICS OF SOCIAL ROBOTICS
+
+Let me walk you through ethics, the heart of responsible social robotics.
+
+Social robots affect people deeply, so ethical reflection is a design duty, not an afterthought.
+
+Deception and authenticity: robots that seem to have feelings may mislead users about their nature. Transparency about what robots are and are not protects autonomy and trust. Expressiveness should aid communication, not manipulate emotion.
+
+Privacy: social robots perceive homes, faces, voices, and intimate routines. Data minimization, encryption, consent, and user control over data are sacred obligations.
+
+Attachment and relationships: people, especially children and elders, bond with social robots. Designers must consider healthy attachment, honest framing, and never exploiting vulnerability for engagement or profit.
+
+Vulnerable populations: children, elderly, and patients deserve extra protection: age appropriate design, clear boundaries, and human oversight.
+
+Autonomy and accountability: when social robots influence decisions, from health reminders to educational judgments, accountability must be clear and humans must retain authority.
+
+Fairness and bias: social robots must not encode or amplify social biases of gender, ethnicity, language, or status. Diverse testing and inclusive design prevent harm.
+
+Cultural respect: designs must honor local values and norms; imposing foreign interaction styles is disrespectful and ineffective.
+
+Labor and society: social robots change service work; responsible deployment includes worker consultation and transition support.
+
+Dual use: social influence capabilities could be misused for manipulation; engineers advocate for beneficial use and safeguards.
+
+Real life practicals. A Nigerian social robot project publishes a transparency statement: what the robot knows, what it records, and who can access data. A companion robot for elders includes family involvement features and human contact encouragement. A tutoring robot's designers test for gender bias in language feedback and correct it. Ethics is engineering practice: build values into requirements, architecture, and evaluation.
+
+A practical habit: hold an ethics review at each design milestone with diverse voices, including intended users; document decisions and reasons.
+
+PART 10 - DESIGN METHODS, FUTURES, AND COURSE COMPLETION
+
+Let me close with design methods, future directions, and your course synthesis.
+
+Design methods for social robotics are iterative and human centered. Study users and context first: observe, interview, and co design. Define the robot's role and interaction principles. Prototype interactions early and cheaply: wizard of oz studies with hidden human control explore concepts before full automation. Evaluate with real users in realistic settings. Iterate based on evidence. Document design decisions and their reasons.
+
+Interdisciplinary teamwork is the norm: engineers, designers, psychologists, domain experts, and community members working together.
+
+Future directions. Language models enable richer conversation and instruction following. Affective computing matures toward reliable emotion aware interaction. Social robots become more affordable and widespread in education, health, and service. Long term autonomy in human environments improves. Cultural adaptation tools help global deployments localize. And community driven design grows.
+
+For Nigeria and Africa, social robotics offers paths to extend education, healthcare, and advisory services with respectful, locally adapted robots. The opportunity is to design for local realities: languages, norms, power, and infrastructure, keeping value on the continent.
+
+Course completion summary. You learned foundations of human robot social interaction. You mastered verbal interaction and dialogue. You studied nonverbal communication: gaze, gesture, proxemics. You explored emotion and social motion. You covered personalization and cultural adaptation. You examined trust, acceptance, and evaluation methods. You toured applications in education, health, service, and companionship. You confronted ethics deeply. And you practiced human centered design methods.
+
+Final reflections. Social robotics is where technology meets humanity. The robots you build will speak to children, comfort elders, guide visitors, and serve communities. Build them with technical excellence and human kindness, with cultural respect and ethical seriousness, and they will be welcomed rather than tolerated. The measure of a social robot is not its processing power but the quality of human life it supports.
+
+PART 11 - PRACTICAL SCENARIOS IN SOCIAL ROBOTICS
+
+Let me add practical scenarios that consolidate social robotics design skills. Scenario one: a hospital reception robot in Lagos. It greets visitors with culturally appropriate politeness in English and Yoruba, guides with clear gestures at comfortable distance, handles confusion with graceful repair calls to human staff, and records only necessary data with consent. Scenario two: a primary school tutoring robot in Ibadan. It teaches reading with patience, uses gaze and praise to sustain attention, adapts pace to each child, and involves teachers with progress reports. Scenario three: an elder companion robot in Accra. It reminds about medication warmly, chats with consistent personality, encourages family contact, and escalates concerns to human caregivers. Scenario four: an agricultural extension robot in rural Nigeria. It explains techniques in Hausa with respectful interaction style, uses simple demonstrations and pictures, and learns farmer preferences over seasons. Scenario five: a museum guide robot in Cape Town. It engages visitors with stories, answers questions conversationally, manages groups with proxemics, and hands over to human guides for complex queries. In each scenario, apply the full toolkit: study users, design interaction principles, prototype with wizard of oz, evaluate in context, and iterate with evidence. Write design documents for each scenario covering role, dialogue flows, nonverbal behaviors, personalization, ethics, and evaluation metrics. Present them to peers and defend choices. This practice builds the human centered judgment that defines excellent social robotics engineers.
+
+PART 12 - DESIGN PRINCIPLES SUMMARY AND FINAL GUIDANCE
+
+Let me close with a summary of design principles and final guidance for aspiring social robotics engineers. Principle one: start with people. Understand their needs, norms, and contexts before choosing technologies. Principle two: design for clarity. Every signal, word, gaze, and motion should make the robot's state and intention legible. Principle three: respect culture and individuals. Adapt to local norms and personal preferences through co design and personalization. Principle four: build trust through honesty. Communicate capabilities and limitations plainly; never manipulate emotions. Principle five: prioritize safety and privacy at every layer of design. Protect people physically with reliable motion and protect their personal data fiercely with strong security and minimal collection. Principle six: evaluate relentlessly. Test with real users in real settings and iterate on evidence. Principle seven: keep humans in charge. Robots serve human authority and human goals. Principle eight: design for failure. Interactions will surely break at times; graceful repair and honest apology preserve relationships when things go wrong. Principle nine: be inclusive in every design decision. Serve people of diverse abilities, languages, ages, and backgrounds with equal care and thoughtfulness. Principle ten: reflect continuously. Social robots affect lives in profound ways; ongoing ethical reflection is an integral part of responsible engineering practice that never truly ends. Carry these ten guiding principles into every social robotics project you undertake from this day onward in your career.
+
+Let me also offer study habits that make social robotics skill permanent. First, observe people in service interactions everywhere: banks, hospitals, markets; note how humans greet, explain, and repair misunderstandings. Second, practice dialogue design: write conversation flows for a reception robot and test them aloud with friends. Third, code nonverbal behavior: implement gaze and gesture rules in simulation and watch how they change interaction feel. Fourth, evaluate honestly: run small user studies for every prototype and record both praise and confusion. Fifth, read across disciplines: psychology, linguistics, and design literature enrich your engineering. Sixth, keep an ethics journal for your projects: decisions about data, autonomy, transparency, and user wellbeing written down with clear reasons for each decision made. Seventh, build a strong portfolio: a dialogue system, a nonverbal behavior demo, and a documented user evaluation. These good habits compound over years into real professional expertise.
+
+Let me also describe a full design workflow you can follow for any social robotics project. Stage one: user research. Interview and observe intended users in their environments; document norms, needs, and constraints. Stage two: define the robot's role and interaction principles in one page: what it does, how it communicates, and what values it upholds. Stage three: prototype interactions rapidly with wizard of oz methods, testing dialogue and behaviors before building full autonomy. Stage four: build the technical system: speech, vision, motion, and dialogue modules integrated on your platform. Stage five: evaluate with representative users in realistic settings using mixed methods: task success, questionnaires, and behavioral observation. Stage six: iterate based on evidence, improving interaction and reliability together. Stage seven: deploy carefully with monitoring, feedback channels, and ongoing support. Stage eight: reflect and document, publishing lessons for the community. Following this workflow keeps projects human centered and technically sound from start to finish. Budget time generously for user research and evaluation; teams that skip these stages pay later with rework and rejection. Build relationships with your user communities; trust and cooperation make every stage smoother and more honest. And remember that social robotics projects live or die by interaction quality: a robot with imperfect perception but delightful interaction often serves better than a technically perfect robot that feels cold and confusing. Polish the human experience with the very same rigor you apply to algorithms and models. Measure interaction quality as seriously as you measure accuracy and speed, and your social robots will be welcomed warmly wherever they serve people in need.
+
+As you embark on projects, remember that social robotics is young and full of opportunity, especially for African contexts where respectful, multilingual, locally adapted robots can extend education, healthcare, and services dramatically. Build prototypes, study users, share findings, and contribute to the growing community. Your work can shape how societies welcome robots into daily life.
+
+Social robotics designs robots that interact naturally and helpfully with people. Master it, and you can build machines that serve society with grace and respect. Thank you for your attention and your effort. I will see you in the next lecture.
+
+Glossary of Key Terms
+
+Social robotics: robots interacting with people in socially appropriate ways. Social attribution: humans assigning mental states to robots. Uncanny valley: discomfort near human like but imperfect robots. Turn taking: conversational alternation between speakers. Grounding: establishing mutual understanding in conversation. Dialogue management: controlling conversation flow and state. Intent classification: recognizing user goals from language. Slot filling: extracting structured details from speech. Code switching: alternating between languages in speech. Prosody: rhythm, stress, and intonation of speech. Gaze: eye or head direction as social signal. Shared attention: joint focus on the same object. Deictic gesture: pointing gestures referring to objects or places. Proxemics: norms of interpersonal distance. Personal space: comfortable distance zone around a person. Affect: emotional expression and recognition. Emotional expression: conveying affect through face, voice, motion. Empathy in design: adapting to user emotional states functionally. Personalization: adapting behavior to individual users. User modeling: representing user preferences and history. Inclusive design: design serving diverse abilities and needs. Cultural adaptation: fitting interaction to cultural norms. Calibrated trust: user reliance matching robot reliability. Acceptance: user willingness to adopt and use robots. Usability testing: evaluating ease and effectiveness of use. Wizard of oz study: hidden human control exploring concepts. Longitudinal study: evaluation over extended time. Behavioral measure: observed user behavior as evaluation data. Co design: designing with users as partners. Transparency: openness about robot capabilities and data. Data minimization: collecting only necessary personal data. Attachment: emotional bonding with robots. Vulnerable populations: groups deserving extra protection. Dual use: technology with beneficial and harmful potential.
+
+Exercises for Students
+
+One: explain social attribution and why it matters in robot design. Two: describe the speech interaction pipeline and one robustness challenge. Three: explain how gaze supports turn taking and shared attention. Four: describe proxemics and how robots should approach people. Five: explain honest emotional expression in robots with examples. Six: compare personalization and cultural adaptation with examples. Seven: explain calibrated trust and how design supports it. Eight: describe two evaluation methods for social robots and when each suits. Nine: propose a social robot application for a Nigerian context and outline its interaction design. Ten: discuss two ethical issues in social robotics and how responsible design addresses them.
+
+END OF AI 312 LECTURE NARRATION

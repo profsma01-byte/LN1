@@ -1,0 +1,324 @@
+================================================================
+BACHELOR OF ARTIFICIAL INTELLIGENCE AND ROBOTICS ENGINEERING
+COURSE: AI 110 - HUMAN-ROBOT INTERACTION
+COMPREHENSIVE SPOKEN LECTURE NARRATION
+Style: Spoken lecture for reading aloud or text-to-speech
+Language: Simple English | Includes real-life practicals
+Length: 5,000+ words | Speaking time: about 40 to 45 minutes
+================================================================
+
+PART 1 - WELCOME: WHEN ROBOTS MEET PEOPLE
+
+Good morning, everyone, and welcome to AI 110, Human-Robot Interaction. Up to now, you have studied robots as machines: their motors, sensors, brains, and control systems. Today we study the most important relationship in robotics: the relationship between robots and people.
+
+Human-robot interaction, usually shortened to HRI, is the field that studies how people and robots work, communicate, and live together. It asks deep and practical questions. How should a robot ask for help? How should it signal what it will do next? Should a robot have a face? Should it have a name? How close should it stand to a person? How do we measure whether people trust it? And what happens when things go wrong?
+
+HRI matters because robots are leaving factories and entering human spaces: hospitals, hotels, airports, farms, classrooms, and homes. A robot that works perfectly in a lab can fail completely in a busy hospital corridor if it confuses nurses, blocks stretchers, or frightens patients. Technical performance is only half the story. Social performance is the other half.
+
+This course sits at the crossroads of engineering, psychology, and design. You will learn to think about people as carefully as you think about motors. By the end of this lecture, you will understand the main styles of human-robot teamwork, the channels robots use to communicate, the science of trust and usability, the methods researchers use to study people with robots, and the ethical duties that come with building social machines.
+
+Let me say this clearly: the engineers who understand people will build the robots that change the world. This course teaches you to be one of them.
+
+PART 2 - WHAT IS HUMAN-ROBOT INTERACTION?
+
+Let us define the field carefully.
+
+Human-robot interaction studies the design, evaluation, and use of robots that work with and for people. It is a subfield of both robotics and human-computer interaction, but it has unique challenges because robots are physical. A software assistant on a screen can be annoying; a robot in a corridor can be dangerous. A chatbot can be ignored; a robot with a face can evoke real emotions. Presence in physical space changes everything.
+
+HRI research looks at three big dimensions. First, the task: what are human and robot doing together? Are they teammates on a factory floor, or is the robot a tool the person commands? Second, the interaction: through what channels do they communicate? Speech, gesture, screens, lights, movement? Third, the relationship: how do people perceive the robot? As a machine, a partner, a pet, a servant, or a colleague?
+
+Levels of autonomy, which you met in robotics fundamentals, shape HRI deeply. A teleoperated robot is a tool in human hands: the interaction is like driving. A supervisory robot works alone but asks for help at key moments: the interaction is like managing a worker. A fully autonomous teammate shares initiative: the interaction is like dancing with a partner. Each level needs different interfaces, different trust, and different safety measures.
+
+Real-life examples of HRI already around us. The robot vacuum in a home: people must learn to trust it around furniture and pets. Delivery robots on sidewalks: pedestrians must understand their intentions to pass safely. Surgical robots: surgeons must control them with precision and feel. Social robots in malls greeting customers: they must be friendly without being annoying. Every one of these is an HRI design problem.
+
+A useful habit: whenever you see a robot serving people, watch the humans. Do they hesitate? Do they smile? Do they avoid it? Do they understand what it is doing? Those observations are raw HRI data, and noticing them trains the empathy that this field requires.
+
+PART 3 - STYLES OF TEAMWORK: FROM TOOL TO TEAMMATE
+
+Let us map the ways humans and robots can relate in work.
+
+Tool relationship. The human commands; the robot obeys. A surgeon moving a robotic arm with a joystick. A hobbyist flying a drone. The design goal here is transparency and precision: the machine must respond exactly and predictably, like a well-made instrument.
+
+Assistant relationship. The robot handles routine work and asks for help at boundaries. A warehouse robot fetching shelves to a human picker. A robot arm presenting tools to a mechanic. The design goal is smooth handovers: the robot must know when it is confident and when to ask.
+
+Teammate relationship. Human and robot share goals and initiative. A rescue team with a search robot exploring rubble: the robot suggests routes, the human makes final calls. The design goal is common ground: both must understand the plan and each other's state.
+
+Companion relationship. The robot supports people emotionally or socially. A companion robot for elderly people, reminding medications and providing conversation. A therapeutic robot for children with autism practicing social skills. The design goal is engagement and care without deception.
+
+Subordinate relationship. The robot follows strict rules under human authority, like a forklift-like carrier in a factory under a supervisor. The design goal is reliability and clear status reporting.
+
+Each style demands different engineering. A teammate needs communication bandwidth and mutual modeling. A companion needs personality and emotional intelligence. A tool needs precision and low cognitive load. Choosing the right style for the context is the first HRI design decision, and mismatch causes failure. Imagine a companion robot acting like a strict tool in a nursing home, or a tool acting playful during surgery. Context decides.
+
+Practical insight for your projects: write one sentence defining the relationship before you design the interface. Example: the robot is an assistant that carries trays in a cafeteria and asks for help at doorways. That sentence guides every later choice.
+
+PART 4 - COMMUNICATION CHANNELS: HOW ROBOTS SPEAK AND LISTEN
+
+Robots and people must understand each other. Let us tour the channels.
+
+Voice. Spoken language is the most natural channel. People can ask questions, give commands, and hear explanations. Modern speech recognition and synthesis, which you met in NLP, make this practical. But challenges abound: accents, background noise in a market, overlapping speech, and code-switching between English and local languages. Design tip: keep commands simple, confirm critical actions, and always provide a non-voice fallback.
+
+Gesture. People point, wave, and signal naturally. A robot that understands pointing can follow a human's indication toward an object. Robots can also gesture: an arm extending toward a path shows intention. Gesture is fast and language-free, useful in noisy factories.
+
+Gaze and head orientation. Where a robot looks tells people what it attends to. A service robot glancing toward a door signals it wants to pass. Research shows gaze makes robots more legible and more socially present.
+
+Body movement and proxemics. How a robot moves through space communicates volumes. Approaching slowly and curving slightly is polite; rushing straight at a person is threatening. Proxemics, the study of personal space, guides how close robots may stand. Different cultures have different comfort distances; designs must adapt.
+
+Lights, sounds, and screens. LED rings signal states: green means working, orange means asking for help, red means fault. Simple sounds confirm actions. Small screens show text or icons. These channels are cheap, clear, and often better than pretending to be human.
+
+Physical contact. Some robots guide by touch: a robotic white cane for the visually impaired, or a wearable exoskeleton. Touch is intimate and powerful, demanding the highest safety and consent standards.
+
+Design principle: use multiple channels together, called multimodal interaction. Saying "excuse me" while slowing and turning on an amber light is far clearer than any single channel. Redundancy creates understanding.
+
+Real-life case: airport guide robots. They combine speech, screen displays, gaze, and movement. When asked for directions, the robot turns its body toward the gate, shows a map on its chest screen, and says "follow me." People understand instantly. That clarity is deliberate HRI design.
+
+PART 5 - UNDERSTANDING PEOPLE: TRUST, USABILITY, AND COGNITION
+
+To design for people, we must understand people. Let us meet key ideas from psychology and usability.
+
+Trust is the foundation. If people do not trust a robot, they will not use it, no matter how capable it is. If they over-trust it, they will rely on it blindly and get hurt when it fails. The goal is calibrated trust: people should trust the robot exactly as much as it deserves. How do we build calibrated trust? Transparency about capabilities and limits, consistent behavior, clear communication of uncertainty, and honest failure handling. When a robot says "I am not sure where the exit is; let me find a staff member," trust grows. When it guesses confidently and is wrong, trust dies.
+
+Usability measures how easily people can use a system. Learn the classic criteria: effectiveness, can people complete tasks; efficiency, how much effort it takes; satisfaction, how people feel about it; and safety. A robot that completes deliveries but terrifies nurses fails usability.
+
+Cognitive load. Every interface demands mental effort. A robot that speaks in jargon, moves unpredictably, or needs constant commands burdens the human. Good design reduces cognitive load: predictable behavior, clear signals, sensible defaults. Think of how a good car works: you drive without thinking about the engine.
+
+Situational awareness. In teamwork, humans must know what the robot is doing and why. If a robot suddenly turns away, is it broken, working, or avoiding danger? Clear status communication maintains shared awareness. The display saying "recharging, back in 10 minutes" prevents confusion and alarm.
+
+Mental models. People hold inner pictures of how things work. If a robot looks like a person, people expect human-level understanding and get disappointed. If it looks like a tool, people expect mechanical behavior. Design the appearance to set honest expectations. A delivery robot shaped like a friendly cart with clear lights sets a truthful mental model.
+
+Errors and recovery. Humans make mistakes; robots make mistakes; teams must recover together. Design for graceful failure: the robot should detect confusion, slow down, explain, and offer options. Recovery behavior matters more than perfect behavior.
+
+Practical habit: after any demo of your robot project, watch people use it without your help for five minutes. Their confusion points are your design improvements. Usability is learned from observation, not assumption.
+
+PART 6 - DESIGNING ROBOTS FOR SOCIAL SPACES
+
+When robots enter public spaces, they become social actors. Let us study the design of socially acceptable robots.
+
+Appearance. Should a robot look human, animal, or machine? Human-like robots, androids, can engage people deeply but risk the uncanny valley: when a robot is almost human but slightly wrong, people feel revulsion. Animal-like robots, such as seal-like companions in elder care, invite affection without demanding human-level conversation. Machine-like robots with clear industrial design set honest expectations. The wisdom: choose appearance for the relationship you want and the expectations you can meet.
+
+Personality and voice. A friendly, calm voice suits a hospital; an energetic voice suits a children's museum. Personality consistency matters: a robot that is playful one moment and stern the next confuses people. Designers often create a character brief, as animators do, to keep behavior coherent.
+
+Politeness and etiquette. Social spaces have rules. Robots should not block doorways, should announce turns, should keep polite distances, and should yield to people. In many cultures, queues and greetings matter; robots that respect these norms are accepted faster. Local cultural awareness is essential: a robot in Ibadan should greet appropriately and respect local norms of deference and space.
+
+Announcing intention. The single most valuable social design: make the robot's next move obvious. Before turning, it slows and signals. Before stopping, it eases. Before approaching, it greets. Predictability breeds comfort.
+
+Privacy in shared spaces. Robots with cameras in homes and hospitals capture intimate moments. Designers must minimize data capture, signal recording clearly, provide off switches, and store data responsibly. People must feel their space is respected.
+
+Noise and aesthetics. Beeping constantly annoys people; silent sneaking scares them. Sound design that is informative and gentle is a craft. The robot's look and sound are part of its safety.
+
+Real-life case: hospital delivery robots. Successful ones look friendly but not human, speak politely, wait for elevators with visible patience signals, and pause for stretchers. Nurses come to see them as helpful colleagues. That acceptance was designed, not accidental.
+
+PART 7 - METHODS: HOW WE STUDY PEOPLE WITH ROBOTS
+
+HRI is an evidence-based field. Let me introduce its methods so you can evaluate robots scientifically.
+
+The Wizard of Oz method. A hidden human controls the robot's smart behavior while participants believe it is autonomous. This lets researchers test interaction designs before building full autonomy. It is honest when participants are debriefed afterward, and it saves months of engineering.
+
+User studies. Real people perform tasks with the robot while researchers measure performance and experience. Typical measures: task completion time, success rate, number of errors, distance kept from the robot, and subjective ratings on questionnaires. Standard questionnaires like the System Usability Scale and Godspeed questionnaire for perceived robot qualities give comparable numbers.
+
+Ethnographic field observation. Watching robots used in real settings for days or weeks: a hospital, a factory, a mall. This reveals what lab tests miss: how people adapt, work around, and creatively misuse systems.
+
+Think-aloud protocols. Users speak their thoughts while using the robot, revealing confusion and mental models.
+
+Physiological measures. Heart rate, skin conductance, and eye tracking show stress and attention that people may not report. A robot that startles users shows spikes in physiology even if users say nothing.
+
+Longitudinal studies. Watching how relationships with robots change over weeks: novelty wears off, habits form, trust stabilizes. First impressions are not the whole story.
+
+Ethics of study. Participants give informed consent. Data is anonymized. Vulnerable groups, like children and elderly people, are protected with extra care. Research ethics boards review studies before they begin.
+
+For your projects: run small user studies even for coursework. Five classmates using your robot for five minutes each will reveal more than fifty hours of solo testing. Write down what confuses them. Fix it. Repeat. That loop is the heart of human-centered robotics.
+
+PART 8 - HRI APPLICATIONS AROUND THE WORLD AND AROUND YOU
+
+Let us tour applications where HRI expertise decides success.
+
+Healthcare. Surgical robots extend surgeons' precision; the interface must feel like an extension of the hand. Rehabilitation robots coach patients through exercises with encouragement and adaptation. Care robots in nursing homes provide companionship and reminders. Each demands trust, safety, and empathy in design.
+
+Education. Tutoring robots teach languages and mathematics to children, adjusting to their pace. They must motivate without discouraging, and manage attention and distraction. Studies show children learn well from patient robot tutors when teachers remain in the loop.
+
+Industry and logistics. Cobots work beside people in factories; HRI design prevents injuries and builds fluent teamwork. Warehouse robots coordinate with pickers; clear signals make the dance of goods and people efficient.
+
+Service and hospitality. Robots deliver room service in hotels, serve food in restaurants, and guide visitors in airports and museums. Acceptance depends on politeness, clarity, and reliability.
+
+Agriculture. Robots that harvest alongside farmers, or that provide advisory information by voice in local languages, must fit real workflows and real constraints of connectivity and literacy.
+
+Home. Robot vacuums, lawn mowers, and companion robots live intimately with families, pets, and children. Safety, quietness, and trust are daily requirements.
+
+Public safety and rescue. Robots exploring dangerous sites work under extreme stress with human teams. Communication clarity saves lives.
+
+Accessibility. Robots and robotic devices assist people with disabilities: robotic wheelchairs, guide robots for the visually impaired, sign-language communicating robots. Design must center dignity and autonomy of users.
+
+For your community thinking: imagine a robot guide at a local hospital, a companion for elderly people living alone, or a teaching assistant in primary schools with large classes. Each is an HRI project with real heart.
+
+PART 9 - ETHICS AND RESPONSIBILITY IN HRI
+
+With social presence comes responsibility. Let us face the ethics directly.
+
+Deception. Should robots pretend to have feelings? People bond with companions that coo and blink. But deception risks manipulation and disappointment. The ethical path: suggest warmth without claiming sentience; be honest about what the machine is.
+
+Attachment and grief. Elderly people have wept when companion robots were taken away for maintenance. Children name and love robots. Designers must plan for attachment honestly, handling farewells and replacements with care.
+
+Privacy. Social robots see and hear life at its most intimate. Consent, data minimization, and security are duties, not features.
+
+Labor and dignity. Robots that replace jobs must be introduced with respect for workers: retraining, redesign of roles, and honest consultation. Robots should reduce drudgery, not humanity.
+
+Vulnerable users. Children, elderly people, and people with cognitive disabilities may not judge robots' limits. Designs must protect them from over-trust and confusion.
+
+Cultural respect. Norms of politeness, personal space, gender interaction, and authority differ across cultures. A robot deployed in Oyo State should behave differently from one in Seoul. Local people should be involved in design.
+
+Accountability. When a robot harms or offends, who answers? The company, the owner, the programmer? Clear accountability chains must exist before deployment.
+
+Practical framework: before deploying any social robot, ask five questions. Is it honest about what it is? Does it protect privacy? Does it respect local culture? Does it reduce or increase harm? And is there a human who remains responsible? Passing this checklist is the mark of responsible HRI engineering.
+
+PART 10 - PRACTICAL LAB: DESIGN AN HRI CONCEPT
+
+Let me guide a design exercise you can do this week.
+
+Choose a setting: a hospital, a school, an airport, a market, or a farm. Define one task the robot will do with people: delivering items, guiding visitors, teaching, or collecting information.
+
+Step one, define the relationship style in one sentence. Example: the robot is an assistant that delivers medicines in a hospital and asks nurses for help at doors.
+
+Step two, sketch the robot's appearance and name its channels: what it looks like, how it speaks, what lights it uses, how it signals intention.
+
+Step three, storyboard three interactions. Draw simple frames: meeting a person, working together, and handling a problem. Write what the robot does and says in each.
+
+Step four, list risks: what if people crowd it, ignore it, or fear it? Write one mitigation for each.
+
+Step five, plan a mini user study: five participants, two tasks, three questions afterward.
+
+Step six, present to classmates and collect feedback. Notice what confuses them in your concept; confusion in the story predicts confusion in reality.
+
+This design exercise builds the front half of HRI skill: empathy, clarity, and foresight. In later robotics courses you will build the back half: the code and hardware that bring the design to life.
+
+PART 11 - STUDY QUESTIONS WITH MODEL ANSWERS
+
+Question one: What is calibrated trust and why does it matter? Model answer: Calibrated trust means people trust a robot exactly as much as its real abilities deserve. Over-trust leads to blind reliance and accidents; under-trust leads to rejection of useful robots. Transparency and honest communication build calibration.
+
+Question two: Why can human-like robot appearance backfire? Model answer: It sets expectations of human intelligence and emotion. When the robot falls short, the uncanny valley effect and disappointment follow. Appearance should match actual capability.
+
+Question three: Name three channels robots use to communicate and one advantage of each. Model answer: Voice, natural for questions and answers; lights, simple and instantly readable for status; movement, communicates intention without words in noisy places.
+
+Question four: What is the Wizard of Oz method? Model answer: A hidden human controls the robot's smart behavior while users believe it is autonomous. It tests interaction designs before full autonomy is built, with ethical debriefing of participants.
+
+Question five: How should a robot behave when confused in a public space? Model answer: Slow down, stop safely, signal its state clearly, explain briefly, and ask for human help rather than guess. Graceful failure preserves safety and trust.
+
+Question six: Why must social robots respect local culture? Model answer: Norms of space, politeness, gender, and authority vary. Robots that ignore local norms offend and are rejected. Cultural fit, developed with local input, enables acceptance and trust.
+
+PART 12 - GLOSSARY AND CLOSING RECAP
+
+Human-robot interaction: the field of designing and studying robots that work with people.
+
+HRI: the common abbreviation for human-robot interaction.
+
+Teleoperation: a human controlling a robot directly, like a tool.
+
+Supervisory control: the human supervising a mostly autonomous robot.
+
+Trust calibration: aligning user trust with robot reliability.
+
+Usability: how easily and effectively people can use a system.
+
+Cognitive load: the mental effort an interface demands.
+
+Situational awareness: knowing what is happening in the shared work.
+
+Mental model: a person's inner picture of how a system works.
+
+Uncanny valley: discomfort with robots that look almost human.
+
+Proxemics: the study of personal space and distance.
+
+Multimodal interaction: using several communication channels together.
+
+Wizard of Oz: hidden human control simulating robot intelligence in studies.
+
+Think-aloud protocol: users speaking thoughts during tasks.
+
+Godspeed questionnaire: a standard tool for measuring perceived robot traits.
+
+System Usability Scale: a standard usability questionnaire.
+
+Ethnographic observation: studying robots in real settings over time.
+
+Graceful failure: handling errors in ways that preserve safety and trust.
+
+Companion robot: a robot providing social or emotional support.
+
+Cobot: a robot designed to work safely beside people.
+
+To recap. We defined HRI as the meeting of robots and people. We mapped teamwork styles from tool to teammate to companion. We toured communication channels: voice, gesture, gaze, movement, lights, and touch. We studied people through trust, usability, cognitive load, and mental models. We designed robots for social spaces with honest appearance and clear intention. We learned research methods from Wizard of Oz to field studies. We surveyed applications in health, education, industry, and homes. We faced the ethics of deception, attachment, privacy, and culture. And we designed an HRI concept with our own hands.
+
+Your exercises. First, watch any robot video online and write three sentences on what the robot communicates well and one thing it communicates poorly. Second, sketch a robot for a local setting and label its communication channels. Third, explain to a friend why over-trust is as dangerous as under-trust. Fourth, run your mini design concept past two people and note their confusion points.
+
+PART 13 - CAREERS, FUTURE TRENDS, AND FINAL REFLECTIONS
+
+Let me close by opening doors: where does HRI expertise take you professionally?
+
+User experience researcher for robotics companies, studying how people use robots and guiding design with evidence. This role blends psychology and engineering and is in high demand as robots enter consumer markets.
+
+HRI designer or interaction designer, shaping how robots look, speak, and behave. If you have both technical skill and creative empathy, this is a beautiful path.
+
+Social robotics engineer, building companion, education, and service robots end to end, from sensors to personality.
+
+Usability and safety specialist, testing robots before deployment in hospitals, airports, and factories, ensuring standards and trust.
+
+Accessibility engineer, building robotic devices with and for people with disabilities, centering dignity and autonomy.
+
+Founder and product builder: Africa needs locally designed service robots: hospital assistants, teaching aids for crowded classrooms, agricultural advisors speaking local languages. Understanding HRI is your advantage in building products people actually accept.
+
+Future trends to watch. Shared autonomy: robots and AI systems that adapt their level of control to each user's skill, taking more initiative with novices and less with experts. Explainable robots: machines that can explain their decisions in plain language, building trust in self-driving cars and medical systems. Emotion-aware systems: robots that sense stress or confusion through voice and posture and respond with patience. Group HRI: robots interacting not with one person but with teams and crowds, a much harder and richer problem. And culturally adaptive robots that change etiquette and communication style by context.
+
+Final reflections. Human-robot interaction taught you that engineering is never only about machines. Every robot you build will enter a human world: someone's home, someone's hospital, someone's street. The quality of that meeting, clear or confusing, safe or threatening, respectful or intrusive, is your responsibility as its maker. Technical brilliance that ignores people is incomplete engineering.
+
+Carry three habits forward. First, watch people struggle with technology and imagine how it could greet, guide, and explain better. Second, design the interaction before the mechanism; know what the robot should communicate, then build the body that carries the message. Third, test with real people early and often; their confusion is your curriculum.
+
+This has been Human-Robot Interaction. You have learned to see robots as social partners, to communicate through many channels, to build calibrated trust, to design for real spaces, and to study people with scientific care. Go build machines that people understand and welcome. The future of robotics will be written by engineers who care about both circuits and hearts.
+
+PART 15 - ADDITIONAL PRACTICAL SCENARIOS FOR HRI
+
+Scenario one: a restaurant food delivery robot. The robot carries dishes from kitchen to tables. It must navigate a crowded room, announce itself politely at tables, and never startle guests. Lights show its path intention; a friendly voice says your meal has arrived. When a child runs into its path, it stops smoothly and waits. Success here is measured not only in dishes delivered but in guests smiling rather than flinching.
+
+Scenario two: a robot receptionist in a government office. Visitors ask about forms and queues. The robot understands speech, points toward the right counter, and displays the required documents on its screen. When it does not understand, it calls a human clerk without embarrassment. Older visitors get slower, clearer speech; younger visitors get quick directions. Adaptation to the person in front of it is the design heart.
+
+Scenario three: a teaching robot in a primary school with large classes. The robot leads phonics practice in small groups while the teacher handles the rest of the class. It praises effort, repeats patiently, and reports progress to the teacher. Children treat it as a friendly helper, never as a replacement for the teacher. The teacher remains the authority; the robot multiplies attention.
+
+Scenario four: a farm advisory robot or kiosk. A farmer speaks a question in Yoruba or Pidgin about maize disease; the system answers with voice and simple pictures, showing treatment steps. Low literacy is no barrier. Trust grows because answers are verified by agronomists and updated with the seasons.
+
+Scenario five: a disinfection robot in a clinic. The robot moves through rooms emitting sanitizing light. It must announce its operation clearly, keep people safe from its ultraviolet light, and schedule itself around patients. Clear signals and strict safety choreography turn a powerful machine into a welcome worker.
+
+Scenario six: a museum guide robot that adapts to visitors. It detects whether a group lingers or moves quickly, and adjusts its stories accordingly. Children get playful questions; adults get deeper context. The interaction is a conversation, not a lecture tape.
+
+In each scenario, notice the recurring principles you learned: announce intention, respect space and culture, adapt to the person, fail gracefully, keep humans in charge of what matters. Master these, and any robot you design will meet people well.
+
+PART 16 - FINAL DESIGN PRINCIPLES CHEAT SHEET
+
+Let me leave you with a compact design principles cheat sheet for any human-robot project.
+
+Principle one: be legible. A person should always be able to tell what the robot is doing and what it will do next. Announce turns, signal stops, show status.
+
+Principle two: be predictable. Surprise is the enemy of trust. Smooth, consistent behavior lets people form accurate mental models and move around the robot confidently.
+
+Principle three: be honest. Do not promise intelligence you do not have. Match appearance and voice to actual capability, and let the robot admit uncertainty.
+
+Principle four: respect humans. Personal space, culture, privacy, and time are sacred. Design for the people in front of you: children, elderly people, busy workers, anxious patients.
+
+Principle five: fail gracefully. When confused or wrong, slow down, explain simply, and ask for help. Recovery behavior earns more trust than perfect behavior ever will.
+
+Principle six: keep humans in charge. People set goals and make final calls; robots execute and suggest. Autonomy is a tool in human service, not a replacement for human judgment.
+
+Principle seven: test with people early. Five minutes with five real users beats five weeks of assumption. Their confusion is your design review.
+
+Principle eight: design for the team, not the robot alone. The workflow, the space, the other machines, and the organization all shape success. The robot is one actor in a human system.
+
+Tape this cheat sheet inside your project notebook. When you design your first social robot, your first cobot workflow, or your final-year project interface, these principles will keep you on the human-centered path. The best robots in history were built by engineers who followed exactly these instincts.
+
+PART 17 - LAST WORDS ON HRI
+
+One last reflection before we close. Human-robot interaction is ultimately about humility: acknowledging that the people who use our robots know things we do not. The nurse knows the corridor rush at shift change. The teacher knows which child loses confidence after a mistake. The farmer knows how rain changes the path to the field. Great HRI engineers collect that knowledge, design with it, and test against it. Technology serves best when it kneels to understand the people it hopes to lift. Carry that humility into every project, and your robots will be welcomed wherever they go.
+
+And one practical assignment to seal the course. Within two weeks, interview three people in your community about robots they have seen on television or in real life: what excited them, what worried them, and what they would want a robot to do for them. Write one page summarizing their answers and what design lessons you draw. Voices from real people are the truest textbook of human-robot interaction. Use them well.
+
+Thank you for your attention and your empathy. I will see you in the next lecture.
+
+================================================================
+END OF AI 110 LECTURE NARRATION
+================================================================

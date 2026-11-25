@@ -1,0 +1,328 @@
+================================================================
+BACHELOR OF ARTIFICIAL INTELLIGENCE AND ROBOTICS ENGINEERING
+COURSE: AI 107 - DATA STRUCTURES AND ALGORITHMS
+COMPREHENSIVE SPOKEN LECTURE NARRATION
+Style: Spoken lecture for reading aloud or text-to-speech
+Language: Simple English | Includes real-life practicals
+Length: 5,000+ words | Speaking time: about 40 to 45 minutes
+================================================================
+
+PART 1 - WELCOME: THE ENGINEERING OF EFFICIENT THINKING
+
+Good morning, everyone, and welcome to AI 107, Data Structures and Algorithms. If artificial intelligence is the brain of modern technology, then data structures and algorithms are the backbone that holds everything upright. Every app on your phone, every website you visit, every robot that moves, and every AI model that trains depends on how data is organized and how problems are solved step by step.
+
+Let me tell you what this course will do for you. You will learn how to organize data so that computers can use it efficiently. You will learn how to solve problems in a structured way. You will learn to measure how fast and how efficient your solutions are. And you will learn the classic building blocks that appear everywhere in software engineering and AI systems: arrays, lists, stacks, queues, trees, graphs, and hash tables, together with the famous algorithms that operate on them.
+
+A word of comfort before we begin. Some students hear algorithms and feel fear. Let me remove that fear now. An algorithm is simply a recipe. When you make jollof rice, you follow steps: parboil rice, fry the tomato base, add spices, add stock, simmer. That is an algorithm. When you arrange books on a shelf from smallest to largest, that is a sorting algorithm. You already think in algorithms every day. This course simply teaches you to write those recipes clearly, measure them honestly, and choose the best one for the job.
+
+By the end of this lecture, you will understand why organization matters, how to count the cost of an algorithm, and how the main data structures work with real-life examples you can see around you.
+
+PART 2 - WHY DATA STRUCTURES MATTER: A REAL-LIFE STORY
+
+Let me start with a story that makes the importance of data structures obvious.
+
+Imagine two students working in the university library. Student A keeps a list of every book she has read on a single sheet of paper, in random order. When she needs to find one book, she reads the whole list from top to bottom. Student B keeps his list sorted alphabetically by title. When he needs a book, he opens the list in the middle, decides whether to look in the front half or the back half, and jumps directly there. For a list of one thousand books, Student A may check all one thousand entries. Student B will find the book in about ten checks.
+
+Both students have the same information. The difference is organization. That difference is the essence of data structures. The right organization turns slow, frustrating systems into fast, elegant ones.
+
+Real-life example: your phone contacts. When you search for a name, the phone does not scan every contact in the world. It uses organized structures that find names quickly. When Google answers your search in a fraction of a second, it is not reading every page on the internet line by line. It uses massive indexes, which are specialized data structures, built over years.
+
+In robotics and AI, this matters even more. A self-driving car must decide in milliseconds whether an object is a pedestrian. A robot navigating a warehouse must plan a path across thousands of possible routes. An AI training system must shuffle millions of data examples efficiently. Poor organization makes these tasks impossible; good organization makes them routine.
+
+So today we begin with the central question of this course: how should we arrange data, and how should we process it, so that the work is done with the least time and the least space?
+
+PART 3 - MEASURING EFFICIENCY: BIG-O NOTATION IN PLAIN ENGLISH
+
+Before we meet the structures, we need our measuring tool. How do we compare two solutions fairly? We use Big-O notation.
+
+Here is the idea in plain words. We care about how the running time grows as the input gets bigger. We do not care about tiny details like whether one program runs on a slightly faster laptop. We care about the shape of growth.
+
+Imagine you have n items. O of n, called linear time, means the work grows in proportion to n. If the items double, the work doubles. Checking every student in a class one by one is linear.
+
+O of log n, called logarithmic time, is wonderful. The work grows very slowly. Doubling the input adds only one more step. Binary search on a sorted list is logarithmic: one million items take about twenty checks.
+
+O of n squared, called quadratic time, grows fast and dangerous. Doubling the input quadruples the work. If a program with one thousand items takes one second, ten thousand items might take one hundred seconds. Simple sorting methods like bubble sort are quadratic, and that is why they are avoided for big data.
+
+O of one, constant time, is the dream. The answer comes in the same time no matter how big the input. Looking up a value in an array by its index is constant time.
+
+O of two to the n, exponential time, explodes horribly. It is fine for tiny inputs and useless for large ones. Some brute-force puzzle solvers behave this way.
+
+Space complexity uses the same idea for memory. A solution may be fast but eat too much RAM, which matters greatly in small robots and phones.
+
+Practical wisdom: write a working solution first, then ask its Big-O. If you must process one million records and your solution is O n squared, you have a problem worth redesigning. If your input is only twenty records, O n squared is perfectly fine. Efficiency is always relative to the size of the problem. Hold this ruler in your pocket for the whole course.
+
+PART 4 - ARRAYS AND LINKED LISTS: THE FIRST BUILDING BLOCKS
+
+Let us meet our first data structures: arrays and linked lists.
+
+An array is a row of boxes in memory, all side by side, each holding one value. Each box has an address number, called an index. If you know the index, you jump straight to the value in constant time. Arrays are brilliant for fast access.
+
+But arrays have a weakness. Imagine a row of seats in a lecture hall. If someone must sit in the middle, everyone from the middle onward must shift one seat. Inserting in the middle of an array is expensive. Deleting has the same shifting problem. And arrays need a fixed size declared in advance in many languages; if the class grows, you may need a bigger hall and to move everyone.
+
+A linked list solves this differently. Instead of one row, you have scattered nodes. Each node holds a value and a note of where the next node sits, like a chain of treasure boxes where each box contains a clue to the next box. Inserting in the middle is easy: change two links, like rewiring two clues. But finding the fifth item requires walking the chain from the start. There is no jumping to index five.
+
+Compare them like this. Arrays win at reading by position. Linked lists win at inserting and deleting in the middle when you are already there. Real systems choose based on the job.
+
+Real-life analogy. An array is like a street of houses with house numbers: you can jump to house 47 directly. A linked list is like a scavenger hunt: each clue leads to the next, and you must follow in order.
+
+In practice, most languages provide dynamic arrays, like Python lists or Java ArrayList, which grow automatically. They give fast access plus amortized fast appending. For heavy insertions in the middle, linked lists or other structures may still win.
+
+Now a practical example. Undo in a text editor. When you type, edit, delete, the actions pile up. When you press undo, the most recent action is reversed first. That is not an array; that is something very special we will meet next: a stack.
+
+PART 5 - STACKS AND QUEUES: ORDER MATTERS
+
+Let us talk about two structures defined by how items enter and leave.
+
+A stack is last in, first out. Think of a stack of plates in the cafeteria. The last plate placed on top is the first plate you take. Push adds to the top; pop removes from the top; peek looks at the top without removing.
+
+Real-life stack examples. Undo and redo in editors. Browser back button: pages pile up as you visit, and back pops the most recent. Function calls in programming: when a function calls another function, the system stacks the calls and unwinds them as each finishes. Expression evaluation: compilers use stacks to check matching brackets and parentheses in your code. When you write code with nested brackets, a stack checks they are balanced.
+
+A queue is first in, first out. Think of the line at the bank or the cafeteria. The first person in line is served first. Enqueue adds to the back; dequeue removes from the front.
+
+Real-life queue examples. Print jobs waiting for a printer. Patients waiting at a clinic. Packets of data traveling through a network router. Task scheduling in operating systems. Breadth-first search on graphs, which we will meet later, uses a queue.
+
+A priority queue is a clever variation: items leave not by arrival but by importance. In a hospital emergency room, a critical patient is treated before someone with a minor cut, regardless of arrival order. Priority queues are usually built with heaps, a structure where the highest or lowest priority item sits at the root and can be removed quickly.
+
+Practical insight for AI and robotics. A robot's action queue holds planned tasks. A search algorithm's frontier of states to explore is often a queue or priority queue. When you later study graph search and path planning, you will see these structures doing heavy lifting.
+
+Exercise you can do right now. Open a text editor and notice undo behavior; explain to a friend why a stack fits. Then think of three more queues in your daily life today: at the ATM, in traffic, in a kitchen order system. Naming them trains your engineering eye.
+
+PART 6 - RECURSION: THE ART OF SELF-SIMILAR SOLUTIONS
+
+Let us introduce recursion, one of the most beautiful ideas in computer science. A recursive solution solves a problem by solving a smaller version of the same problem, and then combining the results.
+
+Real-life analogy. Imagine you are in a long line and want to know your position. You ask the person ahead, who asks the person ahead, until the first person answers one. Then the answer passes back: two, three, four, until it reaches you. Each person did the same simple job on a smaller line. That is recursion.
+
+Classic example: computing factorial. Factorial of five is five times factorial of four. Factorial of four is four times factorial of three. And so on, until factorial of one is defined directly as one. The direct case is called the base case; the self-calling case is the recursive case. Every recursion needs both, or it never ends, like two mirrors reflecting forever.
+
+Recursion appears everywhere. Directory trees on a computer: a folder contains files and other folders. To search for a file, you look inside, and for each subfolder you repeat the same search on a smaller scale. Drawing fractals for computer graphics, which you will meet in Computer Graphics. Tree traversals in databases and file systems. Merge sort and quick sort, our next topics. And depth-first search on graphs.
+
+A caution: recursion uses memory for each pending call, the call stack. Deep recursion on huge inputs can exhaust memory, which is why powerful algorithms often have iterative versions too. But as a thinking tool, recursion is gold: it teaches you to see a big problem as a small problem plus a little work. That vision is the heart of algorithmic thinking.
+
+PART 7 - SORTING AND SEARCHING: CLASSIC ALGORITHMS AT WORK
+
+Now the classics: sorting and searching.
+
+Sorting means arranging items in order: numbers ascending, names alphabetically, tasks by deadline. Why bother? Because sorted data enables fast searching, clean reports, and easier reasoning.
+
+Bubble sort compares neighbors and swaps them if they are out of order, repeatedly, like the largest bubbles floating to the surface one by one. Simple to understand, but slow at O n squared. Good for learning, bad for big data.
+
+Selection scan finds the smallest item and places it first, then the smallest of the rest, and so on. Also quadratic.
+
+Merge sort uses divide and conquer and recursion. Split the list in half, sort each half recursively, then merge the two sorted halves into one sorted list. Its time is O n log n, much better for large lists, at the cost of extra memory. It is the workhorse behind many library sort functions and is wonderfully stable and predictable.
+
+Quick sort picks a pivot and partitions the list into smaller and bigger items around it, then sorts each side recursively. Average case O n log n with excellent practical speed; worst case O n squared with unlucky pivots, mitigated by good pivot choice.
+
+Practical guidance: use the built-in sort of your language; it is highly optimized, typically O n log n with real-world tricks. Understand the classics for interviews and for knowing what happens under the hood.
+
+Searching. Linear search checks each item in turn, O n, fine for small or unsorted lists. Binary search requires a sorted list and repeatedly halves the search space: O log n, glorious for large sorted data. Real-life analogy of binary search: guessing a number between one and one thousand by asking only yes-or-no questions, always splitting the range in half. Twenty questions suffice.
+
+Where AI meets sorting and searching. Training data is often sorted or ranked. Recommendation systems rank items by predicted score. Game-playing AI explores moves sorted by promise. Path planning searches maps. The same classics, repurposed.
+
+PART 8 - TREES: HIERARCHY AND FAST LOOKUP
+
+Let us grow a tree. A tree data structure is a hierarchy: one root, branches, and leaves. Family trees, company organograms, folder structures, and decision trees are all trees in life and in computing.
+
+Binary trees have at most two children per node. Binary search trees keep order: left child smaller, right child larger. This ordering allows fast search, insert, and delete, typically O log n when the tree is balanced.
+
+But watch the danger. If you insert sorted data into a simple binary search tree, it becomes a crooked chain, degenerating to O n like a linked list. The cure is self-balancing trees, like AVL trees and red-black trees, which rotate themselves to stay balanced. Databases and language libraries use balanced trees heavily.
+
+Heaps are trees where the parent always beats the children in priority, either always larger or always smaller. The top of the heap is the extreme value, and insertion and removal are O log n. Priority queues, task schedulers, and algorithms like Dijkstra all use heaps.
+
+Tries are trees for strings, where each level represents a letter. Autocomplete in your phone keyboard is powered by tries or similar structures: you type a few letters and suggestions appear instantly because the structure walks the prefix and lists continuations.
+
+Real-life case: a hospital decision tree for triage. Is the patient conscious? Is breathing normal? Is there severe bleeding? Each question branches, and the leaf gives an action: emergency resuscitation, urgent care, or routine queue. Encoding expert knowledge as trees makes decisions fast and consistent.
+
+For AI, decision trees are also machine learning models that you met in AI 103. The structure is the same: questions and branches. The art is choosing questions that split data well.
+
+PART 9 - GRAPHS: THE STRUCTURE OF CONNECTIONS
+
+Now the most general structure of all: the graph. A graph is a set of nodes connected by edges. Graphs model relationships: cities connected by roads, people connected by friendships, computers connected by networks, web pages connected by links, machines connected in a factory.
+
+Two flavors. Undirected graphs are two-way streets: if A connects to B, B connects to A, like a mutual friendship. Directed graphs are one-way streets: A points to B, like a follower on social media.
+
+Weighted graphs give each edge a cost: distance, time, or fuel. Road maps are weighted graphs. Finding the best route is finding the lowest total weight path.
+
+Breadth-first search explores level by level using a queue. It finds the shortest path in terms of number of hops, perfect for social network degrees of connection. Depth-first search dives deep using a stack or recursion, useful for exploring mazes, detecting cycles, and analyzing dependencies.
+
+Dijkstra's algorithm finds the shortest weighted path from a start node to all others, using a priority queue. It is the ancestor of the routing that GPS apps use every day, though modern systems add clever heuristics and real-time traffic data on top.
+
+A-star search adds a smart estimate of remaining distance to goal, guiding the search like a compass. You will meet A-star properly in robotics planning courses.
+
+Real-life graphs around you right now. The internet is a graph. Your social media feed is a graph. The road you will travel home is a graph. The flight network of Nigeria is a graph. When you understand graphs, you see hidden maps everywhere.
+
+Practical project idea: model your campus as a graph. Buildings are nodes; walkways are edges with walking-time weights. Then use Dijkstra to compute the fastest route between any two lecture halls. This is a genuinely useful mini-project that exercises graphs, heaps, and real-world thinking together.
+
+PART 10 - HASH TABLES: THE MAGIC OF INSTANT LOOKUP
+
+Let me show you the most practically important structure in daily software: the hash table, the engine behind Python dictionaries and Java maps.
+
+The dream is instant lookup: given a key, find its value in constant time. The hash table achieves this with a clever trick. A hash function converts the key into a slot number in an array, like a magic machine that turns names into seat numbers. You compute the slot and jump straight there.
+
+For example, hashing the word mango might give slot 17. Hashing banana might give slot 4. Lookup becomes instant.
+
+But magic has glitches. Two different keys can land in the same slot: a collision. Solutions exist: chaining, where each slot holds a small linked list of items; and open addressing, which probes nearby slots. Good hash functions and decent sizing keep collisions rare, so real-world performance is close to constant time.
+
+Where hash tables rule. Database indexing, caching in web servers, counting word frequencies in NLP, storing robot configurations during search, symbol tables in compilers, and every time you write a Python dictionary with square brackets.
+
+Practical caution. Constant-time lookup is average case. Pathological inputs or poor hash functions can degrade performance. And hash tables do not keep order. If you need order, combine with other structures or use balanced trees.
+
+A memory trick. Think of the hash table as the wristband system at a big event. Your name is hashed to a cloakroom number. You do not search the whole room for your bag; you go straight to your number. Collisions are two people given the same number, resolved by a small local queue at that counter.
+
+PART 11 - ALGORITHMIC PARADIGMS: GREEDY, DIVIDE AND CONQUER, DYNAMIC PROGRAMMING
+
+Let me raise the level. Beyond individual algorithms lie paradigms, general styles of solving problems.
+
+Greedy algorithms make the locally best choice at each step, hoping it leads to globally good results. Giving change with the largest coins first is greedy. Greedy works wonderfully for some problems, like building minimum spanning trees of networks, and fails for others, like certain coin systems or knapsack-style problems. Know when the greedy shortcut is safe.
+
+Divide and conquer splits the problem into independent smaller problems, solves each, and combines. Merge sort and quick sort are its children. It is powerful whenever subproblems do not overlap.
+
+Dynamic programming solves problems with overlapping subproblems by solving each small piece once and storing the results. Real-life analogy: a student who solves each past exam question once and files the solutions avoids solving the same question again and again. The classic example is computing Fibonacci numbers: naive recursion recalculates the same values endlessly, while dynamic programming computes each once and reuses. Word wrapping, sequence alignment in bioinformatics, and robot path counting use dynamic programming.
+
+Backtracking explores options, abandons a path as soon as it proves wrong, and backtracks to try another. Solving sudoku and generating permutations use backtracking. It is the disciplined version of trial and error.
+
+Practical advice: when facing a new problem, ask three questions. Can I solve a smaller version and extend it? Do subproblems repeat? Is the locally best choice always safe? Your answers point to the right paradigm.
+
+PART 12 - DATA STRUCTURES AND ALGORITHMS IN AI AND ROBOTICS
+
+Let me connect this course directly to your degree.
+
+Search in AI uses graphs, queues, and priority queues constantly. Games use minimax with alpha-beta pruning to explore possible moves efficiently. A star search in robot path planning uses heuristics and heaps.
+
+Machine learning pipelines sort and shuffle data millions of times during training. Datasets are indexed with hash structures. Feature stores organize data for fast retrieval. The speed of your AI system often depends on basic data handling, not on the model itself.
+
+Robotics runs on real-time constraints. A robot controller must decide within milliseconds. Choosing O n versus O n squared on a hot loop can be the difference between smooth motion and a crashed robot.
+
+Computer vision processes grids of pixels, and image pyramids are trees of resized images. Connected component labeling groups pixels using graph traversal.
+
+Natural language processing tokenizes text into arrays and builds vocabularies with hash tables. Autocomplete uses tries.
+
+Databases, networks, and operating systems beneath all of AI are built from these same structures. When you master them here, you gain literacy in the whole stack.
+
+PART 13 - PRACTICAL LAB: BUILDING YOUR FIRST EFFICIENT PROGRAM
+
+Let me guide a hands-on exercise you can do this week in Python.
+
+Task: manage the contact list of a small business. Requirements: add a contact, find a contact by name quickly, delete a contact, and list all contacts alphabetically.
+
+Version one: store contacts in a plain list and search linearly. Simple but slow for large lists. Measure the time with Python's time module while searching a thousand names.
+
+Version two: store contacts in a dictionary, a hash table. Search becomes nearly instant. Measure again and compare. This is your first real efficiency lesson with your own hands.
+
+Version three: maintain a separate sorted list of names for alphabetical printing, or sort at print time if lists are small. Discuss the trade-off: sorting costs O n log n, but printing happens rarely.
+
+Version four: handle collisions of needs. What if names repeat? Decide whether name is a unique key or store lists per name. Discuss data modeling.
+
+Write a short report: timings for each version, Big-O of each operation, and which version you would deploy for ten contacts versus one million. This exercise converts theory into instinct, and it is exactly the kind of thinking employers test in interviews.
+
+PART 14 - STUDY QUESTIONS WITH MODEL ANSWERS
+
+Question one: Why is binary search faster than linear search, and what must be true first? Model answer: Binary search halves the remaining search space each step, giving O log n. It requires the data to be sorted first; otherwise the halves cannot be trusted.
+
+Question two: Give one real-life example each of a stack and a queue. Model answer: Browser back button is a stack, last page visited is first undone. A printer job line is a queue, first job sent is first printed.
+
+Question three: When would you choose a linked list over an array? Model answer: When frequent insertions and deletions occur in the middle and direct random access is not needed, linked lists avoid shifting costs.
+
+Question four: What is a collision in a hash table and how is it handled? Model answer: Two keys mapping to the same slot. It is handled by chaining, keeping a small list at the slot, or open addressing, probing other slots.
+
+Question five: Explain divide and conquer with merge sort. Model answer: Split the list into halves recursively until single elements remain, then merge sorted halves pairwise in order, achieving O n log n.
+
+Question six: A robot explores a maze to find the exit. Which structure and search would you start with? Model answer: Model the maze as a graph of cells. Use breadth-first search for fewest steps, or A-star with distance-to-exit heuristic for speed.
+
+Try answering aloud in your own words before comparing. That effortful recall builds true mastery.
+
+PART 15 - GLOSSARY AND CLOSING RECAP
+
+Data structure: a way of organizing data for efficient use.
+
+Algorithm: a step-by-step procedure for solving a problem.
+
+Time complexity: how running time grows with input size.
+
+Space complexity: how memory use grows with input size.
+
+Big-O notation: a way to describe growth rate ignoring constants.
+
+Array: contiguous indexed storage with fast access.
+
+Linked list: chain of nodes with references to the next node.
+
+Stack: last in, first out structure.
+
+Queue: first in, first out structure.
+
+Priority queue: items removed by priority, usually implemented with heaps.
+
+Recursion: solving a problem by solving smaller instances of itself.
+
+Base case: the condition that stops recursion.
+
+Sorting: arranging items in order.
+
+Searching: finding an item in a collection.
+
+Binary search: O log n search on sorted data by halving ranges.
+
+Tree: hierarchical structure of nodes with parent-child links.
+
+Binary search tree: ordered tree for fast lookup when balanced.
+
+Heap: tree maintaining priority at the root.
+
+Trie: tree for fast string prefix operations.
+
+Graph: nodes connected by edges modeling relationships.
+
+Breadth-first search: level-order traversal using a queue.
+
+Depth-first search: deep traversal using stack or recursion.
+
+Dijkstra's algorithm: shortest weighted path algorithm using a priority queue.
+
+Hash table: key-value structure with near-instant lookup via hashing.
+
+Collision: two keys mapping to the same slot in a hash table.
+
+Dynamic programming: solving overlapping subproblems once and reusing results.
+
+Greedy algorithm: making locally optimal choices at each step.
+
+Backtracking: exploring options and abandoning failing paths early.
+
+To recap. We defined data structures and algorithms and why efficiency matters. We measured cost with Big-O. We studied arrays and linked lists, stacks and queues, recursion, sorting and searching, trees and heaps and tries, graphs and their traversals, and hash tables. We toured paradigms: greedy, divide and conquer, dynamic programming, and backtracking. We connected everything to AI and robotics, and we built a real program to feel efficiency with our own hands.
+
+Your exercises. First, write the Big-O of finding the maximum in an unsorted list and explain why. Second, implement binary search in Python on a sorted list of your classmates' names and count comparisons. Third, model your family relationships as a tree and your friendships as a graph; write three sentences comparing them. Fourth, redo the contact book lab with a trie-like prefix search so that typing two letters shows matching names.
+
+PART 16 - CLOSING REFLECTIONS AND STUDY HABITS
+
+Let me close with reflections and study habits that will serve you far beyond exams.
+
+Algorithms reward daily practice over weekend marathons. Solve one small problem every day: implement a stack on Monday, binary search on Tuesday, a graph traversal on Wednesday. Ten minutes of daily coding builds reflexes that no cramming can match.
+
+Read other people's code. Open-source repositories are universities in themselves. When you read how someone else implemented a hash table or a shortest path, you learn idioms, edge-case handling, and naming discipline.
+
+Explain aloud. The rubber duck method is famous among programmers: explain your solution to a rubber duck, or to a friend, or to the wall. Gaps in your understanding will surface immediately. When you can explain Big-O with a story about queues at a bank, you truly own the concept.
+
+Respect edge cases. Empty lists, single elements, duplicate keys, disconnected graphs: professionals think about the boundaries first. Interviewers and real users live at the boundaries.
+
+Finally, see beauty in the craft. A well-fitted algorithm, like a well-fitted key in a lock, has elegance. Sorting that runs ten times faster, lookup that happens instantly, a graph search that finds the optimal route: these are quiet triumphs that power the modern world. You are learning the vocabulary of that triumph.
+
+PART 17 - QUICK REFERENCE: CHOOSING THE RIGHT STRUCTURE
+
+Let me give you a practical decision guide you can keep for the rest of your career.
+
+Need fast access by position and the size is known? Use an array. Need constant-time lookup by key? Use a hash table. Need strict order of arrival? Use a queue. Need to reverse the most recent action? Use a stack. Need to keep items sorted while inserting and deleting? Use a balanced tree or sort lazily. Need priority handling? Use a heap-based priority queue. Need to model connections and routes? Use a graph. Need fast prefix search? Use a trie. Need to process overlapping subproblems once? Use dynamic programming.
+
+Worked mini-case one. You are building a robot task scheduler. Tasks arrive over time and must run in arrival order, except urgent tasks that must jump ahead. Choose a priority queue where urgency sets priority, and within the same priority use arrival order. Store completed tasks in a list for logging. Three structures, one clean system.
+
+Worked mini-case two. You are building an AI training data loader that must shuffle examples each epoch and fetch them fast. Keep data in an array for fast indexing, use a pseudo-random shuffle algorithm in place, and iterate sequentially. Simple and efficient.
+
+Worked mini-case three. You are building a campus navigation feature. Buildings are nodes, walkways are weighted edges, and you need the fastest walking route. Use Dijkstra or A-star with a priority queue and adjacency lists. The structures are old; the application is fresh.
+
+When you face a new problem, sketch the operations first: how often will you search, insert, delete, sort, and traverse? Let the operations choose the structure, not habit. That is the professional mindset this course builds.
+
+Data structures and algorithms are the gym of computer science. Train here regularly, and every other course becomes easier. Thank you for your attention and your effort. Keep coding small things every day, and I will see you in the next lecture.
+
+================================================================
+END OF AI 107 LECTURE NARRATION
+================================================================
