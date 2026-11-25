@@ -227,6 +227,10 @@ PART 19 - STUDY HABITS FOR VISION MASTERY
 
 Study habits that make vision skill permanent. First, collect your own image datasets from your own cameras; personal data teaches the realities of your hardware. Second, implement one classical algorithm per month: corner detection, stereo matching, or template tracking; classical depth keeps you grounded when deep tools fail. Third, read one vision paper per month and reimplement a small piece. Fourth, keep a bug book of vision failures with images, causes, and fixes. Fifth, present your work regularly; explaining vision intuitively is a rare and valuable skill. Sixth, collaborate with application domains: the best vision problems come from real needs in industry and health. Seventh, benchmark your systems continuously and track improvements over time. With these habits, robot vision becomes a lifelong craft.
 
+PART 20 - FINAL FAREWELL
+
+A final farewell in this course. You now hold the essentials of robot vision: imaging that captures truth, calibration that grounds geometry, algorithms that extract meaning, and control that turns seeing into doing. Go forward and practice: on simulators first, then on real cameras and real robots. Make mistakes in labs, learn from them thoroughly, and carry the lessons into your professional work. The machines that will build, harvest, heal, and serve across Africa need eyes like the ones you have learned to build. Give them sight that is sharp, honest, and kind to the people it watches.
+
 Robot vision turns camera pixels into robot action. Master it, and you can build machines that see what to do. Thank you for your attention and your effort. I will see you in the next lecture.
 
 Glossary of Key Terms
