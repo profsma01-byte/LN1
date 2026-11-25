@@ -1,0 +1,46 @@
+WORD COUNT REPORT
+PHD IN MARRIAGE AND FAMILY LIFE THERAPY
+TRIUNE BIBLICAL UNIVERSITY GLOBAL EXTENSION, USA
+==============================================================================
+
+Requirement: at least 5,000 words of spoken lecture narration per course subject,
+in simple English, with real life practicals.
+
+MFLT.901   |  14,700 words | PASS | MFLT901_Advanced_Marriage_and_Family_Therapy.txt
+MFLT.902   |  13,958 words | PASS | MFLT902_Advanced_Theories_of_Family_Systems.txt
+MFLT.903   |  13,251 words | PASS | MFLT903_Advanced_Family_Therapy.txt
+MFLT.904   |  13,530 words | PASS | MFLT904_Ethics_in_Marriage_and_Family_Therapy.txt
+MFLT.905   |  12,903 words | PASS | MFLT905_Advanced_Cultural_Competence_in_Therapy.txt
+MFLT.906   |  12,737 words | PASS | MFLT906_Developmental_Psychology_Across_the_Lifespan.txt
+MFLT.907   |  12,884 words | PASS | MFLT907_Advanced_Couples_Therapy_Techniques.txt
+MFLT.908   |  12,649 words | PASS | MFLT908_Advanced_Family_Dynamics_and_Communication.txt
+MFLT.909   |  12,908 words | PASS | MFLT909_Trauma-Informed_Care_in_Family_Therapy.txt
+MFLT.910   |  12,911 words | PASS | MFLT910_Addiction_and_Family_Systems.txt
+MFLT.911   |  12,636 words | PASS | MFLT911_Child_and_Adolescent_Therapy.txt
+MFLT.912   |  12,537 words | PASS | MFLT912_Clinical_Assessment_in_Family_Therapy.txt
+MFLT.913   |  12,524 words | PASS | MFLT913_Intervention_Strategies_for_Families.txt
+MFLT.914   |  12,650 words | PASS | MFLT914_Crisis_Intervention_in_Family_Systems.txt
+MFLT.915   |  12,501 words | PASS | MFLT915_Group_Therapy_for_Families.txt
+MFLT.916   |  12,562 words | PASS | MFLT916_Psychopathology_in_Family_Contexts.txt
+MFLT.917   |  12,776 words | PASS | MFLT917_Advanced_Narrative_Therapy_Approaches.txt
+MFLT.918   |  12,670 words | PASS | MFLT918_Solution-Focused_Therapy_Techniques.txt
+MFLT.919   |  12,596 words | PASS | MFLT919_Play_Therapy_with_Families.txt
+MFLT.920   |  12,307 words | PASS | MFLT920_Research_in_Marriage_and_Family_Therapy.txt
+MFLT.921   |  12,472 words | PASS | MFLT921_Supervision_and_Consultation_in_Therapy.txt
+MFLT.922   |  12,594 words | PASS | MFLT922_Legal_Issues_in_Family_Therapy.txt
+MFLT.923   |  12,243 words | PASS | MFLT923_Advanced_Research_Methodology.txt
+MFLT.924   |  12,439 words | PASS | MFLT924_Integrative_Approaches_to_Therapy.txt
+MFLT.925   |  12,399 words | PASS | MFLT925_Advanced_Couples_Communication_Skills.txt
+MFLT.926   |  12,425 words | PASS | MFLT926_Family_Life_Cycle_and_Therapy.txt
+MFLT.927   |  12,255 words | PASS | MFLT927_Parenting_Interventions_and_Strategies.txt
+MFLT.928   |  12,486 words | PASS | MFLT928_Sexuality_and_Intimacy_in_Relationships.txt
+MFLT.929   |  12,325 words | PASS | MFLT929_Systemic_Family_Therapy_Models.txt
+MFLT.930   |  12,243 words | PASS | MFLT930_Professional_Development_and_Self-Care.txt
+MFLT.931   |  12,043 words | PASS | MFLT931_Advanced_Approach_Research_and_Writing.txt
+MFLT.960   |  12,192 words | PASS | MFLT960_Dissertation.txt
+
+------------------------------------------------------------------------------
+TOTAL: 406,306 words across 32 lecture files
+AVERAGE: 12,697 words per file
+MINIMUM: 12,043 words
+ALL FILES MEET OR EXCEED THE 5,000-WORD REQUIREMENT.
