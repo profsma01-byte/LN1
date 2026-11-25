@@ -1,0 +1,244 @@
+AI 408 - ROBOT PATH PLANNING
+COMPREHENSIVE SPOKEN LECTURE NARRATION
+Style: Spoken lecture delivery for voice recording and text to speech
+Language: Simple, clear English
+Length: Extended lecture of at least five thousand words
+Year Four, Semester Two, Robotics and Artificial Intelligence Programme
+
+PART 1 - WELCOME TO ROBOT PATH PLANNING
+
+Hello everyone, and welcome to AI 408, Robot Path Planning. This course goes deep into the algorithms that find routes for robots: from grid worlds to high dimensional configuration spaces, from single robots to teams, from deterministic maps to uncertain worlds. Path planning is one of the most algorithmically rich areas of robotics, and mastery here makes you a powerful engineer. I am delighted to guide you through it, and as always we will ground everything in real life practicals and examples from Nigeria and Africa.
+
+What is path planning? Path planning is computing a collision free sequence of motions that takes a robot from a start configuration to a goal configuration. Notice the words: sequence of motions, not just a line on a map; collision free, respecting the robot's body and obstacles; and configuration, the full description of the robot's position and joints. Path planning is where geometry, algorithms, and robotics meet.
+
+Let me distinguish related terms. A path is a geometric curve in configuration space without timing. A trajectory is a path with time: velocities and accelerations along it. Navigation, which you just studied, uses path planning as one module among several. Motion planning is the broader term including dynamics and constraints. This course focuses on the algorithmic core.
+
+Real life practicals ground us. A warehouse robot plans paths through aisles avoiding carts and workers. A robot arm plans motions around fixtures to pick parts. A drone plans routes around buildings and no fly zones. A field robot plans coverage paths across a farm. A rescue robot plans exploration routes through rubble. Each is a path planning problem with its own geometry and constraints.
+
+Path planning connects to your whole education. Graph search and heuristics from AI 311 and algorithms courses are your engines. Kinematics defines configuration spaces. Geometry and computational geometry provide tools. Control executes planned paths. Learning improves planners. Multi robot planning extends to teams. And uncertainty handling links to probabilistic robotics.
+
+How will we study this course? We will begin with problem formulation and configuration space in depth. We will study grid based planning algorithms thoroughly. We will cover roadmaps and sampling based planning. We will examine potential fields and optimization approaches. We will study kinodynamic and constraint aware planning. We will cover planning for articulated and high dimensional systems. We will examine multi robot path planning. We will study planning under uncertainty and replanning. We will cover heuristic design and optimization of plans. We will examine practical implementations and libraries. We will study evaluation and benchmarking of planners. We will explore learning augmented planning. And we will end with applications and reflections.
+
+To succeed in this course, think in spaces and searches: choose the right space, encode obstacles correctly, and search efficiently. Let us begin.
+
+PART 2 - PROBLEM FORMULATION AND CONFIGURATION SPACE
+
+Let me walk you through formulation and configuration space, the foundation of all planning.
+
+A path planning problem is defined by: the robot's configuration space, the start configuration, the goal region, the obstacle region, and the cost function. The planner finds a continuous path in free space from start to goal.
+
+Configuration space construction. For a planar disc robot, obstacles inflate by the robot's radius; the robot becomes a point. For a robot with rotation, the space includes heading; obstacles grow into three dimensional shapes. For a two joint arm, the space is a square of joint angles with obstacle regions computed from workspace geometry. The mapping from workspace to configuration space is the masterstroke of planning theory.
+
+Free space may be disconnected: no path exists; planners must detect and report this honestly.
+
+Cost functions: path length, clearance from obstacles, energy, or smoothness; optimal planning minimizes cost; satisficing finds acceptable paths quickly.
+
+Completeness and resolution completeness: will the planner find a path if one exists; sampling planners are probabilistically complete: success probability approaches one with more samples.
+
+Dimensionality curse: spaces grow fast with degrees of freedom; this shapes algorithm choice across the course.
+
+Real life practicals. A Nigerian student computes C obstacles for a rotating square robot on paper and visualizes free space. An arm planning engineer models a seven joint space for a factory arm. A drone planner works in three dimensional space with no fly volumes. Formulate first; the formulation reveals the algorithm family.
+
+A practical habit: for every planning problem, sketch the configuration space for a simplified case before coding; geometric understanding prevents algorithm misuse.
+
+PART 3 - GRID BASED PLANNING
+
+Let me walk you through grid based planning: the reliable workhorses.
+
+Grid methods discretize configuration space into cells. Breadth first search finds shortest paths in step count; Dijkstra finds least cost paths; A star finds least cost paths with heuristics, exploring far less with good guidance.
+
+Heuristic design for A star. Manhattan distance for four connected grids; Euclidean for eight connected; and true distance measures when costs vary. Admissible heuristics never overestimate, preserving optimality; consistent heuristics keep search smooth.
+
+Cost grids: cells carry traversal costs; planners respect costs naturally. Weighted A star trades optimality for speed; anytime A star improves solutions over time.
+
+D star and D star Lite handle changing maps: incremental replanning from previous solutions as obstacles appear; essential for robots that learn about the world while moving.
+
+Jump point search and theta star speed grid search by exploiting grid structure and allowing any angle paths.
+
+Grid limitations: resolution trade offs; memory at high dimensions; and discretization errors at boundaries.
+
+Real life practicals. A Nigerian logistics robot runs D star Lite on a live cost map, re planning around suddenly appearing pallets. A student implements A star with Manhattan and Euclidean heuristics and compares expansions. A game studio uses jump point search for unit navigation in real time. Grid planning is the dependable baseline every engineer should master.
+
+A practical habit: measure nodes expanded and planning time for every algorithm variant; intuition about efficiency needs numbers.
+
+PART 4 - ROADMAP AND SAMPLING BASED PLANNING
+
+Let me walk you through roadmaps and sampling: the answers to high dimensionality.
+
+Roadmap methods build a graph of collision free configurations and connections, then search it. Visibility graphs connect configurations that see each other; shortest paths hug obstacle corners. Voronoi diagrams keep maximal clearance; ideal for cautious navigation. These classical methods are exact for low dimensions.
+
+Probabilistic roadmaps sample random free configurations, connect nearby samples with local planners, and query paths by graph search. Their power: high dimensional spaces handled gracefully; multi query efficiency for repeated planning in the same space; and probabilistic completeness.
+
+Sampling strategies matter. Uniform sampling covers space but wastes samples in obstacles; obstacle informed sampling biases toward interesting regions; bridge test sampling finds narrow passages; and low discrepancy sequences cover space evenly.
+
+Connection rules: connect k nearest neighbors or all within radius; local planners check collision along straight or simple paths; narrow passages need special handling with bridge tests and medial axis sampling.
+
+Rapidly exploring random trees grow from start, extending toward random targets with nearest neighbor connections; bidirectional variants grow from both start and goal; RRT star rewires for asymptotic optimality.
+
+Informed sampling and pruning for optimality: focus sampling in ellipsoids of potentially improving paths.
+
+Real life practicals. A Nigerian robotics lab plans seven joint arm motions with probabilistic roadmaps for machine tending. A student implements RRT in Python and visualizes tree growth. A drone planner uses RRT star to plan smooth energy efficient routes. Sampling conquers dimensionality.
+
+A practical habit: visualize your samples and connections; coverage pictures reveal sampling problems instantly.
+
+PART 5 - POTENTIAL FIELDS AND OPTIMIZATION PLANNING
+
+Let me walk you through potential fields and optimization: continuous approaches to planning.
+
+Potential field methods treat the goal as attracting and obstacles as repelling the robot; gradient descent follows the field to the goal. Elegant and fast, they suffer local minima: equilibrium points away from the goal where forces balance.
+
+Local minima escapes: random walks, harmonic potentials without minima, navigation functions crafted to be minima free, and combinations with grid planning to escape traps.
+
+Optimization based planning frames path finding as minimizing cost subject to constraints: smoothness, collision avoidance, and dynamic limits. Trajectory optimization refines initial guesses into good paths with numerical methods: gradient descent, sequential quadratic programming, and random shooting.
+
+Chomp and trajopt style methods smooth and optimize paths in environments with obstacles; differentiable collision costs enable gradient based refinement.
+
+Model predictive style planning rolls optimization horizons; replanning each step handles disturbances.
+
+Learning from optimization: warm starts from previous solutions speed re planning.
+
+Real life practicals. A Nigerian drone team optimizes smooth trajectories for inspection flights around towers. A student implements a potential field controller and hunts local minima with random restarts. A robot arm uses trajectory optimization to smooth a rough planned path. Optimize where smoothness and constraints matter.
+
+A practical habit: always check optimized paths for constraint satisfaction after refinement; numerical methods can violate limits near boundaries.
+
+PART 6 - KINODYNAMIC, ARTICULATED, AND CONSTRAINED PLANNING
+
+Let me walk you through planning with dynamics, articulation, and constraints.
+
+Kinodynamic planning respects velocity, acceleration, and torque limits; not every geometric path is executable. State space includes positions and velocities; controls drive the system; planners must respect dynamics exactly or conservatively.
+
+Kinodynamic RRT extends sampling to dynamics; motion primitives, short dynamically feasible segments, become the actions; and hybrid planning separates geometric paths from dynamic execution where valid.
+
+Planning for articulated systems: robot arms with many joints, mobile manipulators, and closed chains. High dimensional sampling with task space heuristics guides search.
+
+Task and motion planning integrates symbolic tasks with geometric feasibility, which you met in AI 311; here the geometric side receives deeper treatment.
+
+Constrained planning: keeping a cup level while moving, maintaining tool orientation, and respecting joint limits; constraints restrict free space into manifolds; planners must navigate constrained spaces with specialized sampling.
+
+Planning with contacts: pushing, bracing, and legged locomotion involve contact sequences; contact planning is the frontier of manipulation and locomotion planning.
+
+Real life practicals. A Nigerian factory plans kinodynamically for a high speed pick and place arm respecting torque limits. A student plans with a level constraint for a waiter robot carrying drinks. A mobile manipulator plans base and arm motions jointly for door opening. Respect dynamics and constraints in planning, or execution will fail.
+
+A practical habit: validate planned paths with a dynamics simulation before hardware; feasibility surprises are cheaper in simulation.
+
+PART 7 - MULTI ROBOT PLANNING, UNCERTAINTY, AND REPLANNING
+
+Let me walk you through planning for teams and under uncertainty.
+
+Multi robot path planning computes collision free paths for several robots. Prioritized planning plans robots in sequence, avoiding earlier planned robots; simple but incomplete in some cases. Conflict based search plans independently and resolves collisions by adding constraints iteratively; efficient and complete in many practical cases. Windowed approaches re plan continuously for large fleets.
+
+Coordination spaces model joint motions exactly for small teams; scaling demands decoupled approaches.
+
+Planning under uncertainty: probabilistic outcomes, sensor noise, and moving obstacles. Contingent plans branch on observations; policies prescribe actions per belief; chance constrained planning bounds risk probabilities.
+
+Anytime and incremental planning: return good paths quickly and improve with computation; essential for real time systems.
+
+Replanning architectures: plan, execute, monitor, and re plan on events; re planning strategies balance responsiveness against computation.
+
+Real life practicals. A Nigerian warehouse uses conflict based search with priority rules for its robot fleet. A delivery robot re plans around pedestrians with rolling horizon planning. A rescue fleet uses windowed planning across a large site. Plan for teams and contingencies; static single plans are for textbooks.
+
+A practical habit: stress test planners with adversarial scenarios: narrow passages, symmetric maps, and dynamic blockages.
+
+PART 8 - HEURISTICS, IMPLEMENTATION, EVALUATION, AND LEARNING
+
+Let me close with heuristic design, implementation practice, evaluation, learning, and applications.
+
+Heuristic design deepens. Pattern databases store exact costs of abstractions as heuristics; landmarks provide must pass waypoints with admissible estimates; and learning predicts heuristic values from data while checking admissibility when needed.
+
+Implementation practice: use proven libraries for production; implement from scratch for learning; profile bottlenecks; use efficient data structures like heaps and KD trees; and parallelize where possible.
+
+Evaluation and benchmarking: metrics: planning time, path cost, success rate, and anytime behavior; benchmark suites standardize comparisons; and honest reporting requires distributions, not single runs.
+
+Learning augmented planning: learned heuristics speed search; learned value functions guide sampling; imitation from human paths; and learned costmaps from experience. Learned components retain guarantees through validation layers.
+
+Applications recap: logistics routing, arm motion planning, drone route planning, field coverage, exploration planning, and game AI. For Nigeria and Africa: delivery logistics on complex compounds, farm coverage with battery limits, infrastructure inspection routes, and evacuation planning support.
+
+Course completion summary. You mastered problem formulation and configuration space. You studied grid based planning thoroughly. You covered roadmaps and sampling based planning. You explored potential fields and optimization. You learned kinodynamic and constrained planning. You covered multi robot and uncertain planning. You studied heuristics, implementation, and evaluation. You examined learning augmented planning. And you considered applications.
+
+Final reflections. Robot path planning is the algorithmic art of purposeful motion: finding routes where geometry is complex, dimensions are high, and constraints are real. Build planners that are fast, complete enough, cost aware, and robust to change, and your robots will find their way wherever they must go.
+
+PART 9 - ADVANCED TOPICS IN PATH PLANNING
+
+Let me deepen your mastery with advanced topics that distinguish expert planners.
+
+Optimal planning theory. The shortest path in a polygonal environment hugs obstacle vertices; visibility graphs capture this exactly. Continuous Dijkstra propagates wavefronts through free space computing exact geodesics; fast marching methods approximate them efficiently on grids. Understanding exact solutions in simple worlds grounds your use of approximations in complex ones.
+
+Planning on manifolds. Constraints like keeping a tray level leave the robot on a lower dimensional manifold within configuration space; sampling on manifolds uses projection and tangent space exploration; and task space regions specify goal sets like all poses placing the peg above the hole.
+
+Decomposition methods. Cell decomposition partitions free space into simple regions connected into graphs; exact for low dimensions. Hierarchical decomposition plans coarsely then refines, saving computation for large worlds.
+
+Replanning theory. D star Lite updates shortest paths with obstacle changes using previous search results; Lifelong Planning A star shares updates across goals; and experience graphs warm start searches from past solutions. For robots operating for hours in changing worlds, incremental methods keep plans fresh at low cost.
+
+Planning with time windows and schedules. When tasks have time constraints, paths must respect schedules; space time planning treats time as another dimension; and reservation based methods coordinate fleets with schedules.
+
+Adversarial and competitive planning. When other agents respond to your robot, game theoretic planning anticipates their reactions; simple avoidance assumes others do not respond strategically.
+
+Numerical robustness. Floating point geometry errors cause subtle failures; robust predicates, exact arithmetic where needed, and careful tolerance handling distinguish production planners from fragile ones.
+
+Real life practicals. A Nigerian drone planner uses fast marching methods to compute smooth geodesics over terrain cost fields. A student implements cell decomposition for a polygonal world and compares with sampling methods. A warehouse vendor adopts experience graphs so repeated routes plan instantly. Depth in theory makes practice reliable.
+
+A practical habit: when a planner fails, simplify the world until it works, then reintroduce complexity step by step; this isolates causes efficiently.
+
+PART 10 - WORKED EXAMPLES AND PRACTICE IN PLANNING
+
+Let me cement skills with worked examples and practice.
+
+Worked example one: planning for a rotating robot among boxes. Build the configuration space by growing boxes with rotation approximated in slices; plan with A star on a discretized space; smooth the path with shortcutting; time parameterize with velocity limits. Compare with RRT on the same world; measure planning time and path cost. This example bridges grid and sampling worlds.
+
+Worked example two: arm planning around fixtures. Model the two joint arm on a table with obstacles; compute C obstacles analytically for the two joint case; plan with a visibility graph; then switch to a probabilistic roadmap and compare. The analytic insight guides expectations for the high dimensional case.
+
+Worked example three: narrow passage challenge. Place a maze with one cell wide gaps; run uniform sampling RRT and observe slowness; add bridge test sampling and medial axis biasing; measure improvement. This example teaches sampling strategy power.
+
+Worked example four: dynamic re planning on a corridor. Start with A star on a static map; introduce moving obstacles; switch to D star Lite; measure re planning latency. This teaches incremental planning value.
+
+Worked example five: multi robot crossing. Four robots crossing an intersection; implement prioritized planning and observe deadlock potential; implement conflict based search and measure improvements. This teaches coordination strategy.
+
+Practice exercises. Implement A star with three heuristics and compare expansions. Implement RRT and RRT star and plot cost versus samples. Implement potential fields and add random restart escape. Implement D star Lite and measure replanning on changing maps. Solve a constrained planning problem with a level constraint. Benchmark your planners on a standard set of worlds and report distributions.
+
+For every exercise, write a short report: method, metrics, observations, and lessons. Reports build the communication skills of a planning engineer.
+
+PART 11 - CAREERS, STUDY PLAN, AND CLOSING REFLECTIONS
+
+Let me close with careers, a study plan, and reflections. Careers in path planning: motion planning engineer for arms and vehicles, navigation algorithm engineer, logistics optimization engineer, game AI developer, robotics software engineer, and operations research analyst. Industries from robotics to transportation to gaming hire planning skill.
+
+Study plan for mastery. Weeks one and two: implement grid planners and heuristics with benchmarks. Weeks three and four: implement probabilistic roadmap and RRT with visualizations. Weeks five and six: implement RRT star and compare with RRT. Weeks seven and eight: implement potential fields with local minima escapes. Weeks nine and ten: implement D star Lite and dynamic replanning. Weeks eleven and twelve: capstone: a planning project for a chosen robot, benchmarked and documented with reports.
+
+Portfolio projects: a planner benchmark suite with reports; a visualized sampling planner; an incremental replanning demo; and a multi robot coordination demo. These prove algorithmic skill to employers.
+
+Final reflections. Path planning is where the elegance of algorithms meets the stubbornness of geometry. Mastering it builds analytical power that transfers far beyond robotics: structured problem solving, trade off analysis, and systematic experimentation. Plan carefully in code and in career; find efficient routes through complex spaces. Africa's robots will navigate its farms, warehouses, and cities; the planners you build will lead them there.
+
+PART 12 - GLOSSARY EXTENSIONS AND QUIZ PREPARATION
+
+Let me extend your planning vocabulary and prepare for assessment. Additional terms. Homotopy class: family of paths continuously deformable into each other. Homology: equivalence classes of paths around obstacles. Clearance: distance from path to obstacles. Informed set: region that can contain improving paths. Ellipsoidal pruning: restricting search to possible improvements. Bisection planner: connecting via midpoint recursion. Lazy collision checking: deferring expensive checks. Batching: processing samples in groups for efficiency. KD tree: spatial index for nearest neighbor queries. Heap: priority queue for best first search. Transposition table: cache of visited states. Symmetry breaking: removing equivalent search branches. Abstraction: simplified problem for heuristics. Refinement: adding detail to coarse plans. Feasibility check: testing constraint satisfaction. Backtracking: undoing choices to escape dead ends. Pruning: discarding hopeless branches. Branch and bound: search with cost bounds. Local search: improving solutions by neighborhood moves. Random restart: re beginning search to escape traps. Meta heuristic: high level search strategy. Parameter sweep: systematic parameter exploration. Robustness test: performance under perturbation. Regression suite: tests preventing re introduced failures. Baseline comparison: measuring against standard methods. Profile: measurement of time by component.
+
+Quiz preparation questions with guidance. Construct configuration space for a polygonal robot; answer with inflation and rotation effects. Explain A star optimality conditions; answer with admissible and consistent heuristics. Compare visibility graphs and probabilistic roadmaps; answer with dimensionality and trade offs. Explain RRT star rewiring; answer with cost improvement mechanism. Describe kinodynamic planning with an example; answer with dynamics and primitives. Explain conflict based search; answer with constraint passing. Describe anytime planning; answer with quick then better behavior. Explain how to benchmark planners honestly; answer with distributions and metrics. These questions sharpen the analytical planner's mind.
+
+PART 13 - FINAL REFLECTIONS ON ROUTES AND REASONING
+
+Final reflections on robot path planning. Path planning is applied reasoning about space and motion: it turns geometry into decisions and constraints into routes. The algorithms you mastered here, search, sampling, optimization, and coordination, are the same engines that power scheduling, logistics, and design far beyond robotics. Cultivate the planner's mindset: formulate problems clearly, choose representations wisely, search efficiently, and validate rigorously. Then carry it into your career and your community. The robots that will work on African farms, in its warehouses, and along its roads need routes planned by engineers with your depth. Plan well, and everything that moves follows your reasoning.
+
+PART 14 - INTERVIEW PREPARATION FOR PLANNING ENGINEERS
+
+Let me prepare you for interviews in path planning. Common questions and how to answer them. Explain configuration space with a worked example; answer with inflation and rotation. Why is A star efficient; answer with heuristics and admissibility. When would you choose sampling over grid methods; answer with dimensionality and structure. Explain RRT star and its convergence; answer with rewiring and asymptotic optimality. How do potential fields fail and how do you fix them; answer with local minima and escapes. Explain kinodynamic planning; answer with dynamics and motion primitives. How do you plan for multiple robots; answer with prioritized and conflict based methods. How do you handle changing worlds; answer with incremental replanning like D star Lite. How do you evaluate planners; answer with time, cost, success, and distributions. Describe a planning project and its challenges; answer with one of your portfolio projects end to end.
+
+For portfolio presentation, show visualizations of your planners: trees growing, cost maps explored, and paths refined. Include benchmark tables with honest distributions. Bring code samples if allowed; planning engineers are hired on demonstrated algorithmic skill.
+
+PART 15 - CLOSING REFLECTIONS ON PLANNING AS A DISCIPLINE
+
+Closing reflections on path planning. Planning is where intelligence shows itself in purposeful action: not reacting blindly, but reasoning ahead. The discipline you have built here, formulating spaces, searching them wisely, respecting constraints, and validating results, is professional power. Use it to guide robots through real worlds: warehouses and farms, factories and cities, rubble and skies. Use it to think clearly about any complex problem: decomposition, search, trade offs, and verification apply far beyond robotics. And remember that plans meet reality with humility: keep replanning, keep testing, keep improving. The routes of tomorrow's African robots will be planned by engineers trained as you have been. Plan with rigor, and let everything that moves follow your reason.
+
+PART 16 - PRACTICE EXERCISES FOR PLANNING MASTERY
+
+Let me extend your practice with exercises that build planning mastery through doing. Exercise one: implement A star on grids with three heuristics and produce expansion count comparisons in a report. Exercise two: implement Dijkstra and A star on weighted cost grids and compare path costs and times. Exercise three: implement a probabilistic roadmap builder with adjustable sample counts and measure success rates across ten worlds. Exercise four: implement RRT and RRT star and plot cost versus number of samples over repeated runs. Exercise five: implement a potential field planner and add a random restart escape; test in worlds with known local minima. Exercise six: implement D star Lite and demonstrate re planning when obstacles appear on a corridor map. Exercise seven: solve a constrained planning problem where a tray must stay level; visualize the constraint manifold. Exercise eight: implement prioritized planning for four robots and then conflict based search; compare makespans. Exercise nine: build a benchmark harness with five worlds and three metrics and run all your planners on it. Exercise ten: write a technical report comparing your planners with honest distributions, failure cases, and lessons. These exercises build the algorithmic craft and the reporting discipline of a planning engineer, and each artifact strengthens your portfolio.
+
+Robot path planning computes routes through complex worlds. Master it, and you can guide any robot to its goal. Thank you for your attention and your effort. I will see you in the next lecture.
+
+Glossary of Key Terms
+
+Path planning: computing collision free routes. Configuration space: space of robot configurations. C obstacle: obstacle region in configuration space. Free space: collision free configuration region. Completeness: guarantee of finding paths when they exist. Probabilistic completeness: success probability growing with samples. Grid planning: discretized space search. A star: heuristic search for least cost paths. D star Lite: incremental replanning on changing maps. Visibility graph: graph of mutually visible configurations. Voronoi diagram: maximal clearance structure. Probabilistic roadmap: sampled graph of free configurations. Local planner: connection checking between samples. Rapidly exploring random tree: random tree growth planner. RRT star: asymptotically optimal RRT variant. Motion primitive: short dynamically feasible motion segment. Potential field: attraction and repulsion navigation. Local minima: equilibrium away from goal. Navigation function: minima free potential function. Trajectory optimization: numerical path refinement. Kinodynamic planning: planning with dynamics constraints. Task and motion planning: integrated symbolic and geometric planning. Constrained planning: planning on constraint manifolds. Prioritized planning: sequential multi robot planning. Conflict based search: resolving conflicts by constraints. Coordination space: joint configuration space of teams. Contingent planning: plans branching on observations. Chance constraint: probabilistic constraint satisfaction. Anytime planning: improving solutions over computation. Pattern database: abstract costs as heuristics. Landmark: waypoint used in heuristic estimation. Warm start: initializing optimization with previous solutions. Costmap: traversal cost representation for planning.
+
+Exercises for Students
+
+One: construct configuration space for a rotating square robot and explain obstacle growth. Two: compare Dijkstra and A star with heuristic admissibility. Three: explain probabilistic roadmap construction and querying. Four: compare RRT and RRT star with trade offs. Five: explain local minima in potential fields and two escape methods. Six: describe kinodynamic planning and why geometry alone fails. Seven: compare prioritized planning and conflict based search. Eight: explain anytime planning with an application. Nine: propose a path planning application for a Nigerian context and outline its formulation. Ten: discuss how learning can augment planners while retaining safety.
+
+END OF AI 408 LECTURE NARRATION

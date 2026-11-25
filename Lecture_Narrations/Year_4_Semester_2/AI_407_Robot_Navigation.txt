@@ -1,0 +1,226 @@
+AI 407 - ROBOT NAVIGATION
+COMPREHENSIVE SPOKEN LECTURE NARRATION
+Style: Spoken lecture delivery for voice recording and text to speech
+Language: Simple, clear English
+Length: Extended lecture of at least five thousand words
+Year Four, Semester Two, Robotics and Artificial Intelligence Programme
+
+PART 1 - WELCOME TO ROBOT NAVIGATION
+
+Hello everyone, and welcome to AI 407, Robot Navigation, the first course of your final semester. Navigation is the art of getting robots from place to place safely and purposefully: the capability that turns a stationary machine into a mobile helper. Delivery robots in buildings, tractors on farms, drones in the sky, submarines in the sea, and rovers on other planets all share one essential skill, navigation. In this course you will master the full navigation stack: localization, mapping, perception of traversability, planning, control, and integration. I am delighted to guide you through it, and as always we will ground everything in real life practicals and examples from Nigeria and Africa.
+
+What is robot navigation? Robot navigation is the process by which a mobile robot moves from its current location to goal locations safely, efficiently, and reliably in its environment. It combines knowing where you are, localization; knowing the world, mapping and perception; deciding how to move, planning; and executing motion, control. When any of these fails, the robot is lost, stuck, or dangerous. Navigation engineering is the discipline of making the whole loop work in real conditions.
+
+Let me frame the challenge with a real scene. Imagine a delivery robot in a Lagos hospital. It must localize itself in a multi floor building, map corridors and doors, detect people and carts to avoid them, plan routes around obstacles, control its wheels smoothly, and report arrival. Crowds move unpredictably; lighting varies; floors differ; elevators and doors must be handled; and safety is absolute. This one scene exercises every topic of this course.
+
+Real life practicals ground us. In Nigerian warehouses, mobile robots navigate aisles carrying goods. In agriculture, field robots navigate crop rows without damaging plants. In mining and energy, inspection robots navigate tunnels and facilities. In cities, delivery robots and autonomous vehicles navigate streets with traffic. Indoors, service robots navigate homes and hospitals. Each application adapts navigation fundamentals to its environment.
+
+Robot navigation connects to your whole education. AI 310 gave you localization and mapping foundations. Mobile robotics in AI 207 covered locomotion and odometry. Path planning in AI 408 will complement this course closely. Control theory governs motion. Perception supplies obstacle and floor information. Machine vision detects lanes and features. Learning improves navigation from experience. And robot ethics governs safety around people.
+
+How will we study this course? We will begin with the navigation architecture and its modules. We will study localization for navigation in practice. We will cover mapping for navigation: metric, topological, and semantic. We will examine traversability and obstacle perception. We will study global and local planning in the navigation stack. We will cover motion control and dynamic window approaches. We will examine behavior coordination and recovery strategies. We will study navigation in dynamic environments with people. We will cover multi floor and large scale navigation. We will examine outdoor navigation: fields, roads, and rough terrain. We will study evaluation and tuning of navigation systems. We will cover safety and human factors. We will explore learning based navigation. And we will end with applications and reflections.
+
+To succeed in this course, think in loops: the localization loop, the perception loop, the planning loop, and the control loop, all running continuously and cooperating. Master the loops, and navigation becomes clear. Let us begin.
+
+PART 2 - NAVIGATION ARCHITECTURE
+
+Let me walk you through the navigation architecture: how the modules fit together.
+
+A navigation system is organized as layers of perception, decision, and action. The classic architecture has components: localization module estimating pose; map service providing environment representation; global planner computing routes; local planner generating immediate motion commands; obstacle detection feeding safety; behavior manager coordinating modes; and low level control driving motors.
+
+Data flows form loops. The localization loop: sensors feed pose estimation, which updates the robot's belief of position continuously. The planning loop: goals and maps feed planners that output paths and velocities. The control loop: velocities feed wheel controllers that move the robot, whose motion is measured and corrected. Each loop runs at its own rate: control at tens of hertz, local planning at ten hertz, localization at ten to twenty hertz, global planning on demand.
+
+Frames and coordinates tie it together: map frame for global consistency, odometry frame for smooth local motion, base frame for the robot body, and sensor frames for each sensor. Transform trees manage these relationships.
+
+Modularity and interfaces matter: clear messages between modules allow independent development and testing. The Robot Operating System, which you studied, provides the standard plumbing for such architectures.
+
+Configuration and tuning: each module has parameters; navigation performance is often won or lost in tuning. Parameter management is engineering craft.
+
+Redundancy and monitoring: safety supervisors watch for failures and trigger stops or recoveries.
+
+Real life practicals. A Nigerian logistics team draws the full node graph of their navigation stack before integration; the diagram becomes their debugging map. A student builds a layered stack in simulation and watches each loop respond. A hospital robot's behavior manager switches between navigating, waiting for elevators, and charging. Architecture first; code second.
+
+A practical habit: rate every module's loop on your architecture diagram with its frequency; timing mismatches cause many mysterious failures.
+
+PART 3 - LOCALIZATION AND MAPPING FOR NAVIGATION
+
+Let me walk you through localization and mapping as navigation uses them.
+
+Navigation needs both where am I and what is around me. You know the foundations from AI 310: odometry, filtering, particle filters, and SLAM. Navigation practice sharpens specific needs.
+
+Localization for navigation must be continuous, bounded in error, and fast enough for control. Indoor practice: laser scan matching against pre built maps with particle filters or scan matchers; visual localization in feature rich areas; ultra wideband beacons where geometry is ambiguous. Outdoor practice: GPS with corrections fused with odometry and inertial sensing; visual odometry and prior maps where GPS degrades.
+
+Map representations for navigation prioritize traversability. Occupancy grids mark free, occupied, and unknown space; cost maps inflate obstacles for clearance; layered cost maps combine static maps with live sensor layers. Topological maps support large scale routing with metric refinement locally. Semantic maps mark zones and rules: waiting areas, slow zones, and restricted areas.
+
+Map lifecycle: building maps, validating them, versioning, and updating as environments change. Multi robot fleets share and update maps.
+
+Degeneracy handling: corridors, glass, and open fields give weak localization cues; multi sensor fusion and prior knowledge maintain accuracy.
+
+Real life practicals. A Nigerian warehouse builds laser maps floor by floor and shares them across its robot fleet. A field robot localizes with GPS and row following vision. A student watches a particle filter converge at startup and tracks drift on a long run. Localize continuously and map for navigability.
+
+A practical habit: log localization confidence during every test run; correlates with failures you will otherwise chase for days.
+
+PART 4 - TRAVERSABILITY AND OBSTACLE PERCEPTION
+
+Let me walk you through traversability: knowing where the robot can safely go.
+
+Obstacle detection turns sensor data into knowledge of what blocks motion. Lidar points cluster into obstacles; cameras detect obstacles with depth or learning; ultrasonic sensors catch close range surprises; and contact sensors provide last resort safety.
+
+Traversability analysis goes beyond obstacle presence: can this surface be crossed. Floor classification: smooth tile, carpet, gravel, grass, mud, or water. Slopes and steps: limits by robot geometry and stability. Roughness and deformability: soft sand, tall grass passable for some robots, and ditches impassable.
+
+Cost maps encode traversal costs: lethal obstacles, high cost near obstacles, moderate cost on rough terrain, and low cost on smooth paths. Inflation layers give clearance; speed scaling slows near hazards.
+
+Dynamic obstacles: people, carts, and vehicles move; detection and prediction feed avoidance. Pedestrian prediction from trajectories and social cues improves safety in crowds.
+
+Unknown space handling: conservative policies avoid unknown areas for safety; exploration policies intentionally enter to map.
+
+Real life practicals. A Nigerian farm robot classifies soil moisture from ground sensors to avoid getting stuck. A hospital robot treats glass walls specially after a collision incident. A student builds layered cost maps with static, obstacle, and inflation layers in simulation. Perceive not just what is there, but whether you can go there.
+
+A practical habit: build a traversability test course with your worst case surfaces and validate perception against it regularly.
+
+PART 5 - PLANNING AND CONTROL IN NAVIGATION
+
+Let me walk you through planning and control as navigation executes them.
+
+Global planning computes routes from pose to goal over the map. A star and Dijkstra on cost grids are the classics; anytime and incremental planners re plan efficiently as maps update; hybrid approaches combine graph routing with local refinement. Route quality measures: length, safety clearance, and smoothness.
+
+Local planning generates immediate motion. The dynamic window approach is the celebrated method: sample achievable velocities within the robot's dynamic limits, evaluate each by trajectory quality: heading toward goal, clearance from obstacles, and speed; execute the best; repeat at high frequency. Its beauty is direct respect for dynamics and safety.
+
+Trajectory rollout and model predictive approaches optimize short horizon motions against cost maps, handling constraints explicitly. Obstacle avoidance behaviors: wall following, bug algorithms, and potential field like steering provide reactive fallbacks.
+
+Motion control executes commands: differential drive kinematics map desired velocities to wheel speeds; heading controllers smooth paths; speed controllers respect stopping distances.
+
+Stopping and safety margins: compute stopping distance from speed and braking, and keep clearance accordingly. Emergency stops trigger from perception failures or unexpected contacts.
+
+Real life practicals. A Nigerian warehouse robot uses dynamic window local planning to weave safely among workers. A student tunes goal tolerances and observes oscillation at goals, fixing with settling behaviors. A delivery robot slows automatically in crowds using speed scaling. Plan globally, react locally, control smoothly.
+
+A practical habit: plot commanded versus executed velocities during tests; tracking error reveals control issues hiding behind planning issues.
+
+PART 6 - BEHAVIORS, RECOVERIES, AND DYNAMIC ENVIRONMENTS
+
+Let me walk you through behavior coordination, recovery, and navigation among people.
+
+Navigation is more than path following: modes and behaviors handle situations. Behaviors: go to goal, follow corridor, wait at door, enter elevator, dock at charger, and follow person. Behavior trees or state machines coordinate modes with conditions and priorities.
+
+Recovery strategies handle failures: robot stuck against obstacle: back away and re approach; localization lost: re localize with special maneuvers; path blocked: re plan with detours; and repeated failures: call for human help. Recovery design distinguishes robust systems from fragile demos.
+
+Dynamic environments with people demand social navigation: predictable motion, comfortable distances, yielding etiquette, and speed limits near humans. Social costs in planners penalize blocking doorways, cutting through groups, and approaching from behind. Predicting pedestrian motion improves flow and safety.
+
+Interaction at bottlenecks: doorways, elevators, and narrow corridors need right of way rules and negotiation behaviors.
+
+Real life practicals. A Nigerian service robot yields to people and waits politely at doorways; users report trusting it. A student implements recovery behaviors and logs their trigger rates. A mall robot announces intentions as it moves through crowds. Navigate socially; robots share space with people.
+
+A practical habit: run navigation tests with scripted surprises: blocked paths, crossing crowds, and lost localization; observe and improve behaviors.
+
+PART 7 - LARGE SCALE, MULTI FLOOR, AND OUTDOOR NAVIGATION
+
+Let me walk you through navigation at scale: buildings, floors, and outdoors.
+
+Large scale indoor navigation: hierarchical maps: metric maps per region with topological links; route planning across regions; and map management for hundreds of rooms. Multi floor navigation integrates elevators and stairs: elevator behaviors, floor transitions, and inter floor localization.
+
+Outdoor navigation in fields: GPS waypoint following with row following vision; terrain assessment for slopes and soil; and coverage patterns for tasks. Rough terrain: stability aware planning, speed control on slopes, and odometry correction for wheel slip.
+
+Road navigation for vehicles: lane keeping, traffic rules, and interaction with road users; this course covers the shared foundations.
+
+Marine and aerial navigation: currents and wind compensation, waypoint following, and geofencing.
+
+Charging and endurance: energy aware navigation: route planning with battery constraints, automatic docking, and mission scheduling around charging.
+
+Real life practicals. A Nigerian agricultural service plans field routes with GPS and revisits under canopy with row vision. A hospital fleet manages elevator scheduling for multi floor deliveries. A mining robot navigates tunnels with prior maps and live lidar. Scale your navigation with hierarchy, energy planning, and robust localization.
+
+A practical habit: simulate mission level scenarios with battery constraints; energy surprises in the field are expensive.
+
+PART 8 - EVALUATION, TUNING, SAFETY, AND LEARNING
+
+Let me close with evaluation, tuning, safety, learning, applications, and reflections.
+
+Evaluation of navigation: metrics: success rate to goals, time to goal, distance efficiency, interventions per hour, safety incidents, and comfort measures like smoothness. Benchmark courses: standardized obstacle courses and scripted scenarios; simulation benchmark suites for repeatability; and field trials for realism. Report metrics honestly across conditions.
+
+Tuning practice: systematic parameter sweeps; one change at a time; logging everything; and regression tests to prevent re breaking fixed behaviors.
+
+Safety engineering: risk assessment for navigation; speed and separation monitoring; safety certification for public deployments; and human oversight in early operation.
+
+Learning based navigation: learned traversability from experience; learned local planners imitating demonstrations; reinforcement learning for adaptive navigation; and continual improvement in deployment. Learned components need evaluation and safety layers like all learned systems.
+
+Applications recap: logistics, agriculture, health, service, inspection, and public transport. For Nigeria and Africa: delivery robots in complex compounds, farm robots on small holdings, inspection robots for infrastructure, and service robots in hospitals and banks.
+
+Course completion summary. You studied navigation architecture and its loops. You covered localization and mapping for navigation. You mastered traversability perception. You learned planning and control in the stack. You explored behaviors, recoveries, and social navigation. You covered large scale and outdoor navigation. You examined evaluation, tuning, safety, and learning. And you considered applications.
+
+Final reflections. Robot navigation is the craft of purposeful movement through a world that is uncertain, dynamic, and shared with people. Build navigation systems that know where they are, judge where they can go, plan wisely, move smoothly, and fail safely, and your robots will serve reliably wherever they travel.
+
+PART 9 - SENSOR SUITES AND PERCEPTION FOR NAVIGATION
+
+Let me walk through the sensor suites and perception layers that navigation systems rely on in practice.
+
+A navigation robot perceives through complementary sensors. Wheel encoders give odometry: smooth, local, drifting. Inertial measurement units give fast motion and orientation with their own drift. Laser scanners give precise geometry in planes or volumes: the backbone of indoor navigation perception. Cameras give rich appearance for visual odometry, place recognition, and lane or row detection. Depth cameras bridge vision and geometry for close range navigation. Ultra wideband radios give absolute local fixes in GPS denied buildings. GPS gives global position outdoors with meter or centimeter corrections. Contact and bump sensors are the final safety net. Good navigation engineers characterize each sensor's failure modes in the target environment: glass and mirrors for lasers, textureless walls and darkness for cameras, metal structures for inertial units, and urban canyons for GPS.
+
+Perception layers transform sensor data into navigation knowledge. Preprocessing filters noise and syncs timestamps. Segmentation separates floor, obstacles, and dynamic objects. Classification labels traversability types: smooth floor, carpet, gravel, grass, or hazard. Tracking follows moving people and carts with predictions. Confidence estimation marks how sure the perception is, guiding conservative behavior. Each layer runs with timing budgets; navigation perception must be real time.
+
+Redundancy and cross checking prevent disasters. Lidar and camera agree on an obstacle; if one fails, the other maintains safety. Watchdogs check sensor health: stale data triggers slowdowns or stops. Degraded modes define how the robot navigates with reduced perception: slower speeds, larger clearances, or retreat to safe positions.
+
+Calibration and alignment make fusion possible. Extrinsics between sensors are verified at installation and periodically checked. Time synchronization ensures that data streams describe the same moments. Without rigorous calibration, fusion becomes confusion.
+
+Real life practicals. A Nigerian warehouse robot fleet runs daily sensor health checks at startup: verifying lidar spin, camera exposure, and odometry calibration with a short test route. A field robot adds bump sensors as a final safety layer after dust blinded its lidar once. A student team cross checks stereo depth against lidar and catches a calibration error before deployment. Perceive redundantly, verify constantly, and fail safe.
+
+A practical habit: maintain a sensor health dashboard with status lights and history; operators and engineers both benefit from visible perception status.
+
+PART 10 - WORKED SCENARIOS IN NAVIGATION ENGINEERING
+
+Let me cement the course with worked scenarios that exercise the full navigation stack.
+
+Scenario one: hospital delivery navigation. The mission: deliver medicines across three floors in a busy teaching hospital in Ibadan. Requirements: safe speed near people, elevator integration, door handling, and ninety nine percent delivery success. Design: laser localization with pre built maps per floor, topological links for elevator routes, social navigation costs around crowds, behaviors for waiting and announcing, and recovery calls to staff when blocked. Testing: scripted runs during quiet and busy hours, measuring interventions per hundred missions. Lessons: human flow patterns dominate performance; tuning for crowds matters more than raw speed.
+
+Scenario two: warehouse pick support navigation. The mission: move totes between picking stations in a Lagos fulfillment center with human pickers. Requirements: aisle etiquette, fleet coordination, and throughput. Design: shared cost maps, fleet traffic manager with reservations at intersections, dynamic window local planning, and automatic charging. Testing: peak load simulations and live pilot. Lessons: intersection policy sets fleet throughput; battery scheduling prevents mid shift stalls.
+
+Scenario three: farm row navigation. The mission: patrol maize rows for a farm near Jos. Requirements: row following under canopy where GPS weakens, terrain handling, and coverage completeness. Design: GPS waypointing to the field, vision row following within rows, terrain cost assessment for mud, and coverage accounting. Testing: full field trials across growth stages. Lessons: perception must adapt as crops grow; conservative speeds prevent plant damage.
+
+Scenario four: campus delivery outdoors. The mission: move parcels between buildings in a university campus. Requirements: mixed walkways, crossings, and pedestrian density. Design: GPS and prior maps, pedestrian prediction, geofenced routes, and staff oversight at crossings. Testing: months of supervised operation. Lessons: edge cases at crossings require human oversight until confidence builds.
+
+Scenario five: inspection route navigation in a factory. The mission: nightly inspection routes around machinery. Requirements: repeatable routes, night lighting, and quiet operation. Design: reflector aided localization, fixed waypoints, and anomaly reporting. Lessons: repeatability beats adaptability for inspection; simple navigation done reliably wins.
+
+For each scenario, write the requirements, sensor suite, map design, planning and behavior choices, test plan, and metrics. Present and critique in class. Scenario practice builds navigation engineering judgment.
+
+PART 11 - CAREERS, STUDY PLAN, AND CLOSING COUNSEL
+
+Let me close with careers, a study plan, and final counsel. Careers in navigation: autonomous mobile robot engineer, navigation software engineer, field robotics engineer, mapping and localization engineer, and robotics integration specialist. Industries deploying navigation include logistics, agriculture, healthcare, mining, energy, and hospitality. Across Nigeria and Africa, automation of movement is accelerating: warehouse growth, agricultural modernization, and service robotics all need navigation engineers.
+
+Study plan for mastery. Weeks one and two: implement grid based A star with heuristics and measure expansions. Weeks three and four: implement D star Lite on a changing map in simulation. Weeks five and six: build a layered cost map pipeline with lidar simulation. Weeks seven and eight: implement dynamic window local planning and tune it. Weeks nine and ten: integrate localization, planning, and control in a robot simulator for a full navigation stack. Weeks eleven and twelve: capstone: a navigation system for a chosen scenario, evaluated with metrics and documented end to end.
+
+Portfolio projects: an A star and D star Lite comparison study; a full navigation stack demo video with recovery behaviors; a tuning and evaluation report with metrics; and a safety review of your system. These demonstrate real capability.
+
+Final counsel. Navigation engineering is integration engineering: modules must cooperate in real time under real conditions. Tune methodically, test in the environments that matter, watch humans use your robots, and improve continuously. Bring affordable, robust navigation to African contexts: the compounds, farms, hospitals, and streets where robots can genuinely help. Build robots that know where they are, choose where to go, and arrive safely.
+
+PART 12 - GLOSSARY EXTENSIONS AND QUIZ PREPARATION
+
+Let me extend your navigation vocabulary and prepare you for assessment. Additional terms. Pose graph: graph of robot poses with constraints. Loop closure: recognizing revisited places to correct drift. Scan matching: aligning laser scans to maps or each other. Particle filter: belief represented by weighted pose hypotheses. Beacon: fixed reference device aiding localization. Fiducial marker: artificial marker for easy recognition. Floor plan map: schematic building representation. Region of interest: map area relevant to current behavior. Goal tolerance: acceptable error at goal arrival. Settling behavior: motion stabilizing at goal. Path smoothing: reducing curvature of planned paths. Shortcutting: cutting corners to shorten paths. Velocity profile: speed over time along a path. Acceleration limit: maximum rate of speed change. Jerk limit: maximum rate of acceleration change. Slip detection: sensing unintended wheel sliding. Odometry drift: accumulated pose error from integration. Geofence: virtual boundary limiting operation. Mission queue: ordered list of navigation goals. Priority arbitration: deciding which behavior runs. State machine: discrete mode controller. Behavior tree: hierarchical behavior coordination. Watchdog: monitor resetting or stopping failing systems. Intervention: human assistance to the robot. Uptime: fraction of time operational. Deployment envelope: conditions for reliable operation.
+
+Quiz preparation questions with guidance. Explain the navigation loop architecture and data flows; answer with module roles and rates. Compare global and local planners; answer with algorithms and purposes. Describe layered cost maps and their layers; answer with static, obstacle, and inflation layers. Explain dynamic window approach; answer with velocity sampling and evaluation. Design recovery behaviors for three failure types; answer with triggers and actions. Explain social navigation with hospital examples; answer with proxemics and etiquette. Describe multi floor navigation; answer with elevator handling and floor maps. List evaluation metrics for navigation; answer with success, time, interventions, and safety. These questions train the professional navigation engineer's mind.
+
+PART 13 - FINAL REFLECTIONS ON ARRIVING WELL
+
+Final reflections on robot navigation. Navigation is where a robot's whole intelligence converges: sensing, knowing, deciding, and moving, all in real time, all under uncertainty, all around people. The engineering is demanding and the impact is tangible: goods delivered, crops tended, inspections completed, patients served. As you build navigation systems, hold three standards. Reliability: the robot arrives again and again without drama. Safety: people and property are never harmed. And grace: motion that feels predictable and considerate to bystanders. These standards turn technology into service. Nigeria and Africa are building the infrastructure of an automated future: the robots that move through it need navigation engineers of skill and conscience. Be those engineers. Know where you are, choose where to go, and arrive with purpose.
+
+PART 14 - INTERVIEW PREPARATION FOR NAVIGATION ENGINEERS
+
+Let me prepare you for interviews in navigation engineering. Common questions and how to answer them. Walk through the navigation stack architecture; answer with modules, data flows, and rates. How does localization fail and what do you do; answer with degeneracy examples and fusion plus recovery. Explain cost maps and tuning; answer with layers, inflation, and systematic tuning practice. Compare D star Lite with A star for changing maps; answer with incremental update advantages. Describe dynamic window approach and its limits; answer with velocity sampling, dynamics, and local minima. How do you handle crowds; answer with prediction, social costs, and speed scaling. What metrics evaluate navigation; answer with success, time, interventions, safety, and comfort. How do you test before deployment; answer with simulation, benchmark courses, scripted surprises, and supervised field trials. Describe a navigation bug you fixed; answer with one of your project stories: symptoms, diagnosis, fix, and lesson. What safety measures matter around people; answer with speed limits, separation monitoring, stops, and oversight.
+
+For portfolio presentation, show a demo video with overlays of localization confidence, cost maps, and planned paths; it demonstrates depth instantly. Bring a one page architecture diagram and a metrics table from your tests. Employers hire navigators who can explain their systems clearly.
+
+PART 15 - CLOSING REFLECTIONS ON MOBILE INTELLIGENCE
+
+Closing reflections on navigation. To navigate is to know oneself, know the world, and move with purpose through uncertainty. In that sense, navigation is a metaphor for engineering itself. You have learned the sensors that see, the maps that remember, the planners that decide, and the controllers that act. Integrate them with care, and machines move reliably. Test them with humility, because reality always has surprises. Share the space with people respectfully, because streets and hallways belong to everyone. And bring mobile intelligence to the work that needs it across Africa: food, health, commerce, and safety. The robots of this continent will carry the navigation systems you now know how to build. Send them out with skill, safety, and grace.
+
+PART 16 - PRACTICE EXERCISES FOR NAVIGATION MASTERY
+
+Let me extend your practice with exercises that build navigation mastery through doing. Exercise one: build a simulation of a differential drive robot with odometry drift and implement a simple localization filter; measure pose error over long runs. Exercise two: construct layered cost maps from simulated lidar data with static, obstacle, and inflation layers; visualize them in a map viewer. Exercise three: implement the dynamic window approach and tune its scoring weights; record how behavior changes with weights. Exercise four: implement three recovery behaviors and test them with scripted blockages; measure recovery success rates. Exercise five: create a social navigation cost layer penalizing doorway blocking and test in a crowd simulation. Exercise six: design an elevator behavior for multi floor missions and simulate the full mission. Exercise seven: write a tuning protocol document for a navigation stack and apply it to your simulation. Exercise eight: run an evaluation suite of ten scripted scenarios and produce a metrics report with visualizations. Exercise nine: perform a safety review of your navigation design with a hazard log and mitigations. Exercise ten: build a demo video with overlays telling the story of your system to non engineers. These exercises move you from knowledge to capability, and the artifacts become portfolio pieces.
+
+Robot navigation gives robots the power to move purposefully through the world. Master it, and you can build machines that arrive safely. Thank you for your attention and your effort. I will see you in the next lecture.
+
+Glossary of Key Terms
+
+Robot navigation: moving robots safely between locations. Navigation stack: integrated modules for autonomous motion. Localization: estimating robot pose in a map. Occupancy grid: cell map of free and occupied space. Cost map: grid of traversal costs with inflation. Traversability: whether terrain can be crossed. Global planner: route computation over the map. Local planner: immediate motion generation. Dynamic window approach: velocity sampling respecting dynamics. Behavior coordination: managing navigation modes. Recovery behavior: actions to escape failure states. Social navigation: navigation respecting people and norms. Right of way: rules for sharing bottlenecks. Stopping distance: distance to halt from speed. Speed scaling: slowing near hazards. Waypoint following: sequential goal tracking. Row following: following crop rows with vision. Geofencing: virtual boundary enforcement. Docking: autonomous charging connection. Energy aware planning: routes respecting battery. Intervention rate: human rescues per hour. Success rate: fraction of goals completed. Comfort metric: smoothness of motion. Regression test: preventing re introduced failures. Safety supervisor: monitoring and override layer. Pedestrian prediction: forecasting people motion. Semantic map: map with meaning labels. Hierarchical map: nested map structures. Floor transition: moving between building levels. Coverage planning: systematic area traversal.
+
+Exercises for Students
+
+One: describe the navigation stack modules and their data flows. Two: explain why layered cost maps matter with an example. Three: compare global and local planning with methods and roles. Four: explain the dynamic window approach and its safety benefits. Five: design three recovery behaviors with trigger conditions. Six: describe social navigation principles for crowded hospitals. Seven: explain multi floor navigation challenges and solutions. Eight: list five navigation metrics and what each reveals. Nine: propose a navigation system for a Nigerian context with sensor and map choices. Ten: discuss safety measures for navigation robots among people.
+
+END OF AI 407 LECTURE NARRATION
