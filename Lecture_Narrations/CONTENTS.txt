@@ -1,0 +1,72 @@
+CONTENTS - COMPREHENSIVE SPOKEN LECTURE NARRATIONS
+4-Year Robotics and Artificial Intelligence Programme
+48 Courses - All narrations verified at 5,000+ words each
+Total word count: 245,950 words
+
+Year 1 Semester 1:
+  - AI_101_Introduction_to_Artificial_Intelligence (5545 words)
+  - AI_102_Robotics_Fundamentals (5094 words)
+  - AI_103_Machine_Learning (5530 words)
+  - AI_104_Computer_Vision (5089 words)
+  - AI_105_Natural_Language_Processing (5070 words)
+  - AI_106_Control_Systems (5060 words)
+
+Year 1 Semester 2:
+  - AI_107_Data_Structures_and_Algorithms (5141 words)
+  - AI_108_Digital_Signal_Processing (5095 words)
+  - AI_109_Embedded_Systems (5131 words)
+  - AI_110_Human_Robot_Interaction (5040 words)
+  - AI_111_Neural_Networks (5019 words)
+  - AI_112_Computer_Graphics (5021 words)
+
+Year 2 Semester 1:
+  - AI_201_Internet_of_Things (5008 words)
+  - AI_202_Robotic_Perception (5041 words)
+  - AI_203_Ethics_in_AI_and_Robotics (5031 words)
+  - AI_204_Autonomous_Systems (5003 words)
+  - AI_205_Reinforcement_Learning (5001 words)
+  - AI_206_Computer_Architecture (5026 words)
+
+Year 2 Semester 2:
+  - AI_207_Mobile_Robotics (5049 words)
+  - AI_208_AI_for_Robotics (5003 words)
+  - AI_209_Fuzzy_Logic (5001 words)
+  - AI_210_Deep_Learning (5000 words)
+  - AI_211_Pattern_Recognition (5000 words)
+  - AI_212_Robot_Kinematics (5051 words)
+
+Year 3 Semester 1:
+  - AI_301_Virtual_Reality (5430 words)
+  - AI_302_Cyber_Physical_Systems (6033 words)
+  - AI_303_Swarm_Robotics (5766 words)
+  - AI_304_Robot_Operating_Systems (5886 words)
+  - AI_305_Cognitive_Robotics (5516 words)
+  - AI_306_Biologically_Inspired_Robotics (5180 words)
+
+Year 3 Semester 2:
+  - AI_307_Machine_Vision (5022 words)
+  - AI_308_Intelligent_Control_Systems (5011 words)
+  - AI_309_Multi_Robot_Systems (5001 words)
+  - AI_310_Robot_Localization_and_Mapping (5004 words)
+  - AI_311_Robotics_Planning (5004 words)
+  - AI_312_Social_Robotics (5003 words)
+
+Year 4 Semester 1:
+  - AI_401_Evolutionary_Robotics (5027 words)
+  - AI_402_Robot_Ethics (5000 words)
+  - AI_403_Robot_Learning (5002 words)
+  - AI_404_AI_Ethics (5001 words)
+  - AI_405_Robot_Manipulation (5011 words)
+  - AI_406_Robot_Perception (5001 words)
+
+Year 4 Semester 2:
+  - AI_407_Robot_Navigation (5000 words)
+  - AI_408_Robot_Path_Planning (5000 words)
+  - AI_409_Robot_Simulation (5000 words)
+  - AI_410_Robot_Vision (5002 words)
+  - AI_411_Robot_Design (5000 words)
+  - AI_450_Project (5001 words)
+
+Format: Plain text (TXT), spoken lecture narration style
+Language: Simple, clear English with real-life practicals (Nigerian/African + global)
+Verified: Every file meets the 5,000+ word requirement (wc -w)
