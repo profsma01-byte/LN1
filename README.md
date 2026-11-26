@@ -12,6 +12,7 @@ Complete spoken lecture narration for all **32 courses** of the PhD in Marriage 
 | Requirement met | 5,000+ words per subject — **all pass** |
 | Format | Plain `.txt`, ready for narration, printing, or study |
 | Language | Simple English, with Nigerian/African real life examples |
+| Google Drive | [Lecture Library folder](https://drive.google.com/drive/folders/1uGD9ld0JddgTeWRaBTzaAC8Ebz5CmKt1) |
 
 ---
 
